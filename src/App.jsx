@@ -6,11 +6,11 @@ import Placeholder from "./components/Placeholder";
 function App() {
   return (
     <>
-    <SignUpPage/>
+    
       <Routes>
         <Route path="/" element={<Placeholder />} />
         <Route path="/login" element={<Placeholder />} />
-        <Route path="/signup" element={<Placeholder />} />
+        <Route path="/signup" element={<SignUpPage/>} />
         <Route path="/home" element={<Placeholder />} />
         <Route path="/movies" element={<Placeholder />} />
         <Route path="/tvseries" element={<Placeholder />} />
