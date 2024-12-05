@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 
+
 export default function Movies() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -29,6 +30,7 @@ export default function Movies() {
     if (error) {
         return <p>Error: {error}</p>;
     }
+    
 
     return (
         <div className="bg-[#10141E] ">
