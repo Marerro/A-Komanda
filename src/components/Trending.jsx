@@ -25,7 +25,7 @@ const Trending = () => {
 
     return (
         <>
-            <div className="min-w-[23.4375rem] min-h-[8.75rem] bg-[#10141E] pl-[1rem] overflow-y">
+            <div className="min-w-[23.4375rem] min-h-[8.75rem] bg-[#10141E] pl-[1rem] overflow-x-auto">
                 <h1 className="pb-[1rem] text-white text-[1.25rem]">Trending</h1>
                 <div className="flex gap-[1rem]">
                     {data.map((show, index) => {
