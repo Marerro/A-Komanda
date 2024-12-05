@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getAll } from "../helpers/get"
+// import img from "../assets/thumbnails/1998/regular/small.jpg"
 
 const Trending = () => {
 
@@ -7,6 +8,8 @@ const Trending = () => {
     const [update, setUpdate] = useState(0);
     const [error, setError] = useState("");
 
+    // console.log(img);
+    
     const fetchData = async () => {
         try {
             const data = await getAll();
@@ -25,13 +28,15 @@ const Trending = () => {
         <>
             <div>
                 <h1>Trending</h1>
-                {data.map((show) => {
-                    const { id, title, thumbnail, trending, small, large, regular, year, category, rating, isBookmarked, isTrending } = show;
-
+                {data.map((show, index) => {
+                    const { id, title, thumbnail, trending, regular, year, category, rating, isBookmarked, isTrending } = show;
+                    
+                    // console.log(thumbnail.regular.small);
                     if (isTrending) {
                         return (
-                            <div key={id}>
-                                <img src={show.thumbnail} alt="#" />
+                            
+                            <div key={index}>
+                                <img src={thumbnail.regular.small} alt="#" />
                             </div>
                         )
                     }
