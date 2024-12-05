@@ -1,8 +1,9 @@
-
+import RecommendedForYou from "./components/RecommendedForYou";
 
 function App() {
   return (
     <>
+      <RecommendedForYou />
     </>
   );
 }
