@@ -41,7 +41,7 @@ export default function Movies() {
                             <div key={movie.id}>
                                 <img
 
-                                    src={"src" + movie.thumbnail.regular.small.slice(1)} 
+                                    src={movie.thumbnail.regular.small} 
                                     alt="movie-image"
                                 />
                                 <div>
