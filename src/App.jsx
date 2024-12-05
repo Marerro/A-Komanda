@@ -1,8 +1,10 @@
+import SignUpPage from "./components/SignUpPage";
 
 
 function App() {
   return (
     <>
+    <SignUpPage/>
     </>
   );
 }
