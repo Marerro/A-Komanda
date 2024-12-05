@@ -1,8 +1,11 @@
+import Movies from "./components/Movies";
+
 
 
 function App() {
   return (
     <>
+   <Movies/>
     </>
   );
 }

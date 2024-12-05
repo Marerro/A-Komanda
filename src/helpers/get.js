@@ -13,3 +13,4 @@ export const getOne = async (id) => {
 
   return response.data;
 }
+
