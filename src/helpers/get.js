@@ -13,3 +13,12 @@ export const getOne = async (id) => {
 
   return response.data;
 }
+
+
+const urlUsers= "http://localhost:5000/users"
+
+export const getAllUsers = async () => {
+  const response = await axios.get(urlUsers);
+
+  return response.data;
+}
