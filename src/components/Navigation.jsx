@@ -9,13 +9,13 @@ import { Link } from "react-router";
 export default function Navigation() {
   return (
     <>
-      <div>
+      <div className="flex flex-row m-2">
         <Link to="/"><img src={logo} alt="logo" /></Link>
-        <div>
-            <Link to="/home"><img src={home} alt="home" /></Link>
-            <Link to="/movies"><img src={movies} alt="movies" /></Link>
-            <Link to="/tvseries"><img src={tvSeries} alt="tv series" /></Link>
-            <Link to="/bookmarks"><img src={bookmark} alt="bookmarks" /></Link>
+        <div className="flex flex-row">
+            <Link to="/home"><img className="m-2" src={home} alt="home" /></Link>
+            <Link to="/movies"><img className="m-2" src={movies} alt="movies" /></Link>
+            <Link to="/tvseries"><img className="m-2" src={tvSeries} alt="tv series" /></Link>
+            <Link to="/bookmarks"><img className="m-2" src={bookmark} alt="bookmarks" /></Link>
         </div>
         <img src={avatar} alt="user picture" />
       </div>
