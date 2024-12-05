@@ -1,0 +1,74 @@
+{
+  "items": [
+    {
+      "category": "furniture",
+      "name": "Table",
+      "value": 100,
+      "quantity": 2,
+      "id": "2"
+    },
+    {
+      "id": "4",
+      "name": "Soccer Ball",
+      "category": "sports",
+      "value": 20,
+      "quantity": 15
+    },
+    {
+      "id": "5",
+      "name": "Electric Guitar",
+      "category": "music",
+      "value": 150,
+      "quantity": 3
+    },
+    {
+      "id": "6",
+      "name": "Sofa",
+      "category": "furniture",
+      "value": 500,
+      "quantity": 1
+    },
+    {
+      "id": "7",
+      "name": "Smartphone",
+      "category": "tech",
+      "value": 800,
+      "quantity": 10
+    },
+    {
+      "id": "8",
+      "name": "Basketball",
+      "category": "sports",
+      "value": 25,
+      "quantity": 5
+    },
+    {
+      "id": "f699",
+      "category": "furniture",
+      "name": "Table",
+      "value": "100",
+      "quantity": "2"
+    },
+    {
+      "id": "5215",
+      "category": "furniture",
+      "name": "Table",
+      "value": "100",
+      "quantity": "23"
+    },
+    {
+      "id": "284e",
+      "category": "furniture",
+      "name": "Table",
+      "value": "100",
+      "quantity": "23"
+    },
+    {
+      "id": "7997",
+      "category": "💀",
+      "name": "Pocket I.C.B.M",
+      "value": "792801",
+      "quantity": "34"
+    }
+  ]
+}
