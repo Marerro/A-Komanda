@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg"
+import bookmarkIconFull from "@assets/icon-bookmark-full.svg"
 
 
 
@@ -9,6 +10,14 @@ export default function TvSeries() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [bookmarked, setBookmarked] = useState({});
+
+    const handleBookmarkClick = (id) => {
+        setBookmarked((prev) => ({
+          ...prev,
+          [id]: !prev[id],
+        }));
+      };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -50,7 +59,10 @@ export default function TvSeries() {
                         return (
 
                             <div key={tvserie.id}>
-                                 <img className="w-[2rem] h-[2rem] relative left-[11rem] top-[3rem]" src={bookmarkIconEmpty} alt="" />
+                                <button onClick={() => handleBookmarkClick(tvserie.id)}>
+                                <img className="w-[2rem] h-[2rem] relative left-[11rem] top-[3rem]" src={bookmarked[tvserie.id] ? bookmarkIconFull : bookmarkIconEmpty} alt="" />
+                                </button>
+                                
                                 <img className="w-[15rem]"
                                 
                                     src={tvserie.thumbnail.regular.small} 
