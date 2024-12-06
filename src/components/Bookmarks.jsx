@@ -34,7 +34,7 @@ export default function Bookmarks() {
 
   return (
     <>
-      <div className="bg-dark-blue">
+      <div className="bg-slate-900">
         <Navigation />
         <div className="text-white">
           <h1>Bookmarked Movies</h1>
