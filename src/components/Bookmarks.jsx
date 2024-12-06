@@ -1,7 +1,7 @@
 import Navigation from "./Navigation";
 import { getAll } from "../helpers/get";
 import { useEffect, useState } from "react";
-import bookmarkIconEmpty from "/src/assets/icon-bookmark-empty.svg";
+import bookmarkIconFull from "/src/assets/icon-bookmark-full.svg";
 
 export default function Bookmarks() {
   const [bookmarkedMovies, setbookmarkedMovies] = useState([]);
@@ -34,7 +34,7 @@ export default function Bookmarks() {
 
   return (
     <>
-      <div className="bg-slate-900">
+      <div className="">
         <Navigation />
         <div className="text-white">
           <h1>Bookmarked Movies</h1>
@@ -55,8 +55,8 @@ const showShowsCard = (shows) => {
       <div className="flex wrap">
         {shows.map((show) => (
           <div key={show.title + show.year}>
-            <button className="relative left-32 top-8 bg-slate-500/50">
-              <img src={bookmarkIconEmpty} />
+            <button className="relative left-32 top-8 bg-dark-blue/50 w-2 h-2">
+              <img src={bookmarkIconFull} />
             </button>
             <img className="w-40" src={show.thumbnail.regular.small} alt={show.title} />
             <div>
