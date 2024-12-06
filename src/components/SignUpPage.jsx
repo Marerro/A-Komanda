@@ -36,7 +36,7 @@ const SignUpPage = () => {
         <div className="pt-5">
         <input type="password" id="password" placeholder="Password"{...register("password", {required: "Can't be empty",  pattern: {
                   value:  /^(?=.*?[A-Za-z])(?=.*?[0-9])(?=.*?[-+_!@#$%^&*.,?]).{8,}$/,
-                  message: "Password must contain at least 8 characters, a capital letter, symbol and a number",}})} />
+                  message: "Only 8 chars, capital letter,symbol and number",}})} />
         <p className="text-error">{errors.password?.message}</p>
         </div>
         <div className="pt-5">
@@ -50,7 +50,7 @@ const SignUpPage = () => {
               })}/>
               <p className="text-error">{errors.repeatPassword?.message}</p>
         </div>
-        <button  type="submit" className="border border-black p-3 mt-5">Create and account</button>
+        <button  type="submit" className="border border-black p-3 mt-5">Create an account</button>
         {error && <p className="text-error">{error}</p>}
     </form>
     <p className="p-5">Already have an account? <Link to={`/login`}>Login</Link> </p>
