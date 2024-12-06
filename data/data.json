@@ -490,6 +490,11 @@
       "id": "ecda",
       "email": "sss@gmail.com",
       "password": "student123!"
+    },
+    {
+      "id": "9f32",
+      "email": "henrikas@gmail.com",
+      "password": "Henrikas123456!"
     }
   ]
 }
