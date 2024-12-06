@@ -30,7 +30,7 @@ export default function Movies() {
     if (error) {
         return <p>Error: {error}</p>;
     }
-    
+    const movies = data.filter(item => item.category === "Movie");
 
     return (
         <div className="bg-[#10141E] ">
@@ -38,7 +38,7 @@ export default function Movies() {
             <div >
                 <div className="flex flex-wrap gap-[0.94rem]">
                    
-                    {data.map((movie) => {
+                    {movies.map((movie) => {
                         return (
 
                             <div key={movie.id}>
