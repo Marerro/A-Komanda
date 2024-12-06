@@ -1,9 +1,5 @@
-
+import TvSeries from "./components/TvSeries"
 import Movies from "./components/Movies";
-
-
-
-
 import RecommendedForYou from "./components/RecommendedForYou";
 import SignUpPage from "./components/SignUpPage";
 import Trending from "./components/Trending"
@@ -20,7 +16,7 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/home" element={<Placeholder />} />
         <Route path="/movies" element={<Movies />} />
-        <Route path="/tvseries" element={<Placeholder />} />
+        <Route path="/tvseries" element={<TvSeries />} />
         <Route path="/bookmarks" element={<Placeholder />} />
       </Routes>
       <Trending />

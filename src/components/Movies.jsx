@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg"
+
 
 
 
@@ -24,6 +26,12 @@ export default function Movies() {
 
         fetchData();
     });
+
+    
+
+    
+
+
     if (loading) {
         return <p>Loading...</p>;
     }
@@ -42,9 +50,9 @@ export default function Movies() {
                         return (
 
                             <div key={movie.id}>
-                                 <img className="w-[2rem] h-[2rem] relative left-[11rem] top-[3rem]" src="src/assets/icon-bookmark-empty.svg" alt="" />
+                                 <img className="w-[2rem] h-[2rem] relative left-[11rem] top-[3rem]" src={bookmarkIconEmpty} alt="" />
                                 <img className="w-[15rem]"
-
+                                
                                     src={movie.thumbnail.regular.small} 
                                     alt="movie-image"
                                 />
