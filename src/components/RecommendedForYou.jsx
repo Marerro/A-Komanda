@@ -59,20 +59,18 @@ function RecommendedForYou() {
           };
 
           const bookMarking = isBookmarked ? (
-            <button onClick={() => unBookmark(id)}>
-              <img
-                src={bookmarkIconEmpty}
-                alt="MovieIcon"
-                className="absolute  justify-center items-center w-[2rem] h-[2rem] top-[2rem] right-[3.0rem] rotate-2"
-              />
+            <button
+              className="absolute right-2 top-2 bg-slate-900/50 w-8 h-8 rounded-full"
+              onClick={() => unBookmark(id)}
+            >
+              <img src={bookmarkIconEmpty} alt="MovieIcon" className="m-auto" />
             </button>
           ) : (
-            <button onClick={() => bookMark(id)}>
-              <img
-                src={bookmarkIconFull}
-                alt="MovieIcon"
-                className="absolute  items-center w-[2rem] h-[2rem] top-[2rem] right-[3.0rem] rotate-2"
-              />
+            <button
+              className="absolute right-2 top-2 bg-slate-900/50 w-8 h-8 rounded-full"
+              onClick={() => bookMark(id)}
+            >
+              <img src={bookmarkIconFull} alt="MovieIcon" className="m-auto" />
             </button>
           );
 
