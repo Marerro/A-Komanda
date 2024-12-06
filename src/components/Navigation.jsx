@@ -10,9 +10,7 @@ export default function Navigation() {
   return (
     <>
       <div className="flex flex-row m-2">
-        <Link to="/">
           <img src={logo} alt="logo" />
-        </Link>
         <div className="flex flex-row">
           <Link to="/home">
             <img className="m-2" src={home} alt="home" />
