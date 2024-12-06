@@ -31,7 +31,7 @@ const SignUpPage = () => {
 
         reset();
         setError("");
-        navigate("/home");
+        navigate("/login");
       }
     } catch (error) {
       setError(error.message);
