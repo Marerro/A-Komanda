@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { post } from "../helpers/post";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { getAllUsers } from "../helpers/get";
 
 
@@ -9,7 +9,8 @@ const SignUpPage = () => {
     const [users, setUsers] = useState([]);
     const { register, handleSubmit, watch, formState: { errors}, reset } = useForm();
     const [error, setError] = useState("");
- 
+    const navigate = useNavigate();
+
     const onSubmit = async (data) => {
       const userData = { email: data.email, password: data.password };
       try {
@@ -28,7 +29,7 @@ const SignUpPage = () => {
   
           reset();
           setError("");
-          
+          navigate("/home")
         }
       } catch (error) {
         setError(error.message);
