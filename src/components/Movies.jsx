@@ -10,6 +10,8 @@ export default function Movies() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -50,7 +52,10 @@ export default function Movies() {
                         return (
 
                             <div key={movie.id}>
-                                 <img className="w-[2rem] h-[2rem] relative left-[11rem] top-[3rem]" src={bookmarkIconEmpty} alt="" />
+                                <button>
+                                <img className="w-[2rem] h-[2rem] relative left-[11rem] top-[3rem]" src={bookmarkIconEmpty} alt="" />
+                                </button>
+                                 
                                 <img className="w-[15rem]"
                                 
                                     src={movie.thumbnail.regular.small} 
