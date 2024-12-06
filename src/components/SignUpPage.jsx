@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { post } from "../helpers/post";
 import { Link } from "react-router";
-
+import { getAllUsers } from "../helpers/get";
 
 
 const SignUpPage = () => {
@@ -11,17 +11,29 @@ const SignUpPage = () => {
     const [error, setError] = useState("");
  
     const onSubmit = async (data) => {
-        const user = {email: data.email, password: data.password}
-        try {
-          const newUser = await post(user);
-          setUsers(prev => [...prev, newUser]);
+      const userData = { email: data.email, password: data.password };
+      try {
+        const users = await getAllUsers();
+        const existingUser = users.find(
+          (user) => user.email === userData.email 
+        );
+        if (existingUser) {
+          setError( `User with such an email already exist`)
+          reset()
+          return
+        } else {
           
+          const newUser = await post(userData);
+          setUsers((prev) => [...prev, newUser]);
+  
           reset();
           setError("");
-        } catch (error) {
-          setError(error.message);
+          
         }
+      } catch (error) {
+        setError(error.message);
       }
+    };
 
       console.log(users)
     return ( <>
