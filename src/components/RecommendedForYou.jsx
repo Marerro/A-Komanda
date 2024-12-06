@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
-import { getAll } from "../helpers/get";
+import { patchData } from "../helpers/update";
 import category_movie from "@assets/icon-category-movie.svg";
 import bookmark from "@assets/icon-bookmark-empty.svg";
 import category_TV from "@assets/icon-category-tv.svg";
+import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
+import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 
 function RecommendedForYou() {
   const [recommendMovies, setRecommendMovies] = useState([]);
+  const [update, setUpdate] = useState(0);
 
   const url = "http://localhost:5000/data";
 
@@ -21,7 +24,7 @@ function RecommendedForYou() {
 
   useEffect(() => {
     getMovies();
-  }, []);
+  }, [update]);
 
   return (
     <>
@@ -45,15 +48,38 @@ function RecommendedForYou() {
             isTrending,
           } = itemData;
 
+          const bookMark = async (id) => {
+            await patchData(id, { isBookmarked: true });
+            setUpdate((prev) => prev + 1);
+          };
+
+          const unBookmark = async (id) => {
+            await patchData(id, { isBookmarked: false });
+            setUpdate((prev) => prev + 1);
+          };
+
+          const bookMarking = isBookmarked ? (
+            <button onClick={() => unBookmark(id)}>
+              <img
+                src={bookmarkIconEmpty}
+                alt="MovieIcon"
+                className="absolute  justify-center items-center w-[2rem] h-[2rem] top-[2rem] right-[3.0rem] rotate-2"
+              />
+            </button>
+          ) : (
+            <button onClick={() => bookMark(id)}>
+              <img
+                src={bookmarkIconFull}
+                alt="MovieIcon"
+                className="absolute  items-center w-[2rem] h-[2rem] top-[2rem] right-[3.0rem] rotate-2"
+              />
+            </button>
+          );
+
           return (
             <div key={id} className="">
               <div className="m-auto relative z-0">
                 <div className="grid grid-cols-2 gap-[0.94rem] w-[23.4375rem] h-[8.75rem] justify-center  ">
-                  <img
-                    className="absolute w-[0.8919rem] h-[1.375rem] top-[0.5rem] right-[0.5rem] border-solid border-[##10141E] rounded-[50px] opacity-[0.500647] box-border"
-                    src={bookmark}
-                    alt="BookmarkIcon"
-                  />
                   <img
                     className="rounded-[0.5rem]"
                     src={itemData.thumbnail.regular.small}
@@ -77,6 +103,7 @@ function RecommendedForYou() {
                       alt="#"
                     />
                   )}
+                  <div>{bookMarking}</div>
                   <p>{category}</p>
                   <span>&#8226;</span>
                   <p>{rating}</p>
