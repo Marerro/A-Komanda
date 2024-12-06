@@ -5,7 +5,7 @@ import { getAllUsers } from "../helpers/get";
 
 
 const LogInPage = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, formState: { errors} } = useForm();
   const [error, setError] = useState("");
   const [logIn, setLogIn] = useState(false);
   const navigate = useNavigate();
@@ -41,8 +41,11 @@ const LogInPage = () => {
             type="text"
             id="email"
             placeholder="Email"
-            {...register("email", { required: true })}
+            {...register("email", {required: "Can't be empty", pattern: {
+              value: /^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+              message: "Invalid email address",}})}
           />
+          <p className="text-error">{errors.email?.message}</p>
         </div>
         <div className="pt-5">
           <input
