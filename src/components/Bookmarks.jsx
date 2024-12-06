@@ -52,13 +52,17 @@ export default function Bookmarks() {
 const showShowsCard = (shows) => {
   return (
     <>
-      <div className="flex wrap">
+      <div className="grid grid-cols-2">
         {shows.map((show) => (
-          <div key={show.title + show.year}>
-            <button className="relative left-32 top-8 bg-dark-blue/50 w-2 h-2">
-              <img src={bookmarkIconFull} />
+          <div className="relative w-40" key={show.title + show.year}>
+            <button className="absolute right-2 top-2 bg-dark-blue/50 w-8 h-8 rounded-full">
+              <img className="m-auto" src={bookmarkIconFull} />
             </button>
-            <img className="w-40" src={show.thumbnail.regular.small} alt={show.title} />
+            <img
+              className="w-40"
+              src={show.thumbnail.regular.small}
+              alt={show.title}
+            />
             <div>
               {show.year} <span>&#8226;</span>
               {show.category} <span>&#8226;</span>
