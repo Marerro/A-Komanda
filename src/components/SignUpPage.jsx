@@ -41,7 +41,7 @@ const SignUpPage = () => {
   console.log(users);
   return (
     <>
-      <h1 className="text-xl p-5">Sign Up</h1>
+      <h1 className="p-5 heading-l">Sign Up</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="mx-5">
         <div>
           <input
@@ -56,7 +56,7 @@ const SignUpPage = () => {
               },
             })}
           />
-          <p className="text-error">{errors.email?.message}</p>
+          <p className="text-error text-red">{errors.email?.message}</p>
         </div>
         <div className="pt-5">
           <input
@@ -68,11 +68,11 @@ const SignUpPage = () => {
               pattern: {
                 value:
                   /^(?=.*?[A-Za-z])(?=.*?[0-9])(?=.*?[-+_!@#$%^&*.,?]).{8,}$/,
-                message: "Only 8 chars, capital letter,symbol and number",
+                message: "At least 8 chars, capital letter, symbol and number",
               },
             })}
           />
-          <p className="text-error">{errors.password?.message}</p>
+          <p className="text-error text-red">{errors.password?.message}</p>
         </div>
         <div className="pt-5">
           <input
@@ -83,20 +83,20 @@ const SignUpPage = () => {
               required: "Can't be empty",
               validate: (val) => {
                 if (watch("password") != val) {
-                  return "Your passwords do no match";
+                  return "Passwords do not match";
                 }
               },
             })}
           />
-          <p className="text-error">{errors.repeatPassword?.message}</p>
+          <p className="text-error text-red">{errors.repeatPassword?.message}</p>
         </div>
-        <button type="submit" className="border border-black p-3 mt-5">
+        <button type="submit" className="border border-white p-3 mt-5 text-white">
           Create an account
         </button>
         {error && <p className="text-error">{error}</p>}
       </form>
-      <p className="p-5">
-        Already have an account? <Link to={`/login`}>Login</Link>{" "}
+      <p className="p-5 text-white">
+        Already have an account? <Link to={`/login`} className="text-red">Login</Link>{" "}
       </p>
     </>
   );
