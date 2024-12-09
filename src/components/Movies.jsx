@@ -32,7 +32,7 @@ export default function Movies() {
         <>
         <Navigation/>
           <div className="recommended_container">
-            <h3>Recommended for you</h3>
+            <h3 className="text-white">Movies</h3>
           </div>
           <div className="bg-[#10141E] m-auto gap-3 grid grid-cols-2">
             {movies.map((itemData) => {
