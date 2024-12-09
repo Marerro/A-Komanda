@@ -31,8 +31,10 @@ const Trending = () => {
 
   return (
     <>
+    <div>
+    <h1 className="heading-m ml-[0.5rem]">Trending</h1>
+    </div>
       <div className="min-w-[23.4375rem] min-h-[8.75rem] bg-[#10141E] pl-[1rem] overflow-x-auto no-scrollbar" {...events} ref={ref}>
-        <h1 className="heading-m">Trending</h1>
         <div className="flex gap-[1rem]">
           {data.map((show) => {
             const { id, title, thumbnail, trending, regular, year, category, rating, isBookmarked, isTrending } = show;
