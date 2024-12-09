@@ -63,14 +63,14 @@ function RecommendedForYou() {
               className="absolute right-2 top-2 bg-slate-900/50 w-8 h-8 rounded-full"
               onClick={() => unBookmark(id)}
             >
-              <img src={bookmarkIconEmpty} alt="MovieIcon" className="m-auto" />
+              <img src={bookmarkIconFull} alt="MovieIcon" className="m-auto" />
             </button>
           ) : (
             <button
               className="absolute right-2 top-2 bg-slate-900/50 w-8 h-8 rounded-full"
               onClick={() => bookMark(id)}
             >
-              <img src={bookmarkIconFull} alt="MovieIcon" className="m-auto" />
+              <img src={bookmarkIconEmpty} alt="MovieIcon" className="m-auto" />
             </button>
           );
 
@@ -84,7 +84,7 @@ function RecommendedForYou() {
                     alt="#"
                   />
                 </div>
-                <div className="flex card_content text-[#FFF]/[0.75] gap-[0.5rem;] text-[0.6875rem]">
+                <div className="flex place-items-center card_content text-[#FFF]/[0.75] gap-[0.5rem;] text-[0.6875rem]">
                   <p>{year}</p>
                   <span>&#8226;</span>
                   {category === "Movie" && (
