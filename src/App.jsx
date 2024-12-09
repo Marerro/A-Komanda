@@ -1,9 +1,7 @@
 import TvSeries from "./components/TvSeries"
 import Movies from "./components/Movies";
-import RecommendedForYou from "./components/RecommendedForYou";
 import SignUpPage from "./components/SignUpPage";
 import { Route, Routes } from "react-router";
-import Placeholder from "./components/Placeholder";
 import LogInPage from "./components/LogInPage";
 import Home from "./components/Home";
 import Bookmarks from "./components/Bookmarks";

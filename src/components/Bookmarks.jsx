@@ -1,7 +1,7 @@
 import Navigation from "./Navigation";
 import { getAll } from "../helpers/get";
 import { useEffect, useState } from "react";
-import bookmarkIconFull from "/src/assets/icon-bookmark-full.svg";
+import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 
 export default function Bookmarks() {
   const [bookmarkedMovies, setbookmarkedMovies] = useState([]);
