@@ -95,7 +95,7 @@ export default function Bookmarks() {
 
   return (
     <>
-      <div className="">
+      <div className="mb-8">
         <Navigation />
         <div>
           <h1 className="heading-xs ml-4 mt-4 mb-4">Bookmarked Movies</h1>
