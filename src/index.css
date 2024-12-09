@@ -16,17 +16,18 @@
 @layer base {
     html {
       @apply bg-dark-blue;
+      box-sizing: border-box;
     }
   }
 
 @layer components {
     
     .heading-l {
-      @apply text-white text-hl font-light;
+      @apply text-white text-hl font-medium;
     }
    
     .heading-m {
-      @apply text-white text-hm font-light;
+      @apply text-white text-hm font-medium;
     }
    
     .heading-s {
@@ -38,10 +39,10 @@
     }
    
     .body-m{
-      @apply text-white text-bm font-light;
+      @apply text-white text-bm font-medium;
     }
    
     .body-s {
-      @apply text-white text-bs font-light;
+      @apply text-white text-bs font-medium;
     }
   }
