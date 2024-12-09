@@ -53,7 +53,9 @@
     font-size: 0.75rem;
     opacity: 0.75;
     font-family: Outfit;
+    
   }
-  .hover-elements{
+  .hover-elements:hover{
+    background-color: black;
 
   }

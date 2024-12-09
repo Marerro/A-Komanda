@@ -50,9 +50,9 @@ const Trending = () => {
               setUpdate((prev) => prev + 1);
             };
 
-            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full">
+            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:fill-white hover:duration-500 hover-elements">
               <img src={bookmarkIconFull} alt="MovieIcon" className="m-auto" />
-            </button> : <button onClick={() => bookMark(id)} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full"><img src={bookmarkIconEmpty} alt="MovieIcon" className="m-auto rotate-1" /></button>
+            </button> : <button onClick={() => bookMark(id)} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:fill-white hover:duration-500 hover-elements"><img src={bookmarkIconEmpty} alt="MovieIcon" className="m-auto rotate-1" /></button>
 
 
             if (isTrending) {
@@ -64,10 +64,6 @@ const Trending = () => {
                     <source
                       media="(min-width: 768px)"
                       srcSet={thumbnail.trending.large}
-                    />
-                    <source
-                      media="(max-width: 767px)"
-                      srcSet={thumbnail.trending.small}
                     />
                     <img
                       className="min-w-[15rem] min-h-[8.75rem] max-w-[29.375rem] max-h-[14.375rem] mobile:w-[15rem] mobile:h-[8.75rem] tablet:w-[29.375rem] tablet:h-[14.375rem] rounded-[0.5rem] hover-elements"
