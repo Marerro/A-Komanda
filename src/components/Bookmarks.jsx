@@ -12,6 +12,10 @@ export default function Bookmarks() {
   const [bookmarkedTVSeries, setbookmarkedTVSeries] = useState([]);
   const [update, setUpdate] = useState(0);
 
+  /**
+   * gets shows from database
+   * filter show to movies and tv series arrays
+   */
   const getShows = async () => {
     try {
       let shows = await getAll();
@@ -42,6 +46,10 @@ export default function Bookmarks() {
     setUpdate((prev) => prev + 1);
   };
 
+  /** 
+   * return array of movie/tv series mapped onto a grid, 
+   * mobile 2 col 
+   */
   const showShowsCard = (shows) => {
     return (
       <>
