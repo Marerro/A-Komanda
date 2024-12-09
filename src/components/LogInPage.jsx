@@ -34,7 +34,7 @@ const LogInPage = () => {
  console.log(logIn)
   return (
     <>
-      <h1 className="text-xl p-5">Log in</h1>
+      <h1 className="p-5 heading-l">Log in</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="mx-5">
         <div>
           <input
@@ -64,6 +64,8 @@ const LogInPage = () => {
       <p className="p-5">
         Don`t have an account? <Link to={`/signup`}>Sign Up</Link>{" "}
       </p>
+
+
     </>
   );
 };

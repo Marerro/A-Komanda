@@ -1,9 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    body{
-        @apply bg-dark-blue;
+
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+
     }
 }
+
+@layer base {
+    html {
+      @apply bg-dark-blue;
+    }
+  }
+
+@layer components {
+    
+    .heading-l {
+      @apply text-white text-hl font-light;
+    }
+   
+    .heading-m {
+      @apply text-white text-hm font-light;
+    }
+   
+    .heading-s {
+      @apply text-white text-hm font-medium;
+    }
+   
+    .heading-xs {
+      @apply text-white text-hs font-medium;
+    }
+   
+    .body-m{
+      @apply text-white text-bm font-light;
+    }
+   
+    .body-s {
+      @apply text-white text-bs font-light;
+    }
+  }
+
+
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+
+    }
+}
+
+@layer base {
+    html {
+      @apply bg-dark-blue;
+    }
+  }
+
+@layer components {
+    
+    .heading-l {
+      @apply text-white text-hl font-light;
+    }
+   
+    .heading-m {
+      @apply text-white text-hm font-light;
+    }
+   
+    .heading-s {
+      @apply text-white text-hm font-medium;
+    }
+   
+    .heading-xs {
+      @apply text-white text-hs font-medium;
+    }
+   
+    .body-m{
+      @apply text-white text-bm font-light;
+    }
+   
+    .body-s {
+      @apply text-white text-bs font-light;
+    }
+  }
