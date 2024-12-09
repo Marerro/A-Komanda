@@ -9,6 +9,7 @@ import Navigation from "./Navigation";
 
 
 
+
 export default function TvSeries() {
     const [data, setData] = useState([]);
   const [update, setUpdate] = useState(0);
@@ -31,12 +32,12 @@ export default function TvSeries() {
     const tvseries = data.filter(itemData => itemData.category === "TV Series");
 
     return (
-        <>
+        <section className="mx-[1rem]">
         <Navigation/>
-          <div className="recommended_container">
-            <h3 className="text-white">TV Series </h3>
+          <div className="">
+            <h3 className="text-white text-[1.25rem] my-[1.5rem]">TV Series </h3>
           </div>
-          <div className="bg-[#10141E] m-auto gap-3 grid grid-cols-2">
+          <div className="bg-[#10141E]  grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4  gap-[0.94rem] ">
             {tvseries.map((itemData) => {
               const {
                 id,
@@ -65,14 +66,14 @@ export default function TvSeries() {
     
               const bookMarking = isBookmarked ? (
                 <button
-                  className="absolute right-2 top-2 bg-slate-900/50 w-8 h-8 rounded-full"
+                  className="absolute right-[0.5rem] top-2  bg-slate-900/50 w-[2rem] h-[2rem] rounded-full"
                   onClick={() => unBookmark(id)}
                 >
                   <img src={bookmarkIconFull} alt="MovieIcon" className="m-auto" />
                 </button>
               ) : (
                 <button
-                  className="absolute right-2 top-2 bg-slate-900/50 w-8 h-8 rounded-full"
+                  className="absolute right-[0.5rem] top-2 bg-slate-900/50 w-8 h-8 rounded-full"
                   onClick={() => bookMark(id)}
                 >
                   <img src={bookmarkIconEmpty} alt="MovieIcon" className="m-auto" />
@@ -81,9 +82,9 @@ export default function TvSeries() {
     
               return (
                 
-                <div key={id} className="">
+                <div key={id} className="justify-self-center">
                   <div className="m-auto relative z-0">
-                    <div className="grid grid-cols-2 gap-[0.94rem] w-[23.4375rem] h-[8.75rem] justify-center  ">
+                    <div className="">
                       <img
                         className="rounded-[0.5rem]"
                         src={itemData.thumbnail.regular.small}
@@ -112,7 +113,7 @@ export default function TvSeries() {
               );
             })}
           </div>
-        </>
+        </section>
       );
 }
 
