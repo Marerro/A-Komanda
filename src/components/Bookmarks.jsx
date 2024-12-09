@@ -56,7 +56,10 @@ const showShowsCard = (shows) => {
     <>
       <div className="grid grid-cols-2 gap-4 ml-4 mr-4">
         {shows.map((show) => (
-          <div className="relative justify-self-center" key={show.title + show.year}>
+          <div
+            className="relative justify-self-center"
+            key={show.title + show.year}
+          >
             <button className="absolute right-2 top-2 bg-dark-blue/50 w-8 h-8 rounded-full">
               <img className="m-auto" src={bookmarkIconFull} />
             </button>
@@ -67,8 +70,12 @@ const showShowsCard = (shows) => {
             />
             <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mt-2">
               <p>{show.year}</p> <span className="p-2">&#8226;</span>
-              {show.category.toLowerCase() == "movie" && <img className="mr-1" src={moviesIcon} alt="" />}
-              {show.category.toLowerCase() == "tv series" && <img src={tvSeriesIcon} alt="" />}
+              {show.category.toLowerCase() == "movie" && (
+                <img className="mr-1" src={moviesIcon} alt="" />
+              )}
+              {show.category.toLowerCase() == "tv series" && (
+                <img src={tvSeriesIcon} alt="" />
+              )}
               <p>{show.category}</p> <span className="p-2">&#8226;</span>
               <p>{show.rating}</p>
             </div>
