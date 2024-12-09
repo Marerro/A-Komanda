@@ -19,7 +19,6 @@ export default function Movies() {
         }));
       };
 
-    
 
     useEffect(() => {
         const fetchData = async () => {
