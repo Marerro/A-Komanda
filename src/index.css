@@ -3,52 +3,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-
-@layer utilities {
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-
-    }
-}
-
-@layer base {
-    html {
-      @apply bg-dark-blue;
-      box-sizing: border-box;
-    }
-  }
-
-@layer components {
-    
-    .heading-l {
-      @apply text-white text-hl font-medium;
-    }
-   
-    .heading-m {
-      @apply text-white text-hm font-medium;
-    }
-   
-    .heading-s {
-      @apply text-white text-hm font-medium;
-    }
-   
-    .heading-xs {
-      @apply text-white text-hs font-medium;
-    }
-   
-    .body-m{
-      @apply text-white text-bm font-medium;
-    }
-   
-    .body-s {
-      @apply text-white text-bs font-medium;
-    }
-  }
-
-
-
 @layer utilities {
     .no-scrollbar::-webkit-scrollbar {
         display: none;
