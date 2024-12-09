@@ -1,4 +1,4 @@
-import TvSeries from "./components/TvSeries"
+import TvSeries from "./components/TvSeries";
 import Movies from "./components/Movies";
 import RecommendedForYou from "./components/RecommendedForYou";
 import SignUpPage from "./components/SignUpPage";
@@ -11,17 +11,14 @@ import Bookmarks from "./components/Bookmarks";
 function App() {
   return (
     <>
-   
       <Routes>
         <Route path="/" element={<LogInPage />} />
         <Route path="/login" element={<LogInPage />} />
-        <Route path="/signup" element={<SignUpPage/>} />
+        <Route path="/signup" element={<SignUpPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/tvseries" element={<TvSeries />} />
         <Route path="/bookmarks" element={<Bookmarks />} />
-
-
       </Routes>
     </>
   );
