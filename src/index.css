@@ -53,9 +53,20 @@
     font-size: 0.75rem;
     opacity: 0.75;
     font-family: Outfit;
-    
-  }
-  .hover-elements:hover{
-    background-color: black;
 
+
+  input {
+    height: 2.25rem;
+    width: 17.438rem;
+    color: white;
+    opacity: 0.5;
+    }
+
+    input:focus{
+      caret-color: #FC4747;
+      
+    }
+   
+  .error-text{
+    font-size: 0.8125rem;
   }
