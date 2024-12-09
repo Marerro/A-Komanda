@@ -68,7 +68,7 @@ const SignUpPage = () => {
               pattern: {
                 value:
                   /^(?=.*?[A-Za-z])(?=.*?[0-9])(?=.*?[-+_!@#$%^&*.,?]).{8,}$/,
-                message: "At least 8 chars, capital letter, symbol and number",
+                message: "At least 8 characters, capital letter, symbol and number",
               },
             })}
           />
