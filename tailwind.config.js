@@ -25,7 +25,7 @@ export default {
         hm: "1.5rem",
         hs: "1.125rem",
         bm: "0.938rem",
-        bs: "0.813",
+        bs: "0.8125rem",
         mm: "0.875rem", //mobile title
         ms: "0.6875rem", //mobile body
       },

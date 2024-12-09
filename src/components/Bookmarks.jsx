@@ -46,14 +46,14 @@ export default function Bookmarks() {
     setUpdate((prev) => prev + 1);
   };
 
-  /** 
-   * return array of movie/tv series mapped onto a grid, 
-   * mobile 2 col 
+  /**
+   * return array of movie/tv series mapped onto a grid,
+   * mobile 2 col
    */
   const showShowsCard = (shows) => {
     return (
       <>
-        <div className="grid grid-cols-2 gap-4 ml-4 mr-4">
+        <div className="grid grid-cols-2 gap-4 ml-4 mr-4 tablet:ml-6 tablet:mr-6 tablet:grid-cols-3 tablet:gap-x-7 tablet:gap-y-6">
           {shows.map((show) => (
             <div
               className="relative justify-self-center"
@@ -69,12 +69,22 @@ export default function Bookmarks() {
                   <img className="m-auto" src={bookmarkIconEmpty} />
                 )}
               </button>
-              <img
-                className="rounded-lg"
-                src={show.thumbnail.regular.small}
-                alt={show.title}
-              />
-              <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mt-2">
+              <picture>
+                <source
+                  media="(min-width: 1440px)"
+                  srcSet={show.thumbnail.regular.large}
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcSet={show.thumbnail.regular.medium}
+                />
+                <img
+                  className="rounded-lg"
+                  src={show.thumbnail.regular.small}
+                  alt={show.title}
+                />
+              </picture>
+              <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mt-2 tablet:h-4 tablet:text-bs">
                 <p>{show.year}</p> <span className="p-2">&#8226;</span>
                 {show.category.toLowerCase() == "movie" && (
                   <img className="mr-1" src={moviesIcon} alt="" />
@@ -85,24 +95,24 @@ export default function Bookmarks() {
                 <p>{show.category}</p> <span className="p-2">&#8226;</span>
                 <p>{show.rating}</p>
               </div>
-              <div className="text-mm text-white font-medium">{show.title}</div>
+              <div className="text-mm text-white font-medium tablet:text-hs">{show.title}</div>
             </div>
           ))}
         </div>
       </>
     );
   };
-
+//text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mt-2
   return (
     <>
       <div className="mb-8">
         <Navigation />
         <div>
-          <h1 className="heading-xs ml-4 mt-4 mb-4">Bookmarked Movies</h1>
+          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:heading-l">Bookmarked Movies</h1>
           {showShowsCard(bookmarkedMovies)}
         </div>
         <div>
-          <h1 className="heading-xs ml-4 mt-4 mb-4">Bookmarked TV Series</h1>
+          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:heading-l">Bookmarked TV Series</h1>
           {showShowsCard(bookmarkedTVSeries)}
         </div>
       </div>
