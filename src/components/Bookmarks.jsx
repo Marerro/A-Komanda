@@ -2,7 +2,6 @@ import Navigation from "./Navigation";
 import { getAll } from "../helpers/get";
 import { useEffect, useState } from "react";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
-import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconHover from "@assets/icon-bookmark-hover.svg";
 import moviesIcon from "@assets/icon-category-movie.svg";
 import tvSeriesIcon from "@assets/icon-category-tv.svg";
@@ -47,14 +46,6 @@ export default function Bookmarks() {
     setUpdate((prev) => prev + 1);
   };
 
-  const hoverButton = (e) => {
-    e.target.children[0]?.setAttribute("src", bookmarkIconHover);
-  };
-
-  const unhoverButton = (e) => {
-    e.target.children[0]?.setAttribute("src", bookmarkIconFull);
-  };
-
   /**
    * return array of movie/tv series mapped onto a grid,
    * mobile 2 col
@@ -69,15 +60,17 @@ export default function Bookmarks() {
               key={show.title + show.year}
             >
               <button
-                className="absolute right-2 top-2 bg-dark-blue/50 w-8 h-8 rounded-full hover:bg-white"
+                className="group absolute right-2 top-2 bg-dark-blue/50 w-8 h-8 rounded-full hover:bg-white"
                 onClick={() => unbookmarShow(show.id)}
-                onMouseEnter={hoverButton} onMouseLeave={unhoverButton}
               >
-                {show.isBookmarked ? (
-                  <img className="m-auto" src={bookmarkIconFull} />
-                ) : (
-                  <img className="m-auto" src={bookmarkIconEmpty} />
-                )}
+                <img
+                  className="m-auto relative group-hover:invisible"
+                  src={bookmarkIconFull}
+                />
+                <img
+                  className="group-hover:visible absolute top-0 invisible"
+                  src={bookmarkIconHover}
+                />
               </button>
               <picture>
                 <source
