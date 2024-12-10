@@ -59,19 +59,20 @@ const Trending = () => {
             const unhoverButton = (e) => {
               e.target.children[0]?.setAttribute("src", bookmarkIconFull);
             };
-           
-            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:duration-500 hover-elements group">
-                    <img className="m-auto group-hover:invisible" src={bookmarkIconFull} />
-                    <img className="m-auto invisible group-hover:visible absolute top-0 right-0" src={bookmarkIconHover} />
-            </button> : <button onClick={() => bookMark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton}  className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:duration-500 hover-elements group">
-                    <img className="m-auto group-hover:invisible rotate-1" src={bookmarkIconEmpty} />
-                    <img className="m-auto invisible group-hover:visible absolute top-0 right-0" src={bookmarkIconHover} />
-              </button>
-            if (isTrending) {
 
+            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:duration-500 group">
+              <img className="m-auto group-hover:invisible" src={bookmarkIconFull} />
+              <img className="m-auto invisible group-hover:visible absolute top-0 right-0" src={bookmarkIconHover} />
+            </button> : <button onClick={() => bookMark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:duration-500 group">
+              <img className="m-auto group-hover:invisible rotate-1" src={bookmarkIconEmpty} />
+              <img className="m-auto invisible group-hover:visible absolute top-0 right-0" src={bookmarkIconHover} />
+            </button>
+
+            if (isTrending) {
               return (
                 <div key={show.id} className="relative">
                   <div>{bookMarking}</div>
+                  <div></div>
                   <picture>
                     <source
                       media="(min-width: 768px)"
@@ -79,11 +80,24 @@ const Trending = () => {
                     />
 
                     <img
-                      className="min-w-[15rem] min-h-[8.75rem] max-w-[29.375rem] max-h-[14.375rem] mobile:w-[15rem] mobile:h-[8.75rem] tablet:w-[29.375rem] tablet:h-[14.375rem] rounded-[0.5rem] hover-elements"
+                      className="max-w-[29.375rem] max-h-[14.375rem]
+                      mobile:w-[15rem] mobile:h-[8.75rem] tablet:w-[29.375rem] tablet:h-[14.375rem]
+                      min-w-[15rem] min-h-[8.75rem] rounded-[0.5rem] hover-elements"
                       src={thumbnail.trending.small}
                       alt="TV shows"
                     />
                   </picture>
+                  <div className="flex items-center absolute top-0 bottom-0 left-0 right-0 m-auto w-[7.3125rem] h-[3rem] bg-white bg-opacity-25 rounded-full">
+                    <img src={playButton} alt="playButton" className="w-[1.875rem] h-[1.875rem] ml-[0.56rem] mr-[1.19rem]" />
+                    <p className="heading-s">Play</p>
+                  </div>
+                  
+
+
+
+
+
+
                   <div className="absolute mobile:top-[5.37rem] mobile:left-[1rem] tablet:top-[9.62rem] tablet:left-[1.5rem] flex place-items-center">
                     <p className="text_above_title mobile:body-s tablet:body-m mr-[0.5rem]">{year}</p>
                     <p className="text_above_title mobile:body-s tablet:body-m">&#8226;</p>

@@ -58,6 +58,10 @@
     font-family: Outfit;
   }
 
+  .hover-elements:hover {
+    
+  }
+
   input {
     height: 2.25rem;
     width: 17.438rem;
