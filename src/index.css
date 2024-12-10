@@ -41,26 +41,31 @@
   .body-s {
     @apply text-white text-bs font-medium;
   }
+  .section-s {
+    @apply text-white text-mm font-medium
+  }
 }
 
 /* Trending section CSS */
-.text_above_title {
-  font-size: 0.75rem;
-  opacity: 0.75;
-  font-family: Outfit;
-}
+  .text_above_title {
+    font-size: 0.75rem;
+    opacity: 0.75;
+    font-family: Outfit;
+  }
 
-input {
-  height: 2.25rem;
-  width: 17.438rem;
-  color: white;
-  opacity: 0.5;
+  input {
+    height: 2.25rem;
+    width: 17.438rem;
+    color: white;
+    opacity: 0.5;
+   
 }
-
-input:focus {
-  caret-color: #fc4747;
+    
+input:focus{
+      caret-color: #FC4747;
+      box-shadow: none !important;
+      
 }
-
-.error-text {
-  font-size: 0.8125rem;
-}
+  .error-text{
+    font-size: 0.8125rem;
+  }
