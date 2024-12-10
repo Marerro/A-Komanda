@@ -83,7 +83,7 @@ function SearchBar({ showComponent, setShowComponent }) {
               return (
                 <>
                   <div key={id} className="">
-                    <div className="m-auto relative z-0 gap-[0.94rem]">
+                    <div className="m-auto z-0 gap-[0.94rem]">
                       <div className="gap-[0.94rem] justify-center">
                         <img
                           className="rounded-[0.5rem] [23.4375rem] h-[8.75rem]"
@@ -91,30 +91,30 @@ function SearchBar({ showComponent, setShowComponent }) {
                           alt="#"
                         />
                       </div>
-                    </div>
-                    <div className="flex place-items-center card_content text-[#FFF]/[0.75] gap-[0.5rem;] text-[0.6875rem]">
-                      <p>{year}</p>
-                      <span>&#8226;</span>
-                      {category === "Movie" && (
-                        <img
-                          className="w-[0.625rem] shrink h-[0.625rem]"
-                          src={category_movie}
-                          alt="#"
-                        />
-                      )}
-                      {category === "TV Series" && (
-                        <img
-                          className="w-[0.625rem] shrink h-[0.625rem]"
-                          src={category_TV}
-                          alt="#"
-                        />
-                      )}
-                      <p>{category}</p>
-                      <span>&#8226;</span>
-                      <p>{rating}</p>
-                    </div>
-                    <div>
-                      <p className="text-[#FFF] text-[0.875rem]">{title}</p>
+                      <div className="flex place-items-center card_content text-[#FFF]/[0.75] gap-[0.5rem;] text-[0.6875rem]">
+                        <p>{year}</p>
+                        <span>&#8226;</span>
+                        {category === "Movie" && (
+                          <img
+                            className="w-[0.625rem] shrink h-[0.625rem]"
+                            src={category_movie}
+                            alt="#"
+                          />
+                        )}
+                        {category === "TV Series" && (
+                          <img
+                            className="w-[0.625rem] shrink h-[0.625rem]"
+                            src={category_TV}
+                            alt="#"
+                          />
+                        )}
+                        <p>{category}</p>
+                        <span>&#8226;</span>
+                        <p>{rating}</p>
+                      </div>
+                      <div>
+                        <p className="text-[#FFF] text-[0.875rem]">{title}</p>
+                      </div>
                     </div>
                   </div>
                 </>
