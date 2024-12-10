@@ -6,6 +6,7 @@ import category_TV from "@assets/icon-category-tv.svg";
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 import Navigation from "./Navigation";
+import SearchBar from "./SearchBar"
 
 export default function Movies() {
   const [data, setData] = useState([]);
@@ -31,6 +32,7 @@ export default function Movies() {
     return (
         <>
         <Navigation/>
+        <SearchBar />
           <div className="recommended_container">
             <h3 className="text-white">Movies</h3>
           </div>

@@ -45,6 +45,9 @@
   .body-s {
     @apply text-white text-bs font-medium;
   }
+  .section-s {
+    @apply text-white text-mm font-medium
+  }
 }
 
 
@@ -60,13 +63,14 @@
     width: 17.438rem;
     color: white;
     opacity: 0.5;
-    }
-
-    input:focus{
-      caret-color: #FC4747;
-      
-    }
    
+}
+    
+input:focus{
+      caret-color: #FC4747;
+      box-shadow: none !important;
+      
+}
   .error-text{
     font-size: 0.8125rem;
   }
