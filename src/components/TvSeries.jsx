@@ -37,7 +37,7 @@ export default function TvSeries() {
       <Navigation />
       <SearchBar />
       <div className="">
-        <h3 className="text-white text-[1.25rem] my-[1.5rem]">TV Series </h3>
+        <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[1.5rem]">TV Series </h3>
       </div>
       <div className="bg-[#10141E]  grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4  gap-[0.94rem] ">
         {tvseries.map((itemData) => {
@@ -100,13 +100,13 @@ export default function TvSeries() {
                   </picture>
 
                 </div>
-                <div className="flex  text-[#FFF]/[0.75] gap-[0.5rem;] text-[0.6875rem]">
+                <div className="flex  gap-[0.44rem;] body-s tablet:body-s desktop:body-s mt-[0.5rem]">
                   <p>{year}</p>
                   <span>&#8226;</span>
 
                   {category === "TV Series" && (
                     <img
-                      className="w-[0.625rem] shrink h-[0.625rem]"
+                      className="w-[0.625rem] shrink h-[0.625rem] tablet:w-[0.72919rem]  translate-y-[0.3rem]"
                       src={category_TV}
                       alt="#"
                     />
@@ -116,7 +116,7 @@ export default function TvSeries() {
                   <span>&#8226;</span>
                   <p>{rating}</p>
                 </div>
-                <p className="section-s">{title}</p>
+                <p className="section-s mt-[0.25rem] tablet:heading-xs desktop:heading-xs">{title}</p>
               </div>
             </div>
           );
