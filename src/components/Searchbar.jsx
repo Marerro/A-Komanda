@@ -5,7 +5,8 @@ import category_TV from "@assets/icon-category-tv.svg";
 import category_movie from "@assets/icon-category-movie.svg";
 import icon_search from "@assets/icon-search.svg";
 
-function SearchBar({ showComponent, setShowComponent }) {
+// page says what page is search on, if page = null, then search works on all shows
+function SearchBar({ showComponent, setShowComponent, page }) {
   const [movies, setMovies] = useState([]);
   const [input, setInput] = useState("");
   const [isVisible, setIsVisible] = useState(false);
@@ -13,7 +14,8 @@ function SearchBar({ showComponent, setShowComponent }) {
   useEffect(() => {
     const getAllMovies = async () => {
       try {
-        const movie = await getAll();
+        let movie = await getAll();
+        if(page == "bookmarks") movie = movie.filter((show) => show.isBookmarked); //only bookmarked shows in search on bookmarks page
         setMovies(movie);
       } catch (error) {
         console.log(error.message);

@@ -1,4 +1,5 @@
 import Navigation from "./Navigation";
+import Searchbar from "./Searchbar";
 import { getAll } from "../helpers/get";
 import { useEffect, useState } from "react";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
@@ -12,6 +13,7 @@ export default function Bookmarks() {
   const [bookmarkedMovies, setbookmarkedMovies] = useState([]);
   const [bookmarkedTVSeries, setbookmarkedTVSeries] = useState([]);
   const [update, setUpdate] = useState(0);
+  const [showComponent, setShowComponent] = useState(false);
 
   /**
    * gets shows from database
@@ -119,24 +121,27 @@ export default function Bookmarks() {
       </>
     );
   };
-  //text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mt-2
+
   return (
     <>
-      <div className="mb-8">
-        <Navigation />
-        <div>
-          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">
-            Bookmarked Movies
-          </h1>
-          {showShowsCard(bookmarkedMovies)}
+      <Navigation />
+      <Searchbar setShowComponent={setShowComponent} page={"bookmarks"} />
+      {!showComponent && (
+        <div className="mb-8">
+          <div>
+            <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">
+              Bookmarked Movies
+            </h1>
+            {showShowsCard(bookmarkedMovies)}
+          </div>
+          <div>
+            <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">
+              Bookmarked TV Series
+            </h1>
+            {showShowsCard(bookmarkedTVSeries)}
+          </div>
         </div>
-        <div>
-          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">
-            Bookmarked TV Series
-          </h1>
-          {showShowsCard(bookmarkedTVSeries)}
-        </div>
-      </div>
+      )}
     </>
   );
 }
