@@ -45,6 +45,9 @@
   .body-s {
     @apply text-white text-bs font-medium;
   }
+  .section-s {
+    @apply text-white text-mm font-medium
+  }
 }
 
 
@@ -75,3 +78,7 @@
     font-size: 0.8125rem;
   }
 }
+
+/* Movies and tv series CSS */
+
+
