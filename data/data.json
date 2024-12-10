@@ -128,7 +128,7 @@
       "year": 2019,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false,
       "id": "b574"
     },
@@ -176,7 +176,7 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false,
       "id": "0a5d"
     },
@@ -272,7 +272,7 @@
       "year": 2018,
       "category": "TV Series",
       "rating": "18+",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false,
       "id": "d05a"
     },

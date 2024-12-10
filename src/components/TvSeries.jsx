@@ -6,6 +6,7 @@ import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 import Navigation from "./Navigation";
 import SearchBar from "./SearchBar"
+import bookmarkIconHover from "@assets/icon-bookmark-hover.svg";
 
 
 
@@ -68,17 +69,28 @@ export default function TvSeries() {
 
           const bookMarking = isBookmarked ? (
             <button
-              className="absolute right-[0.5rem] top-2  bg-slate-900/50 w-[2rem] h-[2rem] rounded-full"
+              className="group absolute right-[0.5rem] top-2  bg-slate-900/50 w-[2rem] h-[2rem] rounded-full hover:bg-white"
               onClick={() => unBookmark(id)}
             >
-              <img src={bookmarkIconFull} alt="MovieIcon" className="m-auto" />
+              <img src={bookmarkIconFull} alt="MovieIcon" className="m-auto group-hover:invisible" />
+
+              <img
+                  className="group-hover:visible absolute top-0 invisible"
+                  src={bookmarkIconHover}
+                />
             </button>
           ) : (
             <button
-              className="absolute right-[0.5rem] top-2 bg-slate-900/50 w-8 h-8 rounded-full"
+              className="group absolute right-[0.5rem] top-2 bg-slate-900/50 w-8 h-8 rounded-full hover:bg-white "
               onClick={() => bookMark(id)}
             >
-              <img src={bookmarkIconEmpty} alt="MovieIcon" className="m-auto" />
+              <img src={bookmarkIconEmpty} alt="MovieIcon" className="m-auto group-hover:invisible" />
+
+              <img
+                  className="group-hover:visible absolute top-0 invisible"
+                  src={bookmarkIconHover}
+                />
+              
             </button>
           );
 
