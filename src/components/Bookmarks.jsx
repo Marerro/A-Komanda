@@ -90,29 +90,39 @@ export default function Bookmarks() {
                   <img className="mr-1 desktop:mr-2" src={moviesIcon} alt="" />
                 )}
                 {show.category.toLowerCase() == "tv series" && (
-                  <img className="mr-1 desktop:mr-2" src={tvSeriesIcon} alt="" />
+                  <img
+                    className="mr-1 desktop:mr-2"
+                    src={tvSeriesIcon}
+                    alt=""
+                  />
                 )}
                 <p>{show.category}</p> <span className="p-2">&#8226;</span>
                 <p>{show.rating}</p>
               </div>
-              <div className="text-mm text-white font-medium tablet:text-hs">{show.title}</div>
+              <div className="text-mm text-white font-medium tablet:text-hs">
+                {show.title}
+              </div>
             </div>
           ))}
         </div>
       </>
     );
   };
-//text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mt-2
+  //text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mt-2
   return (
     <>
       <div className="mb-8">
         <Navigation />
         <div>
-          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">Bookmarked Movies</h1>
+          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">
+            Bookmarked Movies
+          </h1>
           {showShowsCard(bookmarkedMovies)}
         </div>
         <div>
-          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">Bookmarked TV Series</h1>
+          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">
+            Bookmarked TV Series
+          </h1>
           {showShowsCard(bookmarkedTVSeries)}
         </div>
       </div>
