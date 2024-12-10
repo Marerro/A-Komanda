@@ -3,8 +3,10 @@ import { getAll } from "../helpers/get"
 import movieIcon from "@assets/icon-category-movie.svg"
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg"
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg"
+import bookmarkIconHover from "@assets/bookmark_onHover.svg"
 import { useDraggable } from "react-use-draggable-scroll";
 import { patchData } from "../helpers/update";
+import playButton from "@assets/icon-play.svg"
 
 const Trending = () => {
 
@@ -50,11 +52,21 @@ const Trending = () => {
               setUpdate((prev) => prev + 1);
             };
 
-            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:fill-white hover:duration-500 hover-elements">
-              <img src={bookmarkIconFull} alt="MovieIcon" className="m-auto" />
-            </button> : <button onClick={() => bookMark(id)} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:fill-white hover:duration-500 hover-elements"><img src={bookmarkIconEmpty} alt="MovieIcon" className="m-auto rotate-1" /></button>
+            const hoverButton = (e) => {
+              e.target.children[0]?.setAttribute("src", bookmarkIconHover);
+            };
 
-
+            const unhoverButton = (e) => {
+              e.target.children[0]?.setAttribute("src", bookmarkIconFull);
+            };
+           
+            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:duration-500 hover-elements group">
+                    <img className="m-auto group-hover:invisible" src={bookmarkIconFull} />
+                    <img className="m-auto invisible group-hover:visible absolute top-0 right-0" src={bookmarkIconHover} />
+            </button> : <button onClick={() => bookMark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton}  className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:duration-500 hover-elements group">
+                    <img className="m-auto group-hover:invisible rotate-1" src={bookmarkIconEmpty} />
+                    <img className="m-auto invisible group-hover:visible absolute top-0 right-0" src={bookmarkIconHover} />
+              </button>
             if (isTrending) {
 
               return (
@@ -65,6 +77,7 @@ const Trending = () => {
                       media="(min-width: 768px)"
                       srcSet={thumbnail.trending.large}
                     />
+
                     <img
                       className="min-w-[15rem] min-h-[8.75rem] max-w-[29.375rem] max-h-[14.375rem] mobile:w-[15rem] mobile:h-[8.75rem] tablet:w-[29.375rem] tablet:h-[14.375rem] rounded-[0.5rem] hover-elements"
                       src={thumbnail.trending.small}

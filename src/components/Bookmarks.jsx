@@ -2,7 +2,7 @@ import Navigation from "./Navigation";
 import { getAll } from "../helpers/get";
 import { useEffect, useState } from "react";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
-import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
+import bookmarkIconHover from "@assets/icon-bookmark-hover.svg";
 import moviesIcon from "@assets/icon-category-movie.svg";
 import tvSeriesIcon from "@assets/icon-category-tv.svg";
 import { patchData } from "../helpers/update";
@@ -60,14 +60,17 @@ export default function Bookmarks() {
               key={show.title + show.year}
             >
               <button
-                className="absolute right-2 top-2 bg-dark-blue/50 w-8 h-8 rounded-full"
+                className="group absolute right-2 top-2 bg-dark-blue/50 w-8 h-8 rounded-full hover:bg-white"
                 onClick={() => unbookmarShow(show.id)}
               >
-                {show.isBookmarked ? (
-                  <img className="m-auto" src={bookmarkIconFull} />
-                ) : (
-                  <img className="m-auto" src={bookmarkIconEmpty} />
-                )}
+                <img
+                  className="m-auto relative group-hover:invisible"
+                  src={bookmarkIconFull}
+                />
+                <img
+                  className="group-hover:visible absolute top-0 invisible"
+                  src={bookmarkIconHover}
+                />
               </button>
               <picture>
                 <source
