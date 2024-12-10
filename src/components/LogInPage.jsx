@@ -40,11 +40,13 @@ const LogInPage = () => {
   console.log(logIn);
   return (
     <>
-    <div><img src={Logo} /></div>
-    <div  className="bg-semi-dark-blue w-[327px] h-[365px] flex-shrink-0 rounded-[10px]">
-      <h1 className="heading-l pl-[24px] pt-[24px] pb-[32px]">Log in</h1>
-      <form onSubmit={handleSubmit(onSubmit)} className=" pl-[24px]">
-        <div className="pb-[24px]">
+    <div className="flex flex-col place-items-center h-dvh">
+    <div className="pb-[3.65rem] pt-[3rem]"><img src={Logo} className="w-[2rem] h-[1.6rem] "/></div>
+    
+    <div  className="bg-semi-dark-blue w-[20.4375rem] h-[22.8125rem] rounded-[0.63rem] ">
+      <h1 className="heading-l pl-[1.5rem] pt-[1.5rem] pb-[2.5rem]">Log in</h1>
+      <form onSubmit={handleSubmit(onSubmit)} className=" pl-[1.5rem]">
+        <div className="pb-[1.5rem]">
           <input
             type="text"
             id="email"
@@ -56,29 +58,37 @@ const LogInPage = () => {
                 message: "Invalid email address",
               },
             })}
-            className="h-[36px] "
+            className="bg-semi-dark-blue border-0 border-b-[0.063rem]"
           />
-          <p className="text-error text-red">{errors.email?.message}</p>
+          <div className="relative">
+          <p className="error-text text-red absolute bottom-2 left-[10.84rem]">{errors.email?.message}</p>
+          </div>
         </div>
-        <div className="pb-[40px]">
+        <div className="pb-[2.5rem]">
           <input
             type="password"
             id="password"
             placeholder="Password"
             {...register("password", { required: "Can't be empty" })}
-            className="h-[36px]"
+            className="bg-semi-dark-blue border-0 border-b-[0.063rem] "
           />
-          <p className="text-error text-red">{errors.password?.message}</p>
+          <div className="relative">
+          <p className="error-text text-red absolute bottom-2 left-[10.84rem]">{errors.password?.message}</p>
+          </div>
+          <div className="relative">
+        {error && <p className="error-text text-red absolute bottom-[2rem] left-[9.3rem]">{error}</p>}
+        </div>
         </div>
 
-        <button type="submit" className="bg-red text-white body-m rounded-[6px] w-[279px] h-[48px]">
+        <button type="submit" className="bg-red text-white body-m rounded-[0.375rem] w-[17.438rem] h-[3rem] hover:bg-white hover:text-semi-dark-blue hover:duration-500">
           Login to your account
         </button>
-        {error && <p className="text-error text-red">{error}</p>}
+        
       </form>
-      <p className="body-m pl-[56px] pt-[24px]">
+      <p className="body-m pl-[3.5rem] pt-[1.5rem]">
         Don`t have an account? <Link to={`/signup`} className="text-red body-m">Sign Up</Link>
       </p>
+      </div>
       </div>
     </>
   );

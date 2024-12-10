@@ -56,7 +56,7 @@
       "year": 2019,
       "category": "TV Series",
       "rating": "E",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": true,
       "id": "c2da"
     },
@@ -176,7 +176,7 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false,
       "id": "0a5d"
     },
@@ -192,7 +192,7 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "18+",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false,
       "id": "199a"
     },
@@ -224,7 +224,7 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false,
       "id": "dfd7"
     },
@@ -240,7 +240,7 @@
       "year": 2015,
       "category": "TV Series",
       "rating": "E",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false,
       "id": "cc6c"
     },
@@ -272,7 +272,7 @@
       "year": 2018,
       "category": "TV Series",
       "rating": "18+",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false,
       "id": "d05a"
     },
@@ -416,7 +416,7 @@
       "year": 2020,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false,
       "id": "aaf4"
     },
@@ -432,7 +432,7 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false,
       "id": "2f16"
     },
@@ -464,7 +464,7 @@
       "year": 2018,
       "category": "TV Series",
       "rating": "18+",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false,
       "id": "5854"
     },
