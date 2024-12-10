@@ -73,7 +73,7 @@ export default function Bookmarks() {
                   src={bookmarkIconHover}
                 />
               </button>
-              <div className="group/play">
+              <div className="group/play relative">
                 <div className="group-hover/play:visible invisible flex justify-around absolute bg-white/25 rounded-full w-[7.25rem] h-11 m-auto top-0 bottom-0 left-0 right-0">
                   <img className="m-2 w-7 h-7" src={playIcon} />
                   <p className="heading-xs mt-2 mb-2 ml-5 mr-5">Play</p>
@@ -89,7 +89,7 @@ export default function Bookmarks() {
                     srcSet={show.thumbnail.regular.medium}
                   />
                   <img
-                    className="rounded-lg group-hover/play:opacity-20"
+                    className="rounded-lg group-hover/play:opacity-50"
                     src={show.thumbnail.regular.small}
                     alt={show.title}
                   />
