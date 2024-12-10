@@ -74,7 +74,7 @@ const Trending = () => {
                   <div className="absolute mobile:top-[5.37rem] mobile:left-[1rem] tablet:top-[9.62rem] tablet:left-[1.5rem] flex place-items-center">
                     <p className="text_above_title mobile:body-s tablet:body-m mr-[0.5rem]">{year}</p>
                     <p className="text_above_title mobile:body-s tablet:body-m">&#8226;</p>
-                    <img src={movieIcon} alt="MovieIcon" className="text_above_title w-[0.75rem] h-[0.75rem] mr-[0.38rem] ml-[0.5rem]" />
+                    <img src={movieIcon} alt="MovieIcon" className="text_above_title mr-[0.38rem] ml-[0.5rem]" />
                     <p className="text_above_title mobile:body-s tablet:body-m">{category}</p>
                     <p className="text_above_title mobile:body-s mx-[0.5rem] tablet:body-m">&#8226;</p>
                     <p className="text_above_title mobile:body-s mobile:mr-[0.5rem] tablet:body-m tablet:mr-[5rem]">{rating}</p>
