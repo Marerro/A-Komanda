@@ -56,7 +56,7 @@
     font-size: 0.75rem;
     opacity: 0.75;
     font-family: Outfit;
-
+  }
 
   input {
     height: 2.25rem;
@@ -64,21 +64,13 @@
     color: white;
     opacity: 0.5;
    
-    }
+}
     
-    input:focus{
+input:focus{
       caret-color: #FC4747;
       box-shadow: none !important;
       
-    }
-    
-    
-    
+}
   .error-text{
     font-size: 0.8125rem;
   }
-}
-
-/* Movies and tv series CSS */
-
-
