@@ -53,7 +53,7 @@
     font-size: 0.75rem;
     opacity: 0.75;
     font-family: Outfit;
-
+  }
 
   input {
     height: 2.25rem;
@@ -70,4 +70,3 @@
   .error-text{
     font-size: 0.8125rem;
   }
-}
