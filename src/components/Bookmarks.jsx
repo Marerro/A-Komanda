@@ -53,7 +53,7 @@ export default function Bookmarks() {
   const showShowsCard = (shows) => {
     return (
       <>
-        <div className="grid grid-cols-2 gap-4 ml-4 mr-4 tablet:ml-6 tablet:mr-6 tablet:grid-cols-3 tablet:gap-x-7 tablet:gap-y-6">
+        <div className="grid grid-cols-2 gap-4 ml-4 mr-4 tablet:ml-6 tablet:mr-6 tablet:grid-cols-3 tablet:gap-x-7 tablet:gap-y-6 desktop:grid-cols-4 desktop:gap-x-10 desktop:gap-y-8">
           {shows.map((show) => (
             <div
               className="relative justify-self-center"
@@ -87,10 +87,10 @@ export default function Bookmarks() {
               <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mt-2 tablet:h-4 tablet:text-bs">
                 <p>{show.year}</p> <span className="p-2">&#8226;</span>
                 {show.category.toLowerCase() == "movie" && (
-                  <img className="mr-1" src={moviesIcon} alt="" />
+                  <img className="mr-1 desktop:mr-2" src={moviesIcon} alt="" />
                 )}
                 {show.category.toLowerCase() == "tv series" && (
-                  <img src={tvSeriesIcon} alt="" />
+                  <img className="mr-1 desktop:mr-2" src={tvSeriesIcon} alt="" />
                 )}
                 <p>{show.category}</p> <span className="p-2">&#8226;</span>
                 <p>{show.rating}</p>
@@ -108,11 +108,11 @@ export default function Bookmarks() {
       <div className="mb-8">
         <Navigation />
         <div>
-          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:heading-l">Bookmarked Movies</h1>
+          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">Bookmarked Movies</h1>
           {showShowsCard(bookmarkedMovies)}
         </div>
         <div>
-          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:heading-l">Bookmarked TV Series</h1>
+          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">Bookmarked TV Series</h1>
           {showShowsCard(bookmarkedTVSeries)}
         </div>
       </div>
