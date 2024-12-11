@@ -32,7 +32,7 @@ const Trending = () => {
   return (
     <>
       <div>
-        <h1 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[2.5rem] tablet:pt-[2.5rem]">
+        <h1 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[2.5rem]">
           Trending
         </h1>
       </div>
@@ -70,14 +70,14 @@ const Trending = () => {
               e.target.children[0]?.setAttribute("src", bookmarkIconHover);
             };
 
-            const unhoverButton = (e) => {
+            const unhoverButton = (e) => {  
               e.target.children[0]?.setAttribute("src", bookmarkIconFull);
             };
 
-            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/button z-50">
+            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} onMouseEnter={hoverButton} onMouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/button z-50">
               <img className="m-auto group-hover/button:invisible" src={bookmarkIconFull} />
               <img className="m-auto invisible group-hover/button:visible absolute top-0 right-0" src={bookmarkIconHover} />
-            </button> : <button onClick={() => bookMark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/button z-50">
+            </button> : <button onClick={() => bookMark(id)} onMouseEnter={hoverButton} onMouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/button z-50">
               <img className="m-auto group-hover/button:invisible rotate-1" src={bookmarkIconEmpty} />
               <img className="m-auto invisible group-hover/button:visible absolute top-0 right-0" src={bookmarkIconHover} />
             </button>
@@ -108,7 +108,6 @@ const Trending = () => {
                     <p className="text_above_title mobile:body-s tablet:body-m">{category}</p>
                     <p className="text_above_title mobile:body-s mx-[0.5rem] tablet:body-m">&#8226;</p>
                     <p className="text_above_title mobile:body-s mobile:mr-[0.5rem] tablet:body-m tablet:mr-[5rem]">{rating}</p>
-
                     <div className="absolute top-[1rem]">
                       <p className="mobile:body-m tablet:heading-m">{title}</p>
                     </div>

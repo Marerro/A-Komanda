@@ -39,14 +39,14 @@ function SearchBar({ showComponent, setShowComponent, page }) {
 
   return (
     <>
-      <div className="flex gap-[1rem]">
+      <div className="flex my-[1.63rem]">
         <img
-          className="w-[1.5rem] h-[1.5rem] ml-[0.5rem]"
+          className="w-[1.5rem] h-[1.5rem] ml-[1rem] mr-[1rem]"
           src={icon_search}
           alt="#"
         />
         <input
-          className="w-[257px] h-[24px] gap-1 font-[1rem] border-none bg-[#10141E] text-[#FFF]"
+          className="w-[16.0625rem] h-[1.5rem] border-none bg-[#10141E] body-m placeholder-white text-[1rem] placeholder-opacity-50 text-white p-0 search-input"
           type="text"
           placeholder="Search for movies or TV series"
           value={input}
