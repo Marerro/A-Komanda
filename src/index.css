@@ -66,6 +66,8 @@
    
 }
     
+
+
 input:focus{
       caret-color: #FC4747;
       box-shadow: none !important;
@@ -78,3 +80,5 @@ input:focus{
   .error-red{
     border-color: #FC4747 !important;
   }
+
+  
