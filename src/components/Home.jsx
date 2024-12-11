@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <div className="desktop:ml-40">
+      <div className="desktop:ml-32">
         <Searchbar
           showComponent={showComponent}
           setShowComponent={setShowComponent}
