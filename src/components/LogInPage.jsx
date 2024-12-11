@@ -47,7 +47,7 @@ const LogInPage = () => {
 
         <div className="bg-semi-dark-blue w-[20.4375rem] h-[22.8125rem] rounded-[0.63rem] tablet:w-[25rem] tablet:h-[23.3125rem] tablet:rounded-[1.25rem] ">
           <h1 className="heading-l pl-[1.5rem] pt-[1.5rem] pb-[2.5rem] tablet:pl-[2rem] tablet:pt-[2rem]">
-            Log in
+            Login
           </h1>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -66,7 +66,7 @@ const LogInPage = () => {
                   },
                 })}
                 className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] ${
-                  errors.email ? "border-red" : "grayish-blue"
+                  errors.email ? "border-red" : "greyish-blue"
                 }`}
               />
               <div className="relative">
@@ -82,7 +82,7 @@ const LogInPage = () => {
                 placeholder="Password"
                 {...register("password", { required: "Can't be empty" })}
                 className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] ${
-                  errors.password ? "border-red" : "grayish-blue"
+                  errors.password ? "border-red" : "greyish-blue"
                 }`}
               />
               <div className="relative">

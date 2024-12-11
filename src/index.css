@@ -69,3 +69,9 @@ input:focus{
   .error-text{
     font-size: 0.8125rem;
   }
+
+
+  .error-red{
+    border-color: #FC4747 !important;
+  }
+
