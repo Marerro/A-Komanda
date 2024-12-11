@@ -58,23 +58,20 @@
     width: 17.438rem;
     color: white;
     opacity: 0.5;
-   
 }
-    
-
 
 input:focus{
       caret-color: #FC4747;
       box-shadow: none !important;
-      
 }
+
   .error-text{
     font-size: 0.8125rem;
-  }
+}
 
 
   .error-red{
     border-color: #FC4747 !important;
-  }
+}
 
   
