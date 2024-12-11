@@ -1,16 +1,19 @@
 import Navigation from "./Navigation";
+import Searchbar from "./Searchbar";
 import { getAll } from "../helpers/get";
 import { useEffect, useState } from "react";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
-import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
+import bookmarkIconHover from "@assets/icon-bookmark-hover.svg";
 import moviesIcon from "@assets/icon-category-movie.svg";
 import tvSeriesIcon from "@assets/icon-category-tv.svg";
+import playIcon from "@assets/icon-play.svg";
 import { patchData } from "../helpers/update";
 
 export default function Bookmarks() {
   const [bookmarkedMovies, setbookmarkedMovies] = useState([]);
   const [bookmarkedTVSeries, setbookmarkedTVSeries] = useState([]);
   const [update, setUpdate] = useState(0);
+  const [showComponent, setShowComponent] = useState(false);
 
   /**
    * gets shows from database
@@ -60,30 +63,40 @@ export default function Bookmarks() {
               key={show.title + show.year}
             >
               <button
-                className="absolute right-2 top-2 bg-dark-blue/50 w-8 h-8 rounded-full"
+                className="group/book absolute right-2 top-2 bg-dark-blue/50 w-8 h-8 rounded-full hover:bg-white z-10"
                 onClick={() => unbookmarShow(show.id)}
               >
-                {show.isBookmarked ? (
-                  <img className="m-auto" src={bookmarkIconFull} />
-                ) : (
-                  <img className="m-auto" src={bookmarkIconEmpty} />
-                )}
-              </button>
-              <picture>
-                <source
-                  media="(min-width: 1440px)"
-                  srcSet={show.thumbnail.regular.large}
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcSet={show.thumbnail.regular.medium}
+                <img
+                  className="m-auto relative group-hover/book:invisible"
+                  src={bookmarkIconFull}
                 />
                 <img
-                  className="rounded-lg"
-                  src={show.thumbnail.regular.small}
-                  alt={show.title}
+                  className="group-hover/book:visible absolute top-0 invisible"
+                  src={bookmarkIconHover}
                 />
-              </picture>
+              </button>
+              <div className="group/play relative">
+                <div className="group-hover/play:visible invisible flex justify-around absolute bg-white/25 rounded-full w-[7.25rem] h-11 m-auto top-0 bottom-0 left-0 right-0">
+                  <img className="m-2 w-7 h-7" src={playIcon} />
+                  <p className="heading-xs mt-2 mb-2 ml-5 mr-5">Play</p>
+                </div>
+
+                <picture>
+                  <source
+                    media="(min-width: 1440px)"
+                    srcSet={show.thumbnail.regular.large}
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcSet={show.thumbnail.regular.medium}
+                  />
+                  <img
+                    className="rounded-lg group-hover/play:opacity-50"
+                    src={show.thumbnail.regular.small}
+                    alt={show.title}
+                  />
+                </picture>
+              </div>
               <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mt-2 tablet:h-4 tablet:text-bs">
                 <p>{show.year}</p> <span className="p-2">&#8226;</span>
                 {show.category.toLowerCase() == "movie" && (
@@ -108,24 +121,27 @@ export default function Bookmarks() {
       </>
     );
   };
-  //text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mt-2
+
   return (
     <>
-      <div className="mb-8">
-        <Navigation />
-        <div>
-          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">
-            Bookmarked Movies
-          </h1>
-          {showShowsCard(bookmarkedMovies)}
+      <Navigation />
+      <Searchbar setShowComponent={setShowComponent} page={"bookmarks"} />
+      {!showComponent && (
+        <div className="mb-8">
+          <div>
+            <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">
+              Bookmarked Movies
+            </h1>
+            {showShowsCard(bookmarkedMovies)}
+          </div>
+          <div>
+            <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">
+              Bookmarked TV Series
+            </h1>
+            {showShowsCard(bookmarkedTVSeries)}
+          </div>
         </div>
-        <div>
-          <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">
-            Bookmarked TV Series
-          </h1>
-          {showShowsCard(bookmarkedTVSeries)}
-        </div>
-      </div>
+      )}
     </>
   );
 }

@@ -1,15 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
-
   }
 }
 
@@ -21,7 +18,6 @@
 }
 
 @layer components {
-
   .heading-l {
     @apply text-white text-hl font-medium;
   }
@@ -50,12 +46,15 @@
   }
 }
 
-
 /* Trending section CSS */
   .text_above_title {
     font-size: 0.75rem;
     opacity: 0.75;
     font-family: Outfit;
+  }
+
+  .hover-elements:hover {
+    
   }
 
   input {
@@ -74,3 +73,9 @@ input:focus{
   .error-text{
     font-size: 0.8125rem;
   }
+
+
+  .error-red{
+    border-color: #FC4747 !important;
+  }
+
