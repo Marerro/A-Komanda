@@ -10,13 +10,14 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <Searchbar
-        showComponent={showComponent}
-        setShowComponent={setShowComponent}
-      />
-
-      {!showComponent && <Trending />}
-      {!showComponent && <RecommendedForYou />}
+      <div className="desktop:ml-40">
+        <Searchbar
+          showComponent={showComponent}
+          setShowComponent={setShowComponent}
+        />
+        {!showComponent && <Trending />}
+        {!showComponent && <RecommendedForYou />}
+      </div>
     </>
   );
 }
