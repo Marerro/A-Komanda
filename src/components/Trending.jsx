@@ -60,10 +60,10 @@ const Trending = () => {
               e.target.children[0]?.setAttribute("src", bookmarkIconFull);
             };
 
-            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:duration-500 group/button z-50">
+            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/button z-50">
               <img className="m-auto group-hover/button:invisible" src={bookmarkIconFull} />
               <img className="m-auto invisible group-hover/button:visible absolute top-0 right-0" src={bookmarkIconHover} />
-            </button> : <button onClick={() => bookMark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:duration-500 group/button z-50">
+            </button> : <button onClick={() => bookMark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/button z-50">
               <img className="m-auto group-hover/button:invisible rotate-1" src={bookmarkIconEmpty} />
               <img className="m-auto invisible group-hover/button:visible absolute top-0 right-0" src={bookmarkIconHover} />
             </button>
@@ -82,19 +82,11 @@ const Trending = () => {
                       min-w-[15rem] min-h-[8.75rem] rounded-[0.5rem] group-hover/play:opacity-50 hover:duration-500"
                       src={thumbnail.trending.small}
                       alt="TV shows"/>
-                       <div className="group-hover/play:opacity-100 flex items-center absolute top-0 bottom-0 left-0 right-0 m-auto tablet:w-[7.3125rem] tablet:h-[3rem] mobile:w-[6.3125rem] mobile:h-[2rem] bg-white bg-opacity-25 rounded-full opacity-0 hover:opacity-100 hover:duration-500 cursor-pointer">
-                    <button><img src={playButton} alt="playButton" className="mobile:w-[1.4rem] mobile:h-[1.4rem] tablet:w-[1.875rem] tableth-[1.875rem] ml-[0.56rem] mr-[1.19rem]" /></button>
+                       <div className="group-hover/play:opacity-100 flex items-center absolute top-0 mobile:bottom-2 tablet:bottom-0 left-0 right-0 m-auto mobile:w-[5.2rem] mobile:h-[2.1rem] tablet:w-[7.3125rem] tablet:h-[3rem] bg-white bg-opacity-25 rounded-full opacity-0 hover:opacity-100 hover:duration-500 cursor-pointer">
+                    <button><img src={playButton} alt="playButton" className="mobile:w-[1.4rem] mobile:h-[1.4rem] tablet:w-[1.875rem] tablet:h-[1.875rem] ml-[0.56rem] mobile:mr-[0.6rem] tablet:mr-[1.19rem]" /></button>
                     <p className="mobile:heading-xs tablet:heading-s">Play</p>
                   </div>
                   </picture>
-
-
-
-
-
-
-
-
                   <div className="absolute mobile:top-[5.37rem] mobile:left-[1rem] tablet:top-[9.62rem] tablet:left-[1.5rem] flex place-items-center">
                     <p className="text_above_title mobile:body-s tablet:body-m mr-[0.5rem]">{year}</p>
                     <p className="text_above_title mobile:body-s tablet:body-m">&#8226;</p>
