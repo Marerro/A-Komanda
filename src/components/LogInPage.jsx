@@ -28,6 +28,7 @@ const LogInPage = () => {
         } else {
           setError("Incorrect password");
           reset({ password: "" });
+          
         }
       } else {
         setError("User does not exist");
@@ -68,6 +69,7 @@ const LogInPage = () => {
                 className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
                   errors.email ? "border-red" : "greyish-blue"
                 }`}
+                onInput={()=>setError("")}
               />
               <div className="relative">
                 <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
@@ -84,6 +86,7 @@ const LogInPage = () => {
                 className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
                   errors.password ? "border-red" : "greyish-blue"
                 }`}
+                onInput={()=>setError("")}
               />
               <div className="relative">
                 <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
