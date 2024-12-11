@@ -9,7 +9,6 @@ import { patchData } from "../helpers/update";
 import playButton from "@assets/icon-play.svg"
 
 const Trending = () => {
-
   const [data, setData] = useState([]);
   const [update, setUpdate] = useState(0);
   const [error, setError] = useState("");
@@ -26,21 +25,36 @@ const Trending = () => {
   const ref = useRef();
   const { events } = useDraggable(ref);
 
-
   useEffect(() => {
     fetchData();
   }, [update]);
 
   return (
     <>
-
       <div>
-        <h1 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[2.5rem] tablet:pt-[2.5rem]">Trending</h1>
+        <h1 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[2.5rem] tablet:pt-[2.5rem]">
+          Trending
+        </h1>
       </div>
-      <div className="min-w-[23.4375rem] min-h-[8.75rem] bg-[#10141E] mobile:pl-[1rem] tablet:pl-[2.5rem] overflow-x-auto no-scrollbar" {...events} ref={ref}>
+      <div
+        className="min-w-[23.4375rem] min-h-[8.75rem] bg-[#10141E] mobile:pl-[1rem] tablet:pl-[2.5rem] overflow-x-auto no-scrollbar"
+        {...events}
+        ref={ref}
+      >
         <div className="flex mobile:gap-[1rem] tablet:gap-[2.5rem]">
           {data.map((show) => {
-            const { id, title, thumbnail, trending, regular, year, category, rating, isBookmarked, isTrending } = show;
+            const {
+              id,
+              title,
+              thumbnail,
+              trending,
+              regular,
+              year,
+              category,
+              rating,
+              isBookmarked,
+              isTrending,
+            } = show;
 
             const bookMark = async (id) => {
               await patchData(id, { isBookmarked: true });
@@ -48,7 +62,7 @@ const Trending = () => {
             };
 
             const unBookmark = async (id) => {
-              await patchData(id, { isBookmarked: false })
+              await patchData(id, { isBookmarked: false });
               setUpdate((prev) => prev + 1);
             };
 
@@ -68,7 +82,6 @@ const Trending = () => {
                     <img className="m-auto invisible group-hover:visible absolute top-0 right-0" src={bookmarkIconHover} />
               </button>
             if (isTrending) {
-
               return (
                 <div key={show.id} className="relative">
                   <div>{bookMarking}</div>
@@ -85,18 +98,20 @@ const Trending = () => {
                     />
                   </picture>
                   <div className="absolute mobile:top-[5.37rem] mobile:left-[1rem] tablet:top-[9.62rem] tablet:left-[1.5rem] flex place-items-center">
+
                     <p className="text_above_title mobile:body-s tablet:body-m mr-[0.5rem]">{year}</p>
                     <p className="text_above_title mobile:body-s tablet:body-m">&#8226;</p>
                     <img src={movieIcon} alt="MovieIcon" className="text_above_title mr-[0.38rem] ml-[0.5rem]" />
                     <p className="text_above_title mobile:body-s tablet:body-m">{category}</p>
                     <p className="text_above_title mobile:body-s mx-[0.5rem] tablet:body-m">&#8226;</p>
                     <p className="text_above_title mobile:body-s mobile:mr-[0.5rem] tablet:body-m tablet:mr-[5rem]">{rating}</p>
+
                     <div className="absolute top-[1rem]">
                       <p className="mobile:body-m tablet:heading-m">{title}</p>
                     </div>
                   </div>
                 </div>
-              )
+              );
             }
           })}
         </div>
@@ -105,4 +120,4 @@ const Trending = () => {
   );
 };
 
-export default Trending
+export default Trending;
