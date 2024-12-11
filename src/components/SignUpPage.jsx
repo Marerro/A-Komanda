@@ -68,7 +68,7 @@ const SignUpPage = () => {
                     message: "Invalid email",
                   },
                 })}
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white ${
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
                   errors.email ? "border-red" : "greyish-blue"
                 }`}
               />
@@ -92,7 +92,7 @@ const SignUpPage = () => {
                       "At least 8 characters, capital letter, symbol and number",
                   },
                 })}
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white ${
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
                   errors.password ? "error-red" : "greyish-blue"
                 }`}
               />
@@ -124,7 +124,7 @@ const SignUpPage = () => {
                     }
                   },
                 })}
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white ${
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
                   errors.repeatPassword ? "border-red" : "greyish-blue"
                 }`}
               />

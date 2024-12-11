@@ -53,7 +53,7 @@
     font-family: Outfit;
   }
 
-  input {
+  .form-input {
     height: 2.25rem;
     width: 17.438rem;
     color: white;
