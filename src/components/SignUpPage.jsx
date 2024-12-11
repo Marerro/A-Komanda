@@ -7,6 +7,7 @@ import Logo from "/src/assets/logo.svg";
 
 const SignUpPage = () => {
   const [users, setUsers] = useState([]);
+
   const {
     register,
     handleSubmit,
@@ -40,13 +41,14 @@ const SignUpPage = () => {
   };
 
   console.log(users);
+
   return (
     <>
       <div className="flex flex-col place-items-center h-dvh">
         <div className="pb-[3.65rem] pt-[3rem] tablet:pt-[5rem] tablet:pb-[4.53rem] desktop:pt-[4.9rem] desktop:pb-[5.19rem]">
           <img src={Logo} className="w-[2rem] h-[1.6rem] " />
         </div>
-        <div className="bg-semi-dark-blue w-[20.4375rem] h-[26.3rem] rounded-[0.63rem] tablet:w-[25rem] tablet:h-[26.125rem] tablet:rounded-[1.25rem] ">
+        <div className="bg-semi-dark-blue rounded-[0.63rem] pr-[1.5rem] tablet:pr-[2rem] tablet:rounded-[1.25rem] ">
           <h1 className="heading-l pl-[1.5rem] pt-[1.5rem] pb-[2.5rem] tablet:pl-[2rem] tablet:pt-[2rem]">
             Sign Up
           </h1>
@@ -66,7 +68,7 @@ const SignUpPage = () => {
                     message: "Invalid email",
                   },
                 })}
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] ${
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white ${
                   errors.email ? "border-red" : "greyish-blue"
                 }`}
               />
@@ -90,7 +92,7 @@ const SignUpPage = () => {
                       "At least 8 characters, capital letter, symbol and number",
                   },
                 })}
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] ${
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white ${
                   errors.password ? "error-red" : "greyish-blue"
                 }`}
               />
@@ -122,14 +124,23 @@ const SignUpPage = () => {
                     }
                   },
                 })}
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] ${
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white ${
                   errors.repeatPassword ? "border-red" : "greyish-blue"
                 }`}
               />
               <div className="relative">
-                <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
-                  {errors.repeatPassword?.message}
-                </p>
+                {errors.repeatPassword?.type === "required" && (
+                  <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
+                    Can`t be empty
+                  </p>
+                )}
+              </div>
+              <div className="relative">
+                {errors.repeatPassword?.type === "validate" && (
+                  <p className="error-text text-red absolute top-[0.1rem] left-[0.5rem]">
+                    Passwords do not match
+                  </p>
+                )}
               </div>
             </div>
             <div className="relative">
@@ -146,7 +157,7 @@ const SignUpPage = () => {
               Create an account
             </button>
           </form>
-          <p className="body-m pl-[3.5rem] pt-[1.5rem] tablet:pl-[5.75rem]">
+          <p className="body-m pl-[3.5rem] pt-[1.5rem] pb-[1.62rem] tablet:pl-[5.75rem] tablet:pb-[2rem]">
             Already have an account?{" "}
             <Link to={`/login`} className="text-red body-m">
               Login
