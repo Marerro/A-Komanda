@@ -105,7 +105,7 @@ const SignUpPage = () => {
               </div>
               <div className="relative">
                 {errors.password?.type === "pattern" && (
-                  <p className="error-text text-red absolute top-[0.3rem] left-[0.5rem]">
+                  <p className="error-text text-red absolute top-[0.1rem] left-[0.5rem]">
                     At least 8 characters, capital letter, symbol and number
                   </p>
                 )}
@@ -129,9 +129,18 @@ const SignUpPage = () => {
                 }`}
               />
               <div className="relative">
-                <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
-                  {errors.repeatPassword?.message}
-                </p>
+                {errors.repeatPassword?.type === "required" && (
+                  <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
+                    Can`t be empty
+                  </p>
+                )}
+              </div>
+              <div className="relative">
+                {errors.repeatPassword?.type === "validate" && (
+                  <p className="error-text text-red absolute top-[0.1rem] left-[0.5rem]">
+                    Passwords do not match
+                  </p>
+                )}
               </div>
             </div>
             <div className="relative">
