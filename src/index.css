@@ -49,9 +49,13 @@
 /* Trending section CSS */
   .text_above_title {
     font-size: 0.75rem;
-    opacity: 0.75;
     font-family: Outfit;
+    opacity: 0.75;
   }
+
+input:focus{
+      caret-color: #FC4747;
+      box-shadow: none !important;
 
   .form-input {
     height: 2.25rem;
@@ -68,10 +72,19 @@ input:focus{
   .error-text{
     font-size: 0.8125rem;
 }
-
-
   .error-red{
     border-color: #FC4747 !important;
 }
 
-  
+  /* Search bar CSS */
+  .search-input{
+    color: white;
+    font-family: Outfit;
+    font-weight: 200;
+    border-bottom: solid 1px #10141E;
+  }
+  .search-input:focus{
+    border-bottom: solid 0.0625rem #5A698F;
+ 
+  }
+

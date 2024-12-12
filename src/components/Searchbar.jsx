@@ -4,12 +4,14 @@ import { useState } from "react";
 import category_TV from "@assets/icon-category-tv.svg";
 import category_movie from "@assets/icon-category-movie.svg";
 import icon_search from "@assets/icon-search.svg";
+import { useLocation } from "react-router";
 
 // page says what page is search on, if page = null, then search works on all shows
 function SearchBar({ showComponent, setShowComponent, page }) {
   const [movies, setMovies] = useState([]);
   const [input, setInput] = useState("");
   const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const getAllMovies = async () => {
@@ -33,22 +35,35 @@ function SearchBar({ showComponent, setShowComponent, page }) {
     setShowComponent(e.target.value.length > 0);
   };
 
+  const placeholderBasedOnLocation = () => {
+    if (location.pathname === "/home") {
+      return "Search for movies or TV series";
+     } else if (location.pathname === "/movies") {
+          return "Search for movies";
+        } else if (location.pathname === "/tvseries") {
+          return "Search for TV series";
+        } else if (location.pathname === "/bookmarks") {
+          return "Search for bookmarked shows";
+        }
+      }
+
   useEffect(() => {
     setIsVisible(input.length > 0);
   }, [input]);
 
   return (
     <>
-      <div className="flex gap-[1rem]">
+      <div className="flex mobile:my-[1.5rem] tablet:my-[2.06rem] desktop:mt-[4rem] tablet:items-center">
+        <div>
         <img
-          className="w-[1.5rem] h-[1.5rem] ml-[0.5rem]"
+          className="mobile:w-[1.5rem] mobile:h-[1.5rem] tablet:w-[2rem] tablet:h-[2rem] mobile:ml-[1rem] mobile:mr-[1rem] tablet:ml-[1.56rem] tablet:mr-[1.5rem] desktop:ml-[2.25rem] tablet:mb-[0.87rem]"
           src={icon_search}
-          alt="#"
-        />
+          alt="#"/>
+        </div>
         <input
-          className="w-[257px] h-[24px] gap-1 font-[1rem] border-none bg-[#10141E] text-[#FFF]"
+          className="mobile:w-[16.0625rem] mobile:h-[1.5rem] tablet:w-[30.25rem] tablet:h-[2rem] desktop:w-[74rem] desktop:h-[2.9375rem] border-none bg-[#10141E] body-m placeholder-white mobile:text-[1rem] tablet:text-[1.5rem] placeholder-opacity-50 p-0 search-input tablet:pb-[0.88rem] desktop:pb-[0.88rem]"
           type="text"
-          placeholder="Search for movies or TV series"
+          placeholder={placeholderBasedOnLocation()}
           value={input}
           onChange={(e) => checkInput(e)}
         />
