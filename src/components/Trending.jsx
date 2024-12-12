@@ -32,12 +32,12 @@ const Trending = () => {
   return (
     <>
       <div>
-        <h1 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[2.5rem]">
+        <h1 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[1.56rem] desktop:pl-[2.25rem]">
           Trending
         </h1>
       </div>
       <div
-        className="min-w-[23.4375rem] min-h-[8.75rem] bg-[#10141E] mobile:pl-[1rem] tablet:pl-[2.5rem] overflow-x-auto no-scrollbar"
+        className="bg-[#10141E] mobile:pl-[1rem] tablet:pl-[1.56rem] desktop:pl-[2.25rem] overflow-x-auto no-scrollbar"
         {...events}
         ref={ref}
       >
@@ -84,7 +84,7 @@ const Trending = () => {
                     <img
                       className="max-w-[29.375rem] max-h-[14.375rem]
                       mobile:w-[15rem] mobile:h-[8.75rem] tablet:w-[29.375rem] tablet:h-[14.375rem]
-                      min-w-[15rem] min-h-[8.75rem] rounded-[0.5rem] group-hover/play:opacity-50 hover:duration-500"
+                       rounded-[0.5rem] group-hover/play:opacity-50 hover:duration-500"
                       src={thumbnail.trending.small}
                       alt="TV shows"/>
                        <div className="group-hover/play:opacity-100 flex items-center absolute top-0 mobile:bottom-2 tablet:bottom-0 left-0 right-0 m-auto mobile:w-[5.2rem] mobile:h-[2.1rem] tablet:w-[7.3125rem] tablet:h-[3rem] bg-white bg-opacity-25 rounded-full opacity-0 hover:opacity-100 hover:duration-500 cursor-pointer">

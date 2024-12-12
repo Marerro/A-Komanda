@@ -45,7 +45,7 @@ function SearchBar({ showComponent, setShowComponent, page }) {
         } else if (location.pathname === "/bookmarks") {
           return "Search for bookmarked shows";
         }
-      } 
+      }
 
   useEffect(() => {
     setIsVisible(input.length > 0);
@@ -53,14 +53,15 @@ function SearchBar({ showComponent, setShowComponent, page }) {
 
   return (
     <>
-      <div className="flex my-[1.63rem]">
+      <div className="flex my-[1.63rem] tablet:items-center">
+        <div>
         <img
-          className="w-[1.5rem] h-[1.5rem] ml-[1rem] mr-[1rem]"
+          className="mobile:w-[1.5rem] mobile:h-[1.5rem] tablet:w-[2rem] tablet:h-[2rem] mobile:ml-[1rem] mobile:mr-[1rem] tablet:ml-[1.56rem] tablet:mr-[1.5rem] destop:ml-[2.25rem] tablet:mb-[0.87rem]"
           src={icon_search}
-          alt="#"
-        />
+          alt="#"/>
+        </div>
         <input
-          className="w-[16.0625rem] h-[1.5rem] border-none bg-[#10141E] body-m placeholder-white text-[1rem] placeholder-opacity-50 text-white p-0 search-input"
+          className="mobile:w-[16.0625rem] mobile:h-[1.5rem] tablet:w-[30.25rem] tablet:h-[2rem] desktop:w-[74rem] border-none bg-[#10141E] body-m placeholder-white mobile:text-[1rem] tablet:text-[1.5rem] placeholder-opacity-50 p-0 search-input desktop:pb-[0.88rem]"
           type="text"
           placeholder={placeholderBasedOnLocation()}
           value={input}
