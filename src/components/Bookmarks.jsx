@@ -123,7 +123,7 @@ export default function Bookmarks() {
   };
 
   return (
-    <>
+    <div className="desktop:ml-32">
       <Navigation />
       <Searchbar setShowComponent={setShowComponent} page={"bookmarks"} />
       {!showComponent && (
@@ -142,6 +142,6 @@ export default function Bookmarks() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

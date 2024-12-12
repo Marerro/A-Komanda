@@ -30,7 +30,7 @@ export default function Movies() {
     const movies = data.filter(itemData => itemData.category === "Movie");
 
     return (
-        <>
+        <div className="desktop:ml-32">
         <Navigation/>
         <SearchBar />
           <div className="recommended_container">
@@ -118,7 +118,7 @@ export default function Movies() {
               );
             })}
           </div>
-        </>
+        </div>
       );
 }
 

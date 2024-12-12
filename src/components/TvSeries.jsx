@@ -33,7 +33,7 @@ export default function TvSeries() {
   const tvseries = data.filter(itemData => itemData.category === "TV Series");
 
   return (
-    <section className="mx-[1rem]">
+    <section className="mx-[1rem] desktop:ml-32">
       <Navigation />
       <SearchBar />
       <div className="">
