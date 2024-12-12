@@ -53,15 +53,15 @@ function SearchBar({ showComponent, setShowComponent, page }) {
 
   return (
     <>
-      <div className="flex my-[1.63rem] tablet:items-center">
+      <div className="flex mobile:my-[1.5rem] tablet:my-[2.06rem] desktop:mt-[4rem] tablet:items-center">
         <div>
         <img
-          className="mobile:w-[1.5rem] mobile:h-[1.5rem] tablet:w-[2rem] tablet:h-[2rem] mobile:ml-[1rem] mobile:mr-[1rem] tablet:ml-[1.56rem] tablet:mr-[1.5rem] destop:ml-[2.25rem] tablet:mb-[0.87rem]"
+          className="mobile:w-[1.5rem] mobile:h-[1.5rem] tablet:w-[2rem] tablet:h-[2rem] mobile:ml-[1rem] mobile:mr-[1rem] tablet:ml-[1.56rem] tablet:mr-[1.5rem] desktop:ml-[2.25rem] tablet:mb-[0.87rem]"
           src={icon_search}
           alt="#"/>
         </div>
         <input
-          className="mobile:w-[16.0625rem] mobile:h-[1.5rem] tablet:w-[30.25rem] tablet:h-[2rem] desktop:w-[74rem] border-none bg-[#10141E] body-m placeholder-white mobile:text-[1rem] tablet:text-[1.5rem] placeholder-opacity-50 p-0 search-input desktop:pb-[0.88rem]"
+          className="mobile:w-[16.0625rem] mobile:h-[1.5rem] tablet:w-[30.25rem] tablet:h-[2rem] desktop:w-[74rem] desktop:h-[2.9375rem] border-none bg-[#10141E] body-m placeholder-white mobile:text-[1rem] tablet:text-[1.5rem] placeholder-opacity-50 p-0 search-input tablet:pb-[0.88rem] desktop:pb-[0.88rem]"
           type="text"
           placeholder={placeholderBasedOnLocation()}
           value={input}

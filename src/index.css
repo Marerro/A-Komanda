@@ -71,7 +71,8 @@ input:focus{
   .search-input{
     color: white;
     font-family: Outfit;
-    font-weight: 200
+    font-weight: 200;
+    border-bottom: solid 1px #10141E;
   }
   .search-input:focus{
     border-bottom: solid 0.0625rem #5A698F;
