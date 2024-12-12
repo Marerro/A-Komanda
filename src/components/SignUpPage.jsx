@@ -45,22 +45,22 @@ const SignUpPage = () => {
   return (
     <>
       <div className="flex flex-col place-items-center h-dvh">
-        <div className="pb-[3.65rem] pt-[3rem] tablet:pt-[5rem] tablet:pb-[4.53rem] desktop:pt-[4.9rem] desktop:pb-[5.19rem]">
-          <img src={Logo} className="w-[2rem] h-[1.6rem] " />
+        <div className="pb-[3.3rem] pt-[3rem] tablet:pt-[5.5rem] tablet:pb-[4.53rem] desktop:pt-[4.9rem] desktop:pb-[5.19rem]">
+          <img src={Logo} className="w-[2rem] h-[1.6rem]" />
         </div>
         <div className="bg-semi-dark-blue rounded-[0.63rem] pr-[1.5rem] tablet:pr-[2rem] tablet:rounded-[1.25rem] ">
-          <h1 className="heading-l pl-[1.5rem] pt-[1.5rem] pb-[2.5rem] tablet:pl-[2rem] tablet:pt-[2rem]">
+          <h1 className="heading-l pl-[1.5rem] pt-[1.5rem] pb-[2.2rem] tablet:pl-[2rem] tablet:pt-[1.7rem] tablet:pb-[2.1rem] desktop:pb-[2.1rem] desktop:pt-[1.75rem] tracking-tight">
             Sign Up
           </h1>
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="pl-[1.5rem] tablet:pl-[2rem]"
           >
-            <div className="pb-[1.5rem] relative">
+            <div className="pb-[1.2rem] tablet:pb-[1.1rem] relative">
               <input
                 type="text"
                 id="email"
-                placeholder="Email"
+                placeholder="Email address"
                 {...register("email", {
                   required: "Can't be empty",
                   pattern: {
@@ -68,7 +68,7 @@ const SignUpPage = () => {
                     message: "Invalid email",
                   },
                 })}
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.9rem] desktop:pb-[1.7rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
                   errors.email ? "border-red" : "greyish-blue"
                 }`}
               />
@@ -78,7 +78,7 @@ const SignUpPage = () => {
                 </p>
               </div>
             </div>
-            <div className="pb-[1.5rem]">
+            <div className="pb-[1.3rem] tablet:pb-[1.1rem] desktop:pt-[0.25rem]">
               <input
                 type="password"
                 id="password"
@@ -92,7 +92,7 @@ const SignUpPage = () => {
                       "At least 8 characters, capital letter, symbol and number",
                   },
                 })}
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.9rem] tablet:w-[21rem] desktop:pb-[1.7rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
                   errors.password ? "error-red" : "greyish-blue"
                 }`}
               />
@@ -111,7 +111,7 @@ const SignUpPage = () => {
                 )}
               </div>
             </div>
-            <div className="pb-[1.5rem]">
+            <div className="pb-[2.4rem] tablet:pb-[1.45rem] desktop:pt-[0.2rem]">
               <input
                 type="password"
                 id="repeatPassword"
@@ -124,7 +124,7 @@ const SignUpPage = () => {
                     }
                   },
                 })}
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-5 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.8rem] tablet:w-[21rem] desktop:pb-[1.75rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
                   errors.repeatPassword ? "border-red" : "greyish-blue"
                 }`}
               />
@@ -157,9 +157,9 @@ const SignUpPage = () => {
               Create an account
             </button>
           </form>
-          <p className="body-m pl-[3.5rem] pt-[1.5rem] pb-[1.62rem] tablet:pl-[5.75rem] tablet:pb-[2rem]">
-            Already have an account?{" "}
-            <Link to={`/login`} className="text-red body-m">
+          <p className="body-m pl-[3.7rem] pt-[1.4rem] pb-[1.62rem] tablet:pl-[5.75rem] tablet:pb-[2rem]">
+            Already have an account? 
+            <Link to={`/login`} className="text-red body-m mx-1 tablet:mx-3 ">
               Login
             </Link>{" "}
           </p>
