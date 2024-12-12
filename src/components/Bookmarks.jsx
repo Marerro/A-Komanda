@@ -56,7 +56,7 @@ export default function Bookmarks() {
   const showShowsCard = (shows) => {
     return (
       <>
-        <div className="grid grid-cols-2 gap-4 ml-4 mr-4 tablet:ml-6 tablet:mr-6 tablet:grid-cols-3 tablet:gap-x-7 tablet:gap-y-6 desktop:grid-cols-4 desktop:gap-x-10 desktop:gap-y-8">
+        <div className="grid grid-cols-2 gap-4 ml-4 mr-4 tablet:ml-6 tablet:mr-6 tablet:grid-cols-3 tablet:gap-x-7 tablet:gap-y-6 desktop:ml-9 desktop:grid-cols-4 desktop:gap-x-10 desktop:gap-y-8">
           {shows.map((show) => (
             <div
               className="relative justify-self-center"
@@ -123,25 +123,27 @@ export default function Bookmarks() {
   };
 
   return (
-    <>
+    <div className="desktop:ml-32">
       <Navigation />
-      <Searchbar setShowComponent={setShowComponent} page={"bookmarks"} />
+      <div className="ml-4 my-4 tablet:ml-4 tablet:my-2 desktop:ml-4 desktop:mb-8 desktop:mt-16">
+        <Searchbar setShowComponent={setShowComponent} page={"bookmarks"} />
+      </div>
       {!showComponent && (
         <div className="mb-8">
           <div>
-            <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">
+            <h1 className="heading-xs ml-4 my-4 tablet:heading-l tablet:ml-6 tablet:my-6 desktop:ml-9 desktop:my-8">
               Bookmarked Movies
             </h1>
             {showShowsCard(bookmarkedMovies)}
           </div>
           <div>
-            <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-8 desktop:mt-8 desktop:mb-8">
+            <h1 className="heading-xs ml-4 mt-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-9 desktop:mt-8 desktop:mb-8">
               Bookmarked TV Series
             </h1>
             {showShowsCard(bookmarkedTVSeries)}
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
