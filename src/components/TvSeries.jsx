@@ -5,13 +5,9 @@ import category_TV from "@assets/icon-category-tv.svg";
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 import Navigation from "./Navigation";
-import SearchBar from "./Searchbar"
+import SearchBar from "./Searchbar";
 import bookmarkIconHover from "@assets/icon-bookmark-hover.svg";
 import playIcon from "@assets/icon-play.svg";
-
-
-
-
 
 export default function TvSeries() {
   const [data, setData] = useState([]);
@@ -32,7 +28,7 @@ export default function TvSeries() {
   useEffect(() => {
     getTvSeries();
   }, [update]);
-  const tvseries = data.filter(itemData => itemData.category === "TV Series");
+  const tvseries = data.filter((itemData) => itemData.category === "TV Series");
 
   return (
     <>
@@ -145,7 +141,3 @@ export default function TvSeries() {
     </>
   );
 }
-
-
-
-

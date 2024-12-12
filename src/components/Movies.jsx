@@ -6,7 +6,7 @@ import category_TV from "@assets/icon-category-tv.svg";
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 import Navigation from "./Navigation";
-import SearchBar from "./Searchbar"
+import SearchBar from "./Searchbar";
 import playIcon from "@assets/icon-play.svg";
 
 export default function Movies() {
@@ -144,7 +144,3 @@ export default function Movies() {
     </>
   );
 }
-
-
-
-
