@@ -61,6 +61,7 @@ const SignUpPage = () => {
                 type="text"
                 id="email"
                 placeholder="Email address"
+                
                 {...register("email", {
                   required: "Can't be empty",
                   pattern: {
@@ -71,6 +72,7 @@ const SignUpPage = () => {
                 className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.9rem] desktop:pb-[1.7rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
                   errors.email ? "border-red" : "greyish-blue"
                 }`}
+                onInput={() => setError("")}
               />
               <div className="relative">
                 <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
@@ -95,6 +97,7 @@ const SignUpPage = () => {
                 className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.9rem] tablet:w-[21rem] desktop:pb-[1.7rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
                   errors.password ? "error-red" : "greyish-blue"
                 }`}
+                onInput={() => setError("")}
               />
               <div className="relative">
                 {errors.password?.type === "required" && (
@@ -127,6 +130,7 @@ const SignUpPage = () => {
                 className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.8rem] tablet:w-[21rem] desktop:pb-[1.75rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
                   errors.repeatPassword ? "border-red" : "greyish-blue"
                 }`}
+                onInput={() => setError("")}
               />
               <div className="relative">
                 {errors.repeatPassword?.type === "required" && (
@@ -145,7 +149,7 @@ const SignUpPage = () => {
             </div>
             <div className="relative">
               {error && (
-                <p className="error-text text-red absolute pl-[1.06rem] top-[0.5rem]">
+                <p className="error-text text-red absolute pl-[0.6rem] bottom-[0.2rem]">
                   {error}
                 </p>
               )}
