@@ -90,7 +90,7 @@ const LogInPage = () => {
             </div>
 
             {/* Password input window */}
-            <div className="pb-[2.45rem] desktop:pb-[222rem]">
+            <div className="pb-[2.45rem] desktop:pb-[2.5rem]">
               <input
                 type="password"
                 id="password"
