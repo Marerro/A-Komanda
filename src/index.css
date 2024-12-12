@@ -56,7 +56,7 @@
 input:focus{
       caret-color: #FC4747;
       box-shadow: none !important;
-
+}
   .form-input {
     height: 2.25rem;
     width: 17.438rem;
@@ -85,6 +85,4 @@ input:focus{
   }
   .search-input:focus{
     border-bottom: solid 0.0625rem #5A698F;
- 
   }
-
