@@ -35,9 +35,7 @@ export default function TvSeries() {
       <section className="mx-[1rem] desktop:ml-32">
         <SearchBar />
         <div>
-          <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[2.375rem] tracking-wide">
-            TV Series{" "}
-          </h3>
+          <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[2.375rem] tracking-wide">TV Series </h3>
         </div>
         <div className="bg-[#10141E]  grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem]">
           {tvseries.map((itemData) => {
@@ -71,11 +69,7 @@ export default function TvSeries() {
                 className="group absolute right-[0.5rem] top-2  bg-slate-900/50 w-[2rem] h-[2rem] rounded-full hover:bg-white"
                 onClick={() => unBookmark(id)}
               >
-                <img
-                  src={bookmarkIconFull}
-                  alt="MovieIcon"
-                  className="m-auto group-hover:invisible"
-                />
+                <img src={bookmarkIconFull} alt="MovieIcon" className="m-auto group-hover:invisible" />
 
                 <img
                   className="group-hover:visible absolute top-0 invisible"
@@ -87,20 +81,18 @@ export default function TvSeries() {
                 className="group absolute right-[0.5rem] top-2 bg-slate-900/50 w-8 h-8 rounded-full hover:bg-white "
                 onClick={() => bookMark(id)}
               >
-                <img
-                  src={bookmarkIconEmpty}
-                  alt="MovieIcon"
-                  className="m-auto group-hover:invisible"
-                />
+                <img src={bookmarkIconEmpty} alt="MovieIcon" className="m-auto group-hover:invisible" />
 
                 <img
                   className="group-hover:visible absolute top-0 invisible"
                   src={bookmarkIconHover}
                 />
+
               </button>
             );
 
             return (
+
               <div key={id} className="justify-self-center">
                 <div className="m-auto relative z-0">
                   <div className="group/play relative">
@@ -120,9 +112,14 @@ export default function TvSeries() {
                       />
                     </picture>
 
+                  </div>
+                  <div className="flex  gap-[0.25rem] tablet:gap-[0.5rem] desktop:tablet:gap-[0.5rem] body-s tablet:body-s desktop:body-s mobile:mt-[0.25rem] tablet:mt-[0.31rem] desktop:tablet:mt-[0.31rem] opacity-75 text-[0.6875rem] tablet:text-[0.8125rem] desktop:text-[0.8125rem]">
+                    <p>{year}</p>
+                    <span>&#8226;</span>
+
                     {category === "TV Series" && (
                       <img
-                        className="w-[0.625rem] shrink h-[0.625rem]"
+                        className="w-[0.625rem]  h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.75rem] desktop:w-[0.75rem] desktop:h-[0.75rem] mobile:translate-y-[0.20rem] translate-y-[0.3rem]"
                         src={category_TV}
                         alt="#"
                       />
@@ -132,27 +129,8 @@ export default function TvSeries() {
                     <span>&#8226;</span>
                     <p>{rating}</p>
                   </div>
-                  <p className="section-s">{title}</p>
+                  <p className="mobile:mt-[0.25rem] tablet:mt-[0.31rem] desktop:tablet:mt-[0.31rem] section-s mobile:section-s tablet:heading-xs desktop:heading-xs">{title}</p>
                 </div>
-                <div className="flex  gap-[0.25rem] tablet:gap-[0.5rem] desktop:tablet:gap-[0.5rem] body-s tablet:body-s desktop:body-s mobile:mt-[0.25rem] tablet:mt-[0.31rem] desktop:tablet:mt-[0.31rem] opacity-75 text-[0.6875rem] tablet:text-[0.8125rem] desktop:text-[0.8125rem]">
-                  <p>{year}</p>
-                  <span>&#8226;</span>
-
-                  {category === "TV Series" && (
-                    <img
-                      className="w-[0.625rem]  h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.75rem] desktop:w-[0.75rem] desktop:h-[0.75rem] mobile:translate-y-[0.20rem] translate-y-[0.3rem]"
-                      src={category_TV}
-                      alt="#"
-                    />
-                  )}
-                  <div>{bookMarking}</div>
-                  <p>{category}</p>
-                  <span>&#8226;</span>
-                  <p>{rating}</p>
-                </div>
-                <p className="mobile:mt-[0.25rem] tablet:mt-[0.31rem] desktop:tablet:mt-[0.31rem] section-s mobile:section-s tablet:heading-xs desktop:heading-xs">
-                  {title}
-                </p>
               </div>
             );
           })}
