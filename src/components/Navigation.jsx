@@ -1,9 +1,33 @@
 import logo from "../assets/logo.svg";
 import avatar from "../assets/image-avatar.png";
 import { Link, useLocation } from "react-router";
+import { useEffect } from "react";
 
 export default function Navigation() {
   const location = useLocation().pathname;
+
+  const pickPage = () => {
+    switch (location) {
+      case "/home":
+        document.getElementById("home").setAttribute("fill", "#fff");
+        break;
+      case "/movies":
+        document.getElementById("movies").setAttribute("fill", "#fff");
+        break;
+      case "/tvseries":
+        document.getElementById("tvseries").setAttribute("fill", "#fff");
+        break;
+      case "/bookmarks":
+        document.getElementById("bookmarks").setAttribute("fill", "#fff");
+        break;
+      default:
+        break;
+    }
+  };
+
+  useEffect(() => {
+    pickPage();
+  });
 
   return (
     <>
@@ -16,6 +40,7 @@ export default function Navigation() {
         <div className="flex flex-row desktop:flex-col desktop:mt-[4.65rem]">
           <Link to="/home">
             <svg
+              id="home"
               width="20"
               height="20"
               xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +52,7 @@ export default function Navigation() {
           </Link>
           <Link to="/movies">
             <svg
+              id="movies"
               width="20"
               height="20"
               xmlns="http://www.w3.org/2000/svg"
@@ -38,6 +64,7 @@ export default function Navigation() {
           </Link>
           <Link to="/tvseries">
             <svg
+              id="tvseries"
               width="20"
               height="20"
               xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +76,7 @@ export default function Navigation() {
           </Link>
           <Link to="/bookmarks">
             <svg
+              id="bookmarks"
               width="17"
               height="20"
               xmlns="http://www.w3.org/2000/svg"
