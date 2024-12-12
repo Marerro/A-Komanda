@@ -108,7 +108,7 @@ export default function Movies() {
                         srcSet={itemData.thumbnail.regular.large}
                       />
                       <img
-                        className="rounded-lg"
+                        className="rounded-lg group-hover/play:opacity-50"
                         src={itemData.thumbnail.regular.small}
                         alt="movies"
                       />
