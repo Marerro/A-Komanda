@@ -37,11 +37,15 @@ function SearchBar({ showComponent, setShowComponent, page }) {
 
   const placeholderBasedOnLocation = () => {
     if (location.pathname === "/home") {
-      return "adadasdasd"
+      return "Search for movies or TV series";
      } else if (location.pathname === "/movies") {
-          return "bbbbbb"
+          return "Search for movies";
+        } else if (location.pathname === "/tvseries") {
+          return "Search for TV series";
+        } else if (location.pathname === "/bookmarks") {
+          return "Search for bookmarked shows";
         }
-      }
+      } 
 
   useEffect(() => {
     setIsVisible(input.length > 0);
