@@ -66,20 +66,12 @@ const Trending = () => {
               setUpdate((prev) => prev + 1);
             };
 
-            const hoverButton = (e) => {
-              e.target.children[0]?.setAttribute("src", bookmarkIconHover);
-            };
-
-            const unhoverButton = (e) => {  
-              e.target.children[0]?.setAttribute("src", bookmarkIconFull);
-            };
-
-            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} onMouseEnter={hoverButton} onMouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/button z-50">
-              <img className="m-auto group-hover/button:invisible" src={bookmarkIconFull} />
-              <img className="m-auto invisible group-hover/button:visible absolute top-0 right-0" src={bookmarkIconHover} />
-            </button> : <button onClick={() => bookMark(id)} onMouseEnter={hoverButton} onMouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/button z-50">
+            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/bookmark z-50">
+              <img className="m-auto group-hover/bookmark:invisible" src={bookmarkIconFull} />
+              <img className="m-auto invisible group-hover/bookmark:visible absolute top-0 right-0" src={bookmarkIconHover} />
+            </button> : <button onClick={() => bookMark(id)} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/bookmark z-50">
               <img className="m-auto group-hover/button:invisible rotate-1" src={bookmarkIconEmpty} />
-              <img className="m-auto invisible group-hover/button:visible absolute top-0 right-0" src={bookmarkIconHover} />
+              <img className="m-auto invisible group-hover/bookmark:visible absolute top-0 right-0" src={bookmarkIconHover} />
             </button>
             if (isTrending) {
               return (

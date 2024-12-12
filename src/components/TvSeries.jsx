@@ -5,7 +5,7 @@ import category_TV from "@assets/icon-category-tv.svg";
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 import Navigation from "./Navigation";
-import SearchBar from "./SearchBar"
+import SearchBar from "./Searchbar"
 
 
 

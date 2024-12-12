@@ -4,12 +4,14 @@ import { useState } from "react";
 import category_TV from "@assets/icon-category-tv.svg";
 import category_movie from "@assets/icon-category-movie.svg";
 import icon_search from "@assets/icon-search.svg";
+import { useLocation } from "react-router";
 
 // page says what page is search on, if page = null, then search works on all shows
 function SearchBar({ showComponent, setShowComponent, page }) {
   const [movies, setMovies] = useState([]);
   const [input, setInput] = useState("");
   const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const getAllMovies = async () => {
@@ -33,6 +35,14 @@ function SearchBar({ showComponent, setShowComponent, page }) {
     setShowComponent(e.target.value.length > 0);
   };
 
+  const placeholderBasedOnLocation = () => {
+    if (location.pathname === "/home") {
+      return "adadasdasd"
+     } else if (location.pathname === "/movies") {
+          return "bbbbbb"
+        }
+      }
+
   useEffect(() => {
     setIsVisible(input.length > 0);
   }, [input]);
@@ -48,7 +58,7 @@ function SearchBar({ showComponent, setShowComponent, page }) {
         <input
           className="w-[16.0625rem] h-[1.5rem] border-none bg-[#10141E] body-m placeholder-white text-[1rem] placeholder-opacity-50 text-white p-0 search-input"
           type="text"
-          placeholder="Search for movies or TV series"
+          placeholder={placeholderBasedOnLocation()}
           value={input}
           onChange={(e) => checkInput(e)}
         />
