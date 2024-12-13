@@ -125,13 +125,11 @@ export default function Bookmarks() {
   return (
     <div className="desktop:ml-32">
       <Navigation />
-      <div className="ml-4 my-4 tablet:ml-4 tablet:my-2 desktop:ml-4 desktop:mb-8 desktop:mt-16">
         <Searchbar setShowComponent={setShowComponent} page={"bookmarks"} />
-      </div>
       {!showComponent && (
         <div className="mb-8">
           <div>
-            <h1 className="heading-xs ml-4 my-4 tablet:heading-l tablet:ml-6 tablet:my-6 desktop:ml-9 desktop:my-8">
+            <h1 className="heading-xs ml-4 mb-4 tablet:heading-l tablet:ml-6 tablet:mb-6 desktop:ml-9 desktop:mb-8">
               Bookmarked Movies
             </h1>
             {showShowsCard(bookmarkedMovies)}
