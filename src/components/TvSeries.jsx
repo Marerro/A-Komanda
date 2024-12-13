@@ -33,9 +33,10 @@ export default function TvSeries() {
   return (
     <>
       <Navigation />
+      <SearchBar />
       <section className="mx-[1rem] desktop:ml-32">
 
-        <SearchBar />
+        
         <div>
           <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[2.375rem] tracking-wide">TV Series </h3>
         </div>
