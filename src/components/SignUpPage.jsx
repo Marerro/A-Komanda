@@ -66,7 +66,7 @@ const SignUpPage = () => {
                   required: "Can't be empty",
                   pattern: {
                     value: /^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                    message: "Invalid email",
+                    message: "Invalid email adress",
                   },
                 })}
                 className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.9rem] desktop:pb-[1.7rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
@@ -75,9 +75,18 @@ const SignUpPage = () => {
                 onInput={() => setError("")}
               />
               <div className="relative">
-                <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
-                  {errors.email?.message}
-                </p>
+                {errors.email?.type === "required" && (
+                  <p className="error-text text-red absolute bottom-[1.15rem] left-[10.84rem] tablet:left-[14.44rem]">
+                    Can`t be empty
+                  </p>
+                )}
+              </div>
+              <div className="relative">
+                {errors.email?.type === "pattern" && (
+                  <p className="error-text text-red absolute top-[0.1rem] left-[0.5rem]">
+                   Invalid email address
+                  </p>
+                )}
               </div>
             </div>
             <div className="pb-[1.3rem] tablet:pb-[1.1rem] desktop:pt-[0.25rem]">
@@ -101,15 +110,15 @@ const SignUpPage = () => {
               />
               <div className="relative">
                 {errors.password?.type === "required" && (
-                  <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
+                  <p className="error-text text-red absolute bottom-[1.15rem] left-[10.84rem] tablet:left-[14.44rem]">
                     Can`t be empty
                   </p>
                 )}
               </div>
               <div className="relative">
                 {errors.password?.type === "pattern" && (
-                  <p className="error-text text-red absolute top-[0.1rem] left-[0.5rem]">
-                    At least 8 characters, capital letter, symbol and number
+                  <p className="tablet:text-[0.8125rem] text-red absolute top-[0.1rem] left-[0.5rem] mobile:text-[0.78rem]">
+                    At least 8 chars, capital letter, symbol and number
                   </p>
                 )}
               </div>
@@ -134,7 +143,7 @@ const SignUpPage = () => {
               />
               <div className="relative">
                 {errors.repeatPassword?.type === "required" && (
-                  <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
+                  <p className="error-text text-red absolute bottom-[1.15rem] left-[10.84rem] tablet:left-[14.44rem]">
                     Can`t be empty
                   </p>
                 )}

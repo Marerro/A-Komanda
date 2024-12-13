@@ -96,11 +96,7 @@ const LogInPage = () => {
                   </p>
                 )}
               </div>
-              {/* <div className="relative">
-                <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
-                  {errors.email?.message}
-                </p>
-              </div> */}
+              
             </div>
 
             {/* Password input window */}
