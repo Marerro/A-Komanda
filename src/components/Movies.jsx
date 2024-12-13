@@ -33,14 +33,15 @@ export default function Movies() {
   return (
     <>
       <Navigation />
+      
+      
+      <section className=" desktop:ml-32 mobile:mx-[1rem] ">
       <SearchBar />
-      <section className="mx-[1rem] desktop:ml-32 mobile:mx-[1rem] tablet:mx-[1.56rem]">
-
         
         <div>
-          <h3 className="heading-xs tablet:heading-l desktop:heading-l mt-[3rem] mb-[1.3rem] tablet:mb-[1.2rem]   ">Movies</h3>
+          <h3 className="mx-[1rem] tablet:mx-[1.56rem] heading-xs tablet:heading-l desktop:heading-l mt-[3rem] mb-[1.3rem] tablet:mb-[1.2rem]   ">Movies</h3>
         </div>
-        <div className="bg-[#10141E]  grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[1.81rem] mobile:gap-[0.94rem] gap-[0.94rem]">
+        <div className="bg-[#10141E]  grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[1.81rem] mobile:gap-[0.94rem] gap-[0.94rem] mx-[1rem] tablet:mx-[1.56rem]">
           {movies.map((itemData) => {
             const {
               id,
