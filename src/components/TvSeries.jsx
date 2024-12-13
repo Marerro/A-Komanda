@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { patchData } from "../helpers/update";
-
 import category_TV from "@assets/icon-category-tv.svg";
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 import Navigation from "./Navigation";
-import SearchBar from "./Searchbar";
+import SearchBar from "./Searchbar"
 import bookmarkIconHover from "@assets/icon-bookmark-hover.svg";
 import playIcon from "@assets/icon-play.svg";
 
@@ -33,6 +32,7 @@ export default function TvSeries() {
   return (
     <>
       <Navigation />
+
       
       <section className="desktop:ml-32">
       <SearchBar />
@@ -41,6 +41,7 @@ export default function TvSeries() {
           <h3 className="mx-[1rem] heading-xs tablet:heading-m desktop:heading-m my-[2.375rem] tracking-wide">TV Series </h3>
         </div>
         <div className="mx-[1rem] bg-[#10141E]  grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem]">
+
           {tvseries.map((itemData) => {
             const {
               id,

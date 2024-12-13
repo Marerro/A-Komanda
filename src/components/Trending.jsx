@@ -32,12 +32,12 @@ const Trending = () => {
   return (
     <>
       <div>
-        <h1 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[2.5rem] tablet:pt-[2.5rem]">
+        <h1 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[1.56rem] desktop:pl-[2.25rem]">
           Trending
         </h1>
       </div>
       <div
-        className="min-w-[23.4375rem] min-h-[8.75rem] bg-[#10141E] mobile:pl-[1rem] tablet:pl-[2.5rem] overflow-x-auto no-scrollbar"
+        className="bg-[#10141E] mobile:pl-[1rem] tablet:pl-[1.56rem] desktop:pl-[2.25rem] overflow-x-auto no-scrollbar"
         {...events}
         ref={ref}
       >
@@ -66,20 +66,12 @@ const Trending = () => {
               setUpdate((prev) => prev + 1);
             };
 
-            const hoverButton = (e) => {
-              e.target.children[0]?.setAttribute("src", bookmarkIconHover);
-            };
-
-            const unhoverButton = (e) => {
-              e.target.children[0]?.setAttribute("src", bookmarkIconFull);
-            };
-
-            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/button z-50">
-              <img className="m-auto group-hover/button:invisible" src={bookmarkIconFull} />
-              <img className="m-auto invisible group-hover/button:visible absolute top-0 right-0" src={bookmarkIconHover} />
-            </button> : <button onClick={() => bookMark(id)} onmouseEnter={hoverButton} onmouseLeave={unhoverButton} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/button z-50">
+            const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/bookmark z-50">
+              <img className="m-auto group-hover/bookmark:invisible" src={bookmarkIconFull} />
+              <img className="m-auto invisible group-hover/bookmark:visible absolute top-0 right-0" src={bookmarkIconHover} />
+            </button> : <button onClick={() => bookMark(id)} className="absolute mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/bookmark z-50">
               <img className="m-auto group-hover/button:invisible rotate-1" src={bookmarkIconEmpty} />
-              <img className="m-auto invisible group-hover/button:visible absolute top-0 right-0" src={bookmarkIconHover} />
+              <img className="m-auto invisible group-hover/bookmark:visible absolute top-0 right-0" src={bookmarkIconHover} />
             </button>
             if (isTrending) {
               return (
@@ -92,7 +84,7 @@ const Trending = () => {
                     <img
                       className="max-w-[29.375rem] max-h-[14.375rem]
                       mobile:w-[15rem] mobile:h-[8.75rem] tablet:w-[29.375rem] tablet:h-[14.375rem]
-                      min-w-[15rem] min-h-[8.75rem] rounded-[0.5rem] group-hover/play:opacity-50 hover:duration-500"
+                       rounded-[0.5rem] group-hover/play:opacity-50 hover:duration-500"
                       src={thumbnail.trending.small}
                       alt="TV shows"/>
                        <div className="group-hover/play:opacity-100 flex items-center absolute top-0 mobile:bottom-2 tablet:bottom-0 left-0 right-0 m-auto mobile:w-[5.2rem] mobile:h-[2.1rem] tablet:w-[7.3125rem] tablet:h-[3rem] bg-white bg-opacity-25 rounded-full opacity-0 hover:opacity-100 hover:duration-500 cursor-pointer">
@@ -108,7 +100,6 @@ const Trending = () => {
                     <p className="text_above_title mobile:body-s tablet:body-m">{category}</p>
                     <p className="text_above_title mobile:body-s mx-[0.5rem] tablet:body-m">&#8226;</p>
                     <p className="text_above_title mobile:body-s mobile:mr-[0.5rem] tablet:body-m tablet:mr-[5rem]">{rating}</p>
-
                     <div className="absolute top-[1rem]">
                       <p className="mobile:body-m tablet:heading-m">{title}</p>
                     </div>

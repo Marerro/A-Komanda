@@ -71,7 +71,7 @@ const LogInPage = () => {
                   required: "Can't be empty",
                   pattern: {
                     value: /^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                    message: "Invalid email",
+                    message: "Invalid email address",
                   },
                 })}
                 // If the error occurs, sets input border red
@@ -83,14 +83,24 @@ const LogInPage = () => {
                 onInput={() => setError("")}
               />
               <div className="relative">
-                <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
-                  {errors.email?.message}
-                </p>
+                {errors.email?.type === "required" && (
+                  <p className="error-text text-red absolute bottom-[1.15rem] left-[10.84rem] tablet:left-[14.44rem]">
+                    Can`t be empty
+                  </p>
+                )}
               </div>
+              <div className="relative">
+                {errors.email?.type === "pattern" && (
+                  <p className="error-text text-red absolute top-[0.1rem] left-[0.5rem]">
+                   Invalid email address
+                  </p>
+                )}
+              </div>
+              
             </div>
 
             {/* Password input window */}
-            <div className="pb-[2.45rem] desktop:pb-[222rem]">
+            <div className="pb-[2.45rem] desktop:pb-[2.5rem]">
               <input
                 type="password"
                 id="password"
@@ -102,14 +112,14 @@ const LogInPage = () => {
                 onInput={() => setError("")}
               />
               <div className="relative">
-                <p className="error-text text-red absolute bottom-3 left-[10.84rem] tablet:left-[14.44rem]">
+                <p className="error-text text-red absolute bottom-[1.15rem] left-[10.84rem] tablet:left-[14.44rem]">
                   {errors.password?.message}
                 </p>
               </div>
               <div className="relative">
                 {/* Shows errors coming from error state */}
                 {error && (
-                  <p className="error-text text-red absolute pl-[1.06rem] top-[0.5rem]">
+                  <p className="error-text text-red absolute pl-[1.06rem] top-[0.1rem]">
                     {error}
                   </p>
                 )}
