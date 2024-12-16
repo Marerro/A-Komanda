@@ -31,6 +31,25 @@ export default function Movies() {
       console.error("Duomenys nebuvo gauti iš endpoint", error);
     }
   };
+  
+  const filterMovies = (query) => {
+    setQuery(query);
+    if (!query) {
+      setOnlyMovies(
+        data.filter((item) => item.category.toLowerCase() === "movie")
+      );
+    } else {
+      const lowerCaseQuery = query.toLowerCase();
+ 
+      const filteredMovies = data.filter(
+        (movie) =>
+          movie.category.toLowerCase() === "movie" &&
+          movie.title.toLowerCase().startsWith(lowerCaseQuery)
+      );
+ 
+      setOnlyMovies(filteredMovies);
+    }
+  };
 
   useEffect(() => {
     getMovies();
