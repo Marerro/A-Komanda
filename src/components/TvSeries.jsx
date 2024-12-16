@@ -172,14 +172,14 @@ export default function TvSeries() {
           // if component true show filtered tvseries
           <div>
             <h1 className="text-white">
-              Found {onlyTVseries.length} results for '{query}'
+              Found {onlyTVseries.length} results for `{query}`
             </h1>
             {renderTvSeries(onlyTVseries)}
           </div>
         ) : (
           <div>
-            <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[2.375rem] mx-[1rem]">
-              All TV Series
+            <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[2.375rem]">
+              TV Series
             </h3>
             {renderTvSeries(onlyTVseries)}
           </div>

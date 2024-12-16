@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { patchData } from "../helpers/update";
 import category_movie from "@assets/icon-category-movie.svg";
 import bookmarkIconHover from "@assets/icon-bookmark-hover.svg";
-import category_TV from "@assets/icon-category-tv.svg";
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 import Navigation from "./Navigation";
@@ -31,7 +30,7 @@ export default function Movies() {
       console.error("Duomenys nebuvo gauti iš endpoint", error);
     }
   };
-  
+
   const filterMovies = (query) => {
     setQuery(query);
     if (!query) {
@@ -40,13 +39,13 @@ export default function Movies() {
       );
     } else {
       const lowerCaseQuery = query.toLowerCase();
- 
+
       const filteredMovies = data.filter(
         (movie) =>
           movie.category.toLowerCase() === "movie" &&
           movie.title.toLowerCase().startsWith(lowerCaseQuery)
       );
- 
+
       setOnlyMovies(filteredMovies);
     }
   };
@@ -70,7 +69,6 @@ export default function Movies() {
           return (
             <div key={id} className="justify-self-center">
               <div className="m-auto relative z-0">
-                {/* Thumbnail and Play Icon */}
                 <div className="group/play relative">
                   <div className="group-hover/play:visible invisible flex justify-around absolute bg-white/25 rounded-full w-[7.25rem] h-11 m-auto top-0 bottom-0 left-0 right-0">
                     <img className="m-2 w-7 h-7" src={playIcon} alt="Play" />
@@ -155,9 +153,11 @@ export default function Movies() {
           </div>
         ) : (
           // Jei showComponent yra false, rodome visus filmus
+
           <div className="">
             <h3 className="mx-[1rem] mobile:mx-[1rem] tablet:mx-[1.56rem] heading-xs tablet:heading-l desktop:heading-l  mb-[1.3rem] mt-[2.4rem] mobile:mt-[1.5rem]  mobile:mb-[1.5rem] tablet:mb-[1.4rem] tablet:mt-[1rem] desktop:mt-[0.8rem] desktop:mb-[2.2rem]">
-              Movies
+
+             
             </h3>
             {renderMovieCards(onlyMovies)}
           </div>
