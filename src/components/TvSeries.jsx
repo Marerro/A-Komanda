@@ -32,15 +32,12 @@ export default function TvSeries() {
   return (
     <>
       <Navigation />
-
-      
       <section className="desktop:ml-32">
       <SearchBar />
-        
         <div>
           <h3 className="mx-[1rem] heading-xs tablet:heading-m desktop:heading-m my-[2.375rem] tracking-wide">TV Series </h3>
         </div>
-        <div className="mx-[1rem] bg-[#10141E]  grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem]">
+        <div className="mx-[1rem] bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem]">
 
           {tvseries.map((itemData) => {
             const {

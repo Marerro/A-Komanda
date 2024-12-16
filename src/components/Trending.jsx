@@ -32,7 +32,7 @@ const Trending = () => {
   return (
     <>
       <div>
-        <h1 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[1.56rem] desktop:pl-[2.25rem]">
+        <h1 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] tablet:pl-[1.56rem] desktop:pl-[2.35rem] tracking-[0.05rem] trending-title mobile:mt-[1.4rem] tablet:mt-[0.9rem] tablet:tracking-[0.00215rem] mobile:mb-[1rem] tablet:mb-[1.3rem] desktop:mb-[1.4rem]">
           Trending
         </h1>
       </div>
@@ -94,14 +94,14 @@ const Trending = () => {
                   </picture>
                   <div className="absolute mobile:top-[5.37rem] mobile:left-[1rem] tablet:top-[9.62rem] tablet:left-[1.5rem] flex place-items-center">
 
-                    <p className="text_above_title mobile:body-s tablet:body-m mr-[0.5rem]">{year}</p>
+                    <p className="text_above_title mobile:body-s tablet:body-m mr-[0.4rem]">{year}</p>
                     <p className="text_above_title mobile:body-s tablet:body-m">&#8226;</p>
-                    <img src={movieIcon} alt="MovieIcon" className="text_above_title mr-[0.38rem] ml-[0.5rem]" />
+                    <img src={movieIcon} alt="MovieIcon" className="text_above_title mobile:mr-[0.36rem] mobile:ml-[0.41rem] tablet:ml-[0.5rem]" />
                     <p className="text_above_title mobile:body-s tablet:body-m">{category}</p>
-                    <p className="text_above_title mobile:body-s mx-[0.5rem] tablet:body-m">&#8226;</p>
+                    <p className="text_above_title mobile:body-s mobile:mx-[0.4rem] tablet:mx-[0.5rem] tablet:body-m">&#8226;</p>
                     <p className="text_above_title mobile:body-s mobile:mr-[0.5rem] tablet:body-m tablet:mr-[5rem]">{rating}</p>
-                    <div className="absolute top-[1rem]">
-                      <p className="mobile:body-m tablet:heading-m">{title}</p>
+                    <div className="absolute mobile:top-[1.2rem] tablet:top-[1.4rem]">
+                      <p className="mobile:body-m tablet:heading-m movie-title">{title}</p>
                     </div>
                   </div>
                 </div>
