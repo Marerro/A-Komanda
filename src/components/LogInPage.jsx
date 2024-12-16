@@ -82,6 +82,7 @@ const LogInPage = () => {
                 }`}
                 onInput={() => setError("")}
               />
+              {/* Separation of errors by checking their type and placing them differently*/}
               <div className="relative">
                 {errors.email?.type === "required" && (
                   <p className="error-text text-red absolute bottom-[1.15rem] left-[10.84rem] tablet:left-[14.44rem]">
