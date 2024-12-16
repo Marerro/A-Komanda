@@ -32,10 +32,6 @@ export default function Movies() {
     }
   };
 
-  useEffect(() => {
-    getMovies();
-  }, [update]);
-
   const filterMovies = (query) => {
     setQuery(query);
     if (!query) {
@@ -55,9 +51,13 @@ export default function Movies() {
     }
   };
 
+  useEffect(() => {
+    getMovies();
+  }, [update]);
+
   const renderMovieCards = (movies) => {
     return (
-      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem]">
+      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem] mx-[1rem]">
         {movies.map((movie) => {
           const { id, title, thumbnail, year, category, rating, isBookmarked } =
             movie;
@@ -135,7 +135,7 @@ export default function Movies() {
   return (
     <>
       <Navigation />
-      <section className="mx-[1rem] desktop:ml-32">
+      <section className="desktop:ml-32">
         <SearchBar
           setShowComponent={setShowComponent}
           page={"movies"}
