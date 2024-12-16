@@ -57,7 +57,7 @@ export default function Movies() {
 
   const renderMovieCards = (movies) => {
     return (
-      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem]">
+      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem] mx-[1rem]">
         {movies.map((movie) => {
           const { id, title, thumbnail, year, category, rating, isBookmarked } =
             movie;
@@ -135,7 +135,7 @@ export default function Movies() {
   return (
     <>
       <Navigation />
-      <section className="mx-[1rem] desktop:ml-32">
+      <section className="desktop:ml-32">
         <SearchBar
           setShowComponent={setShowComponent}
           page={"movies"}
@@ -153,7 +153,7 @@ export default function Movies() {
         ) : (
           // Jei showComponent yra false, rodome visus filmus
           <div>
-            <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[2.375rem]">
+            <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[2.375rem] mx-[1rem]">
               All Movies
             </h3>
             {renderMovieCards(onlyMovies)}
