@@ -31,7 +31,7 @@ export default function Movies() {
       console.error("Duomenys nebuvo gauti iš endpoint", error);
     }
   };
-  
+
   const filterMovies = (query) => {
     setQuery(query);
     if (!query) {
@@ -40,13 +40,13 @@ export default function Movies() {
       );
     } else {
       const lowerCaseQuery = query.toLowerCase();
- 
+
       const filteredMovies = data.filter(
         (movie) =>
           movie.category.toLowerCase() === "movie" &&
           movie.title.toLowerCase().startsWith(lowerCaseQuery)
       );
- 
+
       setOnlyMovies(filteredMovies);
     }
   };
@@ -153,8 +153,8 @@ export default function Movies() {
         ) : (
           // Jei showComponent yra false, rodome visus filmus
           <div>
-            <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[2.375rem] mx-[1rem]">
-              All Movies
+            <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[2.375rem]">
+              Movies
             </h3>
             {renderMovieCards(onlyMovies)}
           </div>

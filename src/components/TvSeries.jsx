@@ -178,8 +178,8 @@ export default function TvSeries() {
           </div>
         ) : (
           <div>
-            <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[2.375rem] mx-[1rem]">
-              All TV Series
+            <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[2.375rem]">
+              TV Series
             </h3>
             {renderTvSeries(onlyTVseries)}
           </div>
