@@ -8,6 +8,9 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+  body::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer base {
@@ -48,11 +51,19 @@
 
 /* Trending section CSS */
   .text_above_title {
-    font-size: 0.75rem;
-    font-family: Outfit;
     opacity: 0.75;
+    font-family: Outfit;
+    font-size: 0.9375rem;
+    line-height: normal;
   }
 
+  .movie-title {
+    font-family: Outfit;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 input:focus{
       caret-color: #FC4747;
       box-shadow: none !important;
