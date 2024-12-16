@@ -45,55 +45,71 @@
     @apply text-white text-bs font-medium;
   }
   .section-s {
-    @apply text-white text-mm font-medium
+    @apply text-white text-mm font-medium;
   }
 }
 
 /* Trending section CSS */
-  .text_above_title {
-    opacity: 0.75;
-    font-family: Outfit;
-    font-size: 0.9375rem;
-    line-height: normal;
-  }
-
-  .movie-title {
-    font-family: Outfit;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-input:focus{
-      caret-color: #FC4747;
-      box-shadow: none !important;
-}
-  .form-input {
-    height: 2.25rem;
-    width: 17.438rem;
-    color: white;
-    opacity: 0.5;
+.text_above_title {
+  opacity: 0.75;
+  font-family: Outfit;
+  font-size: 0.9375rem;
+  line-height: normal;
 }
 
-input:focus{
-      caret-color: #FC4747;
-      box-shadow: none !important;
+.movie-title {
+  font-family: Outfit;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+input:focus {
+  caret-color: #fc4747;
+  box-shadow: none !important;
+}
+.form-input {
+  height: 2.25rem;
+  width: 17.438rem;
+  color: white;
+  opacity: 0.5;
 }
 
-  .error-text{
-    font-size: 0.8125rem;
-}
-  .error-red{
-    border-color: #FC4747 !important;
+input:focus {
+  caret-color: #fc4747;
+  box-shadow: none !important;
 }
 
-  /* Search bar CSS */
-  .search-input{
-    color: white;
-    font-family: Outfit;
-    font-weight: 200;
-    border-bottom: solid 1px #10141E;
-  }
-  .search-input:focus{
-    border-bottom: solid 0.0625rem #5A698F;
-  }
+.error-text {
+  font-size: 0.8125rem;
+}
+.error-red {
+  border-color: #fc4747 !important;
+}
+
+/* Search bar CSS */
+.search-input {
+  color: white;
+  font-family: Outfit;
+  font-weight: 200;
+  border-bottom: solid 1px #10141e;
+}
+.search-input:focus {
+  border-bottom: solid 0.0625rem #5a698f;
+}
+
+.tv_series_text_above {
+  font-family: Outfit;
+  font-size: 0.6875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.tv_series_title {
+  font-family: Outfit;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

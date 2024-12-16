@@ -61,7 +61,7 @@ export default function TvSeries() {
 
   const renderTvSeries = (series) => {
     return (
-      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem] mx-[1rem]">
+      <div className="bg-[#10141E]  grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[1.81rem] mobile:gap-[0.94rem] gap-[0.94rem] mx-[1rem] tablet:pl-[1.05rem] tablet:pr-[1.05rem] tablet:mx-[0.5rem] desktop:mx-[2.25rem] ">
         {series.map((itemData) => {
           const { id, title, thumbnail, year, category, rating, isBookmarked } =
             itemData;
@@ -77,7 +77,7 @@ export default function TvSeries() {
           };
           const bookMarking = isBookmarked ? (
             <button
-              className="group absolute right-[0.5rem] top-2 bg-slate-900/50 w-[2rem] h-[2rem] rounded-full hover:bg-white"
+              className="group absolute right-[0.5rem] top-2 tablet:top-[1rem] tablet:right-[1rem] bg-slate-900/50 w-[2rem] h-[2rem] rounded-full hover:bg-white"
               onClick={() => unBookmark(id)}
             >
               <img
@@ -93,7 +93,7 @@ export default function TvSeries() {
             </button>
           ) : (
             <button
-              className="group absolute right-[0.5rem] top-2 bg-slate-900/50 w-8 h-8 rounded-full hover:bg-white"
+              className="group absolute right-[0.5rem] top-2 tablet:top-[1rem] tablet:right-[1rem] bg-slate-900/50 w-8 h-8 rounded-full hover:bg-white"
               onClick={() => bookMark(id)}
             >
               <img
@@ -111,7 +111,7 @@ export default function TvSeries() {
 
           return (
             <div key={id} className="justify-self-center">
-              <div className="m-auto relative z-0">
+              <div className="m-auto relative z-0 ">
                 <div className="group/play relative">
                   <div className="group-hover/play:visible invisible flex justify-around absolute bg-white/25 rounded-full w-[7.25rem] h-11 m-auto top-0 bottom-0 left-0 right-0">
                     <img
@@ -133,22 +133,24 @@ export default function TvSeries() {
                     />
                   </picture>
                 </div>
-                <div className="flex gap-[0.25rem] tablet:gap-[0.5rem] desktop:gap-[0.5rem] body-s tablet:body-s desktop:body-s mobile:mt-[0.25rem] tablet:mt-[0.31rem] desktop:tablet:mt-[0.31rem] opacity-75 text-[0.6875rem] tablet:text-[0.8125rem] desktop:text-[0.8125rem]">
-                  <p>{year}</p>
-                  <span>&#8226;</span>
+                <div className="flex gap-[0.26rem] tablet:gap-[0.5rem] desktop:gap-[0.5rem] body-s tablet:body-s desktop:body-s mobile:mt-[0.5rem] tablet:mt-[0.6rem] desktop:tablet:mt-[0.31rem] opacity-75 text-[0.6875rem] tablet:text-[0.8125rem] desktop:text-[0.8125rem] tv_series_text_above ">
+                  <p className="mr-[-0.2rem]">{year}</p>
+                  <span className="ml-[0.32rem] mx-[0.2rem] tablet:mx-[0.17rem]">&#8226;</span>
                   {category === "TV Series" && (
+                    
                     <img
-                      className="w-[0.625rem] h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.75rem] desktop:w-[0.75rem] desktop:h-[0.75rem] mobile:translate-y-[0.20rem] translate-y-[0.3rem]"
+                      className="w-[0.625rem] h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.79rem] desktop:w-[0.75rem] desktop:h-[0.75rem] mobile:translate-y-[0.20rem] translate-y-[0.3rem] mx-[-0.19rem]"
                       src={category_TV}
                       alt="Category Icon"
                     />
+                   
                   )}
                   <div>{bookMarking}</div>
-                  <p>{category}</p>
-                  <span>&#8226;</span>
+                  <p >{category}</p>
+                  <span className="ml-[0.15rem]">&#8226;</span>
                   <p>{rating}</p>
                 </div>
-                <p className="mobile:mt-[0.25rem] tablet:mt-[0.31rem] desktop:tablet:mt-[0.31rem] section-s mobile:section-s tablet:heading-xs desktop:heading-xs">
+                <p className="mobile:mt-[0.26rem] tablet:mt-[0.31rem] section-s  tablet:heading-xs desktop:heading-xs tv_series_title">
                   {title}
                 </p>
               </div>
@@ -172,16 +174,18 @@ export default function TvSeries() {
           // if component true show filtered tvseries
           <div>
             <h1 className="text-white">
-              Found {onlyTVseries.length} results for '{query}'
+              Found {onlyTVseries.length} results for `{query}`
             </h1>
             {renderTvSeries(onlyTVseries)}
           </div>
         ) : (
           <div>
-            <h3 className="heading-xs tablet:heading-m desktop:heading-m my-[2.375rem] mx-[1rem]">
-              All TV Series
+            <h3 className="heading-xs tablet:heading-l desktop:heading-m my-[1.45rem] mx-[1.05rem] tracking-wider tablet:my-[0.8525rem] tablet:pl-[0.6rem] tablet:tracking-normal tablet:mb-[1.3rem]">
+            TV Series
             </h3>
+            
             {renderTvSeries(onlyTVseries)}
+            
           </div>
         )}
       </section>
