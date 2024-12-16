@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { getAll } from "../helpers/get";
 import { useState } from "react";
-import category_TV from "@assets/icon-category-tv.svg";
-import category_movie from "@assets/icon-category-movie.svg";
 import icon_search from "@assets/icon-search.svg";
 import { useLocation } from "react-router";
 

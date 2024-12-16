@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { patchData } from "../helpers/update";
 import category_movie from "@assets/icon-category-movie.svg";
 import bookmarkIconHover from "@assets/icon-bookmark-hover.svg";
-import category_TV from "@assets/icon-category-tv.svg";
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 import Navigation from "./Navigation";
@@ -70,7 +69,6 @@ export default function Movies() {
           return (
             <div key={id} className="justify-self-center">
               <div className="m-auto relative z-0">
-                {/* Thumbnail and Play Icon */}
                 <div className="group/play relative">
                   <div className="group-hover/play:visible invisible flex justify-around absolute bg-white/25 rounded-full w-[7.25rem] h-11 m-auto top-0 bottom-0 left-0 right-0">
                     <img className="m-2 w-7 h-7" src={playIcon} alt="Play" />

@@ -4,6 +4,7 @@ import category_movie from "@assets/icon-category-movie.svg";
 import category_TV from "@assets/icon-category-tv.svg";
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
+import playButton from "@assets/icon-play.svg";
 
 export default function RecommendedForYou() {
   const [recommendMovies, setRecommendMovies] = useState([]);
@@ -48,7 +49,18 @@ export default function RecommendedForYou() {
                 <source
                   media="(min-width: 1440px)"
                   srcSet={thumbnail.regular.large}
+                  alt="Shows"
                 />
+                <div className="group-hover/play:opacity-100 flex items-center absolute top-0 mobile:bottom-2 tablet:bottom-16 left-0 right-6 m-auto mobile:w-[5.2rem] mobile:h-[2.1rem] tablet:w-[7.3125rem] tablet:h-[3rem] bg-white bg-opacity-25 rounded-full opacity-0 hover:opacity-100 hover:duration-500 cursor-pointer">
+                  <button>
+                    <img
+                      src={playButton}
+                      alt="playButton"
+                      className="mobile:w-[1.4rem] mobile:h-[1.4rem] tablet:w-[1.875rem] tablet:h-[1.875rem] ml-[0.56rem] mobile:mr-[0.6rem] tablet:mr-[1.19rem]"
+                    />
+                  </button>
+                  <p className="mobile:heading-xs tablet:heading-s">Play</p>
+                </div>
                 <source
                   media="(min-width: 768px)"
                   srcSet={thumbnail.regular.medium}
