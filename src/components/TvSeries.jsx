@@ -37,10 +37,10 @@ export default function TvSeries() {
       <section className="desktop:ml-32">
       <SearchBar />
         
-        <div>
-          <h3 className="mx-[1rem] heading-xs tablet:heading-m desktop:heading-m my-[2.375rem] tracking-wide">TV Series </h3>
+        <div >
+          <h3 className="mx-[1.1rem] heading-xs tablet:heading-m desktop:heading-m tracking-wider pb-[1.35rem]">TV Series </h3>
         </div>
-        <div className="mx-[1rem] bg-[#10141E]  grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem]">
+        <div className="mx-[1rem] bg-[#10141E]  grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem] ">
 
           {tvseries.map((itemData) => {
             const {
@@ -117,16 +117,18 @@ export default function TvSeries() {
                     </picture>
 
                   </div>
-                  <div className="flex  gap-[0.25rem] tablet:gap-[0.5rem] desktop:tablet:gap-[0.5rem] body-s tablet:body-s desktop:body-s mobile:mt-[0.25rem] tablet:mt-[0.31rem] desktop:tablet:mt-[0.31rem] opacity-75 text-[0.6875rem] tablet:text-[0.8125rem] desktop:text-[0.8125rem]">
+                  <div className="flex  gap-[0.3rem] tablet:gap-[0.5rem] desktop:tablet:gap-[0.5rem] body-s tablet:body-s desktop:body-s mobile:mt-[0.44rem] tablet:mt-[0.31rem] desktop:tablet:mt-[0.31rem] opacity-75 text-[0.6875rem] tablet:text-[0.8125rem] desktop:text-[0.8125rem]">
                     <p>{year}</p>
                     <span>&#8226;</span>
 
+                      
                     {category === "TV Series" && (
                       <img
                         className="w-[0.625rem]  h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.75rem] desktop:w-[0.75rem] desktop:h-[0.75rem] mobile:translate-y-[0.20rem] translate-y-[0.3rem]"
                         src={category_TV}
                         alt="#"
                       />
+                    
                     )}
                     <div>{bookMarking}</div>
                     <p>{category}</p>
