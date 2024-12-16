@@ -31,14 +31,13 @@ export default function Navigation() {
 
   return (
     <>
-      <div className="bg-dark-blue hidden w-screen h-10 z-20 fixed top-0 tablet:inline-block desktop:hidden"></div>
       <div className="flex justify-between desktop:justify-normal items-center flex-row desktop:flex-col z-30 sticky top-0 tablet:top-6 desktop:fixed desktop:top-8 desktop:bottom-8 desktop:max-h-[60rem] desktop:left-8 bg-semi-dark-blue tablet:m-6 tablet:rounded-[0.625rem] desktop:rounded-[1.25rem] desktop:m-0 desktop:min-w-24">
         <img
           className="m-4 h-5 w-auto tablet:h-6 tablet:w-8 tablet:m-6 desktop:w-8 desktop:m-[2.2rem]"
           src={logo}
           alt="logo"
         />
-        <div className="flex flex-row tablet:mr-4 desktop:flex-col h-4 tablet:h-5 desktop:mt-10 desktop:h-[13.5rem]">
+        <div className="flex flex-row desktop:flex-col h-4 tablet:h-5 tablet:mr-4 desktop:mr-0 desktop:mt-10 desktop:h-[13.5rem]">
           <Link to="/home">
             <svg
               id="home"
