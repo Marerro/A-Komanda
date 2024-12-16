@@ -172,7 +172,7 @@ export default function TvSeries() {
           // if component true show filtered tvseries
           <div>
             <h1 className="text-white">
-              Found {onlyTVseries.length} results for '{query}'
+              Found {onlyTVseries.length} results for `{query}`
             </h1>
             {renderTvSeries(onlyTVseries)}
           </div>
