@@ -36,25 +36,6 @@ export default function Movies() {
     getMovies();
   }, [update]);
 
-  const filterMovies = (query) => {
-    setQuery(query);
-    if (!query) {
-      setOnlyMovies(
-        data.filter((item) => item.category.toLowerCase() === "movie")
-      );
-    } else {
-      const lowerCaseQuery = query.toLowerCase();
-
-      const filteredMovies = data.filter(
-        (movie) =>
-          movie.category.toLowerCase() === "movie" &&
-          movie.title.toLowerCase().startsWith(lowerCaseQuery)
-      );
-
-      setOnlyMovies(filteredMovies);
-    }
-  };
-
   const renderMovieCards = (movies) => {
     return (
       <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem]">
