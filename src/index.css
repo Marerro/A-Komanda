@@ -4,12 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Trending section's scrollbar hide on different browsers */
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
-    display: none;
+    display: none; /* Chrome & Safari */
   }
-  body::-webkit-scrollbar {
-    display: none;
+  .no-scrollbar{
+    -ms-overflow-style: none;  /* Internet Explorer */
+    scrollbar-width: none; /* Firefox */
   }
 }
 
@@ -44,9 +47,11 @@
   .body-s {
     @apply text-white text-bs font-medium;
   }
+
   .section-s {
     @apply text-white text-mm font-medium;
   }
+
 }
 
 /* Trending section CSS */

@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { getAll } from "../helpers/get";
 import { useState } from "react";
-import category_TV from "@assets/icon-category-tv.svg";
-import category_movie from "@assets/icon-category-movie.svg";
 import icon_search from "@assets/icon-search.svg";
 import { useLocation } from "react-router";
 
@@ -52,10 +50,10 @@ function SearchBar({ showComponent, setShowComponent, page, onSearch }) {
 
   return (
     <>
-      <div className="flex mobile:mt-[1.5rem] tablet:mt-[2.06rem] desktop:mt-[3.95rem] tablet:items-center">
+      <div className="flex mt-[1.5rem] mobile:mt-[1.5rem] tablet:mt-[2.06rem] desktop:mt-[3.95rem] tablet:items-center">
         <div>
           <img
-            className="mobile:w-[1.5rem] mobile:h-[1.5rem] tablet:w-[2rem] tablet:h-[2rem] mobile:ml-[1rem] mobile:mr-[1rem] tablet:ml-[1.56rem] tablet:mr-[1.5rem] desktop:ml-[2.25rem] tablet:mb-[0.87rem]"
+            className="w-[1.5rem] h-[1.5rem] mobile:w-[1.5rem] mobile:h-[1.5rem] tablet:w-[2rem] tablet:h-[2rem] ml-[1rem] mr-[1rem] mobile:ml-[1rem] mobile:mr-[1rem] tablet:ml-[1.56rem] tablet:mr-[1.5rem] desktop:ml-[2.25rem] tablet:mb-[0.87rem]"
             src={icon_search}
             alt="#"
           />

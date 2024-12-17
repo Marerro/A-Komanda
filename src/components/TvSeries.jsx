@@ -47,7 +47,7 @@ export default function TvSeries() {
       const filteredTVSeries = data.filter(
         (series) =>
           series.category.toLowerCase() === "tv series" &&
-          series.title.toLowerCase().startsWith(lowerCaseQuery)
+          series.title.toLowerCase().includes(lowerCaseQuery)
       );
       setOnlyTVseries(filteredTVSeries);
     }
