@@ -56,7 +56,7 @@ export default function Bookmarks() {
 
   const showShowsCard = (shows) => {
     return (
-      <div className="grid grid-cols-2 gap-3 ml-4 mr-4 tablet:ml-6 tablet:mr-6 tablet:grid-cols-3 tablet:gap-x-7 tablet:gap-y-[1.3rem] desktop:ml-9 desktop:grid-cols-4 desktop:gap-x-10 desktop:gap-y-8">
+      <div className="grid grid-cols-2 gap-3 ml-4 mr-4 tablet:ml-6 tablet:mr-6 tablet:grid-cols-3 tablet:gap-x-7 tablet:gap-y-[1.3rem] desktop:ml-9 desktop:grid-cols-4 desktop:mr-8 desktop:gap-x-10 desktop:gap-y-7">
         {shows.map((show) => (
           <div
             key={show.title + show.year}
@@ -96,7 +96,7 @@ export default function Bookmarks() {
                 />
               </picture>
             </div>
-            <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mb-1 mt-2 tablet:h-4 tablet:text-bs">
+            <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mb-1 mt-2 tablet:h-4 tablet:text-bs desktop:mt-3">
               <p>{show.year}</p> <span className="p-[0.4rem]">&#8226;</span>
               {show.category.toLowerCase() === "movie" && (
                 <img
