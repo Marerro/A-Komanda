@@ -156,7 +156,7 @@ export default function Movies() {
         ) : (
           // Jei showComponent yra false, rodome visus filmus
           <div className="">
-            <h3 className="mx-[1rem] mobile:mx-[1rem] tablet:mx-[1.56rem] heading-xs tablet:heading-l desktop:heading-l  mb-[1.3rem] mt-[2.4rem] mobile:mt-[1.5rem]  mobile:mb-[1.5rem] tablet:mb-[1.4rem] tablet:mt-[1rem] desktop:mt-[0.8rem] desktop:mb-[2.2rem]">
+            <h3 className="mx-[1rem] mobile:mx-[1rem] tablet:mx-[1.56rem] desktop:mx-[2.25rem] heading-xs tablet:heading-l desktop:heading-l  mb-[1.3rem] mt-[2.4rem] mobile:mt-[1.5rem]  mobile:mb-[1.5rem] tablet:mb-[1.4rem] tablet:mt-[1rem] desktop:mt-[0.8rem] desktop:mb-[2.2rem]">
               Movies
             </h3>
             {renderMovieCards(onlyMovies)}
