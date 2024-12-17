@@ -46,7 +46,7 @@ export default function Bookmarks() {
 
   const filteredData = query
     ? [...bookmarkedMovies, ...bookmarkedTVSeries].filter((show) =>
-        show.title.toLowerCase().startsWith(query.toLowerCase())
+        show.title.toLowerCase().includes(query.toLowerCase())
       )
     : [...bookmarkedMovies, ...bookmarkedTVSeries];
 

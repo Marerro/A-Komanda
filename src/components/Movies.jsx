@@ -44,7 +44,7 @@ export default function Movies() {
       const filteredMovies = data.filter(
         (movie) =>
           movie.category.toLowerCase() === "movie" &&
-          movie.title.toLowerCase().startsWith(lowerCaseQuery)
+          movie.title.toLowerCase().includes(lowerCaseQuery)
       );
  
       setOnlyMovies(filteredMovies);
