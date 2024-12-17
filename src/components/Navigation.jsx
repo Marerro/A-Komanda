@@ -91,11 +91,10 @@ export default function Navigation() {
             </svg>
           </Link>
         </div>
-        <img
-          className="m-4 w-6 tablet:w-8 tablet:m-4 desktop:w-10 desktop:mb-8 desktop:absolute desktop:bottom-0"
-          src={avatar}
-          alt="user picture"
-        />
+
+        {/* <div className="border border-white border-solid rounded-full m-4 w-6 tablet:w-8 tablet:m-4 desktop:w-10 desktop:mb-8 desktop:absolute desktop:bottom-0"> */}
+          <img className="border border-white border-solid rounded-full m-4 w-6 tablet:w-8 tablet:m-4 desktop:w-10 desktop:mb-8 desktop:absolute desktop:bottom-0" src={avatar} alt="user picture" />
+        {/* </div> */}
       </div>
     </>
   );
