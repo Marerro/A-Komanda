@@ -3,12 +3,19 @@ import { getAll } from "../helpers/get";
 import { useState } from "react";
 import icon_search from "@assets/icon-search.svg";
 import { useLocation } from "react-router";
+import { useForm } from "react-hook-form";
 
 // page says what page is search on, if page = null, then search works on all shows
 function SearchBar({ showComponent, setShowComponent, page, onSearch }) {
   const [movies, setMovies] = useState([]);
   const [input, setInput] = useState("");
   const location = useLocation();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
   useEffect(() => {
     const getAllMovies = async () => {
@@ -57,9 +64,9 @@ function SearchBar({ showComponent, setShowComponent, page, onSearch }) {
             src={icon_search}
             alt="#"
           />
-        </div>
+        </div >
         <input
-          className="mobile:w-[16.0625rem] mobile:h-[1.5rem] tablet:w-[30.25rem] tablet:h-[2rem] desktop:w-[74rem] desktop:h-[2.9375rem] border-none bg-[#10141E] body-m placeholder-white mobile:text-[1rem] tablet:text-[1.5rem] placeholder-opacity-50 p-0 search-input tablet:pb-[0.88rem] desktop:pb-[0.88rem]"
+          className="mobile:w-[16.0625rem] mobile:h-[1.5rem] tablet:w-[30.25rem] tablet:h-[2rem] desktop:w-[74rem] desktop:h-[2.9375rem] border-none bg-[#10141E] body-m placeholder-white mobile:text-[1rem] tablet:text-[1.5rem] placeholder-opacity-50 p-0 search-input tablet:pb-[0.88rem] desktop:pb-[0.88rem] overflow: auto"
           type="text"
           placeholder={placeholderBasedOnLocation()}
           value={input}
