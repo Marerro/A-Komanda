@@ -15,7 +15,6 @@
     scrollbar-width: none; /* Firefox */
   }
 }
-
 @layer base {
   html {
     @apply bg-dark-blue;
@@ -61,7 +60,6 @@
   font-size: 0.9375rem;
   line-height: normal;
 }
-
 .movie-title {
   font-family: Outfit;
   font-size: 1.5rem;
@@ -69,6 +67,12 @@
   font-weight: 400;
   line-height: normal;
 }
+.background-features{
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.75) 100%);
+  border-radius: 0.5rem;
+}
+/* Trending section CSS */
+
 input:focus {
   caret-color: #fc4747;
   box-shadow: none !important;
@@ -100,8 +104,9 @@ input:focus {
   border-bottom: solid 1px #10141e;
 }
 .search-input:focus {
-  border-bottom: solid 0.0625rem #5a698f;
+  border-bottom: solid 0.0625rem #5A698F;
 }
+/* Search bar CSS */
 
 .tv_series_text_above {
   font-family: Outfit;
