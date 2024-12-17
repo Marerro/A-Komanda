@@ -122,7 +122,7 @@ export default function TvSeries() {
                     <p className="heading-xs mt-2 mb-2 ml-5 mr-5">Play</p>
                   </div>
                   <picture>
-                    <source
+                     <source
                       media="(min-width: 768px)"
                       srcSet={thumbnail.regular.large}
                     />

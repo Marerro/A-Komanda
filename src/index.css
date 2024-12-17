@@ -69,14 +69,11 @@
   line-height: normal;
 }
 
-.trending-tabl-desk {
-  font-family: Outfit;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.03125rem;
+.background-features{
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.75) 100%);
+  border-radius: 0.5rem;
 }
+/* Trending section CSS */
 
 input:focus {
   caret-color: #FC4747;
@@ -114,3 +111,4 @@ input:focus {
 .search-input:focus {
   border-bottom: solid 0.0625rem #5A698F;
 }
+/* Search bar CSS */
