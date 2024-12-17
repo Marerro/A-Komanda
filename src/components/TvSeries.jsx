@@ -131,7 +131,7 @@ export default function TvSeries() {
                       srcSet={thumbnail.regular.medium}
                     />
                     <img
-                      className="rounded-lg"
+                      className="rounded-lg group-hover/play:opacity-50"
                       src={thumbnail.regular.small}
                       alt="TV shows"
                     />
