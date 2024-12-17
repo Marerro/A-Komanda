@@ -123,7 +123,7 @@ export default function RecommendedForYou() {
   return (
     <>
       <div className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[2.5rem] tablet:pt-[2.5rem] recommended_container">
-        <h3 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[2.5rem] tablet:pt-[2.5rem] desktop:pr-[60.25rem] font-outfit">
+        <h3 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:mt-[1.4rem] mobile:pb-[1rem] tablet:pl-[2.5rem] tablet:pt-[2.5rem] desktop:pr-[60.25rem] font-outfit mobile:size-[1.25rem] mobile:w-[25rem] mobile:font-[400] mobile:leading-normal mobile:tracking-[0.0453rem]">
           Recommended for you
         </h3>
       </div>
