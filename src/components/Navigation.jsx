@@ -33,7 +33,7 @@ export default function Navigation() {
     <>
       <div className="flex justify-between desktop:justify-normal items-center flex-row desktop:flex-col z-30 sticky top-0 tablet:top-6 desktop:fixed desktop:top-8 desktop:bottom-8 desktop:max-h-[60rem] desktop:left-8 bg-semi-dark-blue tablet:m-6 tablet:rounded-[0.625rem] desktop:rounded-[1.25rem] desktop:m-0 desktop:min-w-24">
         <img
-          className="m-4 h-5 w-auto tablet:h-6 tablet:w-8 tablet:m-6 desktop:w-8 desktop:m-[2.2rem]"
+          className="m-4 h-5 w-auto tablet:h-6 tablet:w-8 tablet:m-6 desktop:w-8 desktop:mx-8 desktop:my-[2.2rem]"
           src={logo}
           alt="logo"
         />
@@ -45,7 +45,7 @@ export default function Navigation() {
               height="16"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
-              className="hover:fill-red h-fit mx-3 tablet:h-5 tablet:w-5 tablet:mr-5 tablet:m-0 desktop:mx-4 desktop:mb-5 desktop:w-5 desktop:h-auto"
+              className="hover:fill-red h-fit mx-3 tablet:h-5 tablet:w-5 tablet:mr-4 tablet:m-0 desktop:mx-4 desktop:mb-5 desktop:w-5 desktop:h-auto"
               fill="#5A698F"
             >
               <path d="M8 0H1C.4 0 0 .4 0 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1Zm0 11H1c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1ZM19 0h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1Zm0 11h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1Z" />
@@ -91,8 +91,9 @@ export default function Navigation() {
             </svg>
           </Link>
         </div>
+
         <img
-          className="m-4 w-6 tablet:w-8 tablet:m-4 desktop:w-10 desktop:mb-8 desktop:absolute desktop:bottom-0"
+          className="border border-white border-solid rounded-full m-4 w-6 tablet:w-8 tablet:m-4 desktop:w-10 desktop:mb-8 desktop:absolute desktop:bottom-0"
           src={avatar}
           alt="user picture"
         />

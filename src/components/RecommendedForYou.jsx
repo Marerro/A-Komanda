@@ -5,6 +5,7 @@ import category_TV from "@assets/icon-category-tv.svg";
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 import playButton from "@assets/icon-play.svg";
+import bookmarkIconHover from "@assets/bookmark_onHover.svg";
 
 export default function RecommendedForYou() {
   const [recommendMovies, setRecommendMovies] = useState([]);
@@ -43,20 +44,20 @@ export default function RecommendedForYou() {
           movie;
 
         return (
-          <div key={id} className="relative">
-            <div className="mobile:m-[0.5rem] min-h-[0.5rem] tablet:ml-[1.53rem]">
+          <div key={id} className="relative group/play">
+            <div className="mobile:m-[0.5rem] min-h-[0.5rem] tablet:ml-[1.53rem] z-20">
               <picture>
                 <source
                   media="(min-width: 1440px)"
-                  srcSet={thumbnail.regular.large}
+                  src={thumbnail.regular.large}
                   alt="Shows"
                 />
-                <div className="group-hover/play:opacity-100 flex items-center absolute top-0 mobile:bottom-2 tablet:bottom-16 left-0 right-6 m-auto mobile:w-[5.2rem] mobile:h-[2.1rem] tablet:w-[7.3125rem] tablet:h-[3rem] bg-white bg-opacity-25 rounded-full opacity-0 hover:opacity-100 hover:duration-500 cursor-pointer">
+                <div className="group-hover/play:opacity-100 flex items-center absolute top-0 mobile:bottom-8 mobile:left-4 tablet:bottom-13 tablet:right-1 left-0 right-6 m-auto mobile:w-[5.2rem] mobile:h-[2.1rem] tablet:w-[7.3125rem] tablet:h-[3rem] desktop:bottom-14 desktop:right-9 bg-white bg-opacity-25 rounded-full opacity-0 hover:opacity-100 hover:duration-500 cursor-pointer z-40">
                   <button>
                     <img
                       src={playButton}
                       alt="playButton"
-                      className="mobile:w-[1.4rem] mobile:h-[1.4rem] tablet:w-[1.875rem] tablet:h-[1.875rem] ml-[0.56rem] mobile:mr-[0.6rem] tablet:mr-[1.19rem]"
+                      className="mobile:w-[1.4rem] mobile:h-[1.4rem] tablet:w-[1.875rem] tablet:h-[1.875rem] ml-[0.56rem] mobile:mr-[0.6rem] tablet:mr-[1.19rem] z-70"
                     />
                   </button>
                   <p className="mobile:heading-xs tablet:heading-s">Play</p>
@@ -66,7 +67,7 @@ export default function RecommendedForYou() {
                   srcSet={thumbnail.regular.medium}
                 />
                 <img
-                  className="w-[3rem] h-[1rem] max-w-[29.375rem] max-h-[14.375rem] mobile:w-[10.25rem] mobile:h-[6.875rem] tablet:w-[13.75rem] tablet:h-[8.75rem] rounded-[0.5rem] desktop:w-[17.5rem] desktop:h-[10.875rem] hover-elements"
+                  className="w-[3rem] h-[1rem] max-w-[29.375rem] max-h-[14.375rem] mobile:w-[10.25rem] mobile:h-[6.875rem] tablet:w-[13.75rem] tablet:h-[8.75rem] rounded-[0.5rem] desktop:w-[17.5rem] desktop:h-[10.875rem] group-hover/play:opacity-50 hover:duration-500"
                   src={thumbnail.regular.small}
                   alt={title}
                 />
@@ -74,13 +75,17 @@ export default function RecommendedForYou() {
             </div>
 
             <button
-              className="absolute mobile:top-[0.9rem] mobile:left-[8.60rem] tablet:top-[1rem] tablet:left-[13rem] desktop:left-[16.5rem] desktop:top-[1rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:fill-white hover:duration-500 hover-elements"
+              className="absolute mobile:top-[0.9rem] mobile:left-[8.60rem] tablet:top-[1rem] tablet:left-[13rem] desktop:left-[16.5rem] desktop:top-[1rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:fill-white hover:duration-500 hover-elements group/book hover:bg-white"
               onClick={() => toggleBookmark(id, isBookmarked)}
             >
               <img
                 src={isBookmarked ? bookmarkIconFull : bookmarkIconEmpty}
                 alt="Bookmark Icon"
-                className="m-auto"
+                className="m-auto group-hover/bookmark:invisible"
+              />
+              <img
+                className="m-auto group-hover/book:visible invisible absolute top-0 right-0"
+                src={bookmarkIconHover}
               />
             </button>
 
