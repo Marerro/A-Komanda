@@ -38,7 +38,7 @@ export default function RecommendedForYou() {
 
   // Card rendering
   const renderMovieCards = (movies) => (
-    <div className="bg-[#10141E] m-auto gap-3 grid desktop:grid-cols-4 desktop:w-[90rem] desktop:h-[131.5625rem] mobile:grid-cols-2 mobile:w-[23.4375rem] tablet:grid-cols-3 tablet:w-[48rem]">
+    <div className="bg-[#10141E] m-auto desktop:gap-1 grid desktop:grid-cols-4 desktop:w-[90rem] desktop:h-[131.5625rem] mobile:grid-cols-2 mobile:w-[22.50rem] tablet:grid-cols-3 tablet:w-[48rem] mobile:ml-[0.5rem] mobile:mt-[0.4rem] mobile:gap-y-[0.39rem] ">
       {movies.map((movie) => {
         const { id, title, thumbnail, year, category, rating, isBookmarked } =
           movie;
