@@ -36,7 +36,7 @@ export default function Home() {
 
   const filteredData = query
     ? data.filter((movie) =>
-        movie.title.toLowerCase().startsWith(query.toLowerCase())
+        movie.title.toLowerCase().includes(query.toLowerCase())
       )
     : data.filter(
         (item) =>
