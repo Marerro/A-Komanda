@@ -136,7 +136,7 @@ export default function Bookmarks() {
         {showComponent ? (
           <div>
             <h1 className="text-white">
-              Found {filteredData.length} results for `{query}`
+              Found {filteredData.length} results for &quot;{query}&quot;
             </h1>
             {showShowsCard(filteredData)}
           </div>
