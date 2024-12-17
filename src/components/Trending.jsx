@@ -13,8 +13,9 @@ const Trending = () => {
   const [data, setData] = useState([]);
   const [update, setUpdate] = useState(0);
   const [error, setError] = useState("");
-  const [rating, setRating] = useState(0)
 
+
+  // Takes data from data.json file
   const fetchData = async () => {
     try {
       const data = await getAll();
@@ -24,8 +25,10 @@ const Trending = () => {
     }
   };
 
+  // useDraggable extension along with overflow are used for trending's section carousel
   const ref = useRef();
   const { events } = useDraggable(ref);
+
 
   useEffect(() => {
     fetchData();
@@ -78,6 +81,7 @@ const Trending = () => {
               <img className="m-auto invisible group-hover/bookmark:visible absolute top-0 right-0" src={bookmarkIconHover} />
             </button>
 
+            // Filters only isTrending = true movies/shows
             if (isTrending) {
               return (
                 <div key={show.id} className="relative group/play">
