@@ -75,7 +75,7 @@ export default function RecommendedForYou() {
             </div>
 
             <button
-              className="absolute mobile:top-[0.9rem] mobile:left-[8.60rem] tablet:top-[1rem] tablet:left-[13rem] desktop:left-[16.5rem] desktop:top-[1rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:fill-white hover:duration-500 hover-elements group/book hover:bg-white"
+              className="absolute mobile:top-[1.0rem] mobile:left-[8.30rem] tablet:top-[1rem] tablet:left-[13rem] desktop:left-[16.5rem] desktop:top-[1rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:fill-white hover:duration-500 hover-elements group/book hover:bg-white"
               onClick={() => toggleBookmark(id, isBookmarked)}
             >
               <img
@@ -89,26 +89,36 @@ export default function RecommendedForYou() {
               />
             </button>
 
-            <div className="flex place-items-center card_content text-[#FFF]/[0.75] ml-[0.5rem] gap-[0.5rem;] text-[0.6875rem] tablet:ml-[1.56rem] tablet:gap-[0.5rem]">
-              <p>{year}</p>
-              <span>&#8226;</span>
+            <div className="flex place-items-center card_content text-[#FFF]/[0.75] ml-[0.5rem] gap-[0.5rem;] mobile:gap-[0.8rem] text-[0.6875rem] tablet:ml-[1.56rem] tablet:gap-[0.5rem]">
+              <p className="mobile:mt-[-0.20rem] mobile:size-[0.6875rem]">
+                {year}
+              </p>
+              <span className="mobile:translate-x-[0.2rem] mobile:translate-y-[-0.1rem]">
+                &#8226;
+              </span>
               {category === "Movie" && (
                 <img
-                  className="w-[0.625rem] shrink h-[0.625rem]"
+                  className="w-[0.625rem] shrink h-[0.625rem] mobile:translate-y-[-0.06rem] mobile:translate-x-[-0.15rem]"
                   src={category_movie}
                   alt="Movie Icon"
                 />
               )}
               {category === "TV Series" && (
                 <img
-                  className="w-[0.625rem] shrink h-[0.625rem]"
+                  className="w-[0.625rem] shrink h-[0.625rem] mobile:translate-y-[-0.0rem] mobile:translate-x-[-0.36rem]"
                   src={category_TV}
                   alt="TV Icon"
                 />
               )}
-              <p>{category}</p>
-              <span>&#8226;</span>
-              <p>{rating}</p>
+              <p className="mobile:mr-[-4px] mobile:mt-[-0.20rem] mobile:translate-x-[-0.57rem] mobile:size-[0.6875rem]">
+                {category}
+              </p>
+              <span className="mobile:translate-x-[0.15rem] mobile:translate-y-[-0.1rem]">
+                &#8226;
+              </span>
+              <p className="mobile:mt-[-0.20rem] mobile:translate-x-[-0.4rem] mobile:translate-y-[-0.1rem] mobile:size-[0.6875rem]">
+                {rating}
+              </p>
             </div>
 
             <p className="text-[#FFF] text-[0.875rem] mobile:ml-[0.5rem] tablet:ml-[1.56rem]">
