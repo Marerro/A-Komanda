@@ -33,7 +33,7 @@ export default function Navigation() {
     <>
       <div className="flex justify-between desktop:justify-normal items-center flex-row desktop:flex-col z-30 sticky top-0 tablet:top-6 desktop:fixed desktop:top-8 desktop:bottom-8 desktop:max-h-[60rem] desktop:left-8 bg-semi-dark-blue tablet:m-6 tablet:rounded-[0.625rem] desktop:rounded-[1.25rem] desktop:m-0 desktop:min-w-24">
         <img
-          className="m-4 h-5 w-auto tablet:h-6 tablet:w-8 tablet:m-6 desktop:w-8 desktop:m-[2.2rem]"
+          className="m-4 h-5 w-auto tablet:h-6 tablet:w-8 tablet:m-6 desktop:w-8 desktop:mx-8 desktop:my-[2.2rem]"
           src={logo}
           alt="logo"
         />

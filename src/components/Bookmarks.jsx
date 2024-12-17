@@ -50,8 +50,7 @@ export default function Bookmarks() {
   };
 
   /**
-   * return array of movie/tv series mapped onto a grid,
-   * mobile 2 col
+   * return array of movie/tv series mapped onto a grid
    */
   const showShowsCard = (shows) => {
     return (
@@ -125,7 +124,7 @@ export default function Bookmarks() {
   return (
     <div className="desktop:ml-32">
       <Navigation />
-        <Searchbar setShowComponent={setShowComponent} page={"bookmarks"} />
+      <Searchbar setShowComponent={setShowComponent} page={"bookmarks"} />
       {!showComponent && (
         <div className="mb-8">
           <div>
