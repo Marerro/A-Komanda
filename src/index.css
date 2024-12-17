@@ -4,15 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Trending section's scrollbar hide on different browsers */
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
-    display: none;
+    display: none; /* Chrome & Safari */
   }
-
-  body::-webkit-scrollbar {
-    display: none;
+  .no-scrollbar{
+    -ms-overflow-style: none;  /* Internet Explorer */
+    scrollbar-width: none; /* Firefox */
   }
-
 }
 
 @layer base {
@@ -67,15 +68,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-
-.trending-tabl-desk {
-  font-family: Outfit;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.03125rem;
 }
 
 input:focus {
