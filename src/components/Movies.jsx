@@ -31,7 +31,7 @@ export default function Movies() {
       console.error("Duomenys nebuvo gauti iš endpoint", error);
     }
   };
-  
+
   const filterMovies = (query) => {
     setQuery(query);
     if (!query) {
@@ -40,13 +40,13 @@ export default function Movies() {
       );
     } else {
       const lowerCaseQuery = query.toLowerCase();
- 
+
       const filteredMovies = data.filter(
         (movie) =>
           movie.category.toLowerCase() === "movie" &&
           movie.title.toLowerCase().startsWith(lowerCaseQuery)
       );
- 
+
       setOnlyMovies(filteredMovies);
     }
   };
@@ -91,29 +91,29 @@ export default function Movies() {
 
                 {/* Info Section */}
                 <div className="">
-                <div className="flex gap-[0.25rem] mobile:gap-[0.25rem] tablet:gap-[0.5rem] desktop:gap-[0.4rem] body-s tablet:body-s desktop:body-s mt-[0.7rem] mobile:mt-[0.3rem] tablet:mt-[0.5rem] desktop:mt-[0.5rem]  opacity-75 text-[0.6875rem] tablet:text-[0.8125rem] desktop:text-[0.8125rem]">
-                  <p className="">{year}</p>
-                  <span className="">&#8226;</span>
-                  {category.toLowerCase() === "movie" && (
-                    <img
-                      className="w-[0.625rem]  h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.75rem] desktop:w-[0.75rem] desktop:h-[0.75rem] mobile:translate-y-[0.20rem] translate-y-[0.3rem]"
-                      src={category_movie}
-                      alt="Category Icon"
-                    />
-                  )}
-                  <p className="">{category}</p>
-                  <span className="">&#8226;</span>
-                  <p className="">{rating}</p>
+                  <div className="flex gap-[0.3rem] mobile:gap-[0.3rem] tablet:gap-[0.415rem] desktop:gap-[0.4rem] body-s tablet:body-s desktop:body-s mt-[0.4rem] mobile:mt-[0.4rem] tablet:mt-[0.5rem]  desktop:mt-[0.5rem]  opacity-75 text-[0.6875rem] tablet:text-[0.8125rem] desktop:text-[0.8125rem]">
+                    <p className="">{year}</p>
+                    <span className="">&#8226;</span>
+                    {category.toLowerCase() === "movie" && (
+                      <img
+                        className="w-[0.625rem]  h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.75rem] desktop:w-[0.75rem] desktop:h-[0.75rem] mobile:translate-y-[0.20rem] translate-y-[0.3rem]"
+                        src={category_movie}
+                        alt="Category Icon"
+                      />
+                    )}
+                    <p className="">{category}</p>
+                    <span className="">&#8226;</span>
+                    <p className="">{rating}</p>
+                  </div>
+                  <p className="section-s mobile:section-s tablet:heading-xs desktop:heading-xs tablet:mb-[-0.25rem] mobile:mb-[0.05rem] mb-[0.05rem] desktop:mb-[-0.7rem]">
+                    {title}
+                  </p>
                 </div>
-                <p className="mt-[0.1rem] tablet:mt-[-0.3rem]    desktop:mt-[-0.4rem]   section-s mobile:section-s tablet:heading-xs desktop:heading-xs">
-                  {title}
-                </p>
-                </div>
-                
+
 
                 {/* Bookmark Button */}
                 <button
-                  className="group/book absolute right-[0.5rem] tablet:right-[1rem] top-2 tablet:top-[1rem] bg-slate-900/50 w-8 h-8 rounded-full hover:bg-white"
+                  className="group/book absolute right-[0.5rem] tablet:right-[1rem] top-2 tablet:top-[0.95rem] desktop:top-[1.1rem] bg-slate-900/50 w-8 h-8 rounded-full hover:bg-white"
                   onClick={() => handleBookmark(id)}
                 >
                   <img
@@ -156,7 +156,7 @@ export default function Movies() {
         ) : (
           // Jei showComponent yra false, rodome visus filmus
           <div className="">
-            <h3 className="mx-[1rem] mobile:mx-[1rem] tablet:mx-[1.56rem] desktop:mx-[2.25rem] heading-xs tablet:heading-l desktop:heading-l  mb-[1.3rem] mt-[2.4rem] mobile:mt-[1.5rem]  mobile:mb-[1.5rem] tablet:mb-[1.4rem] tablet:mt-[1rem] desktop:mt-[0.8rem] desktop:mb-[2.2rem]">
+            <h3 className="mx-[1rem] mobile:mx-[1rem] tablet:mx-[1.56rem] desktop:mx-[2.25rem] heading-xs tablet:heading-l desktop:heading-l  mb-[1.4rem] mt-[1.4rem] mobile:mt-[1.4rem]  mobile:mb-[1.5rem] tablet:mt-[0.65rem]   desktop:mt-[0.9rem] desktop:mb-[2.2rem] tracking-tighter">
               Movies
             </h3>
             {renderMovieCards(onlyMovies)}
