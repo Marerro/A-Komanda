@@ -56,14 +56,14 @@ export default function Bookmarks() {
 
   const showShowsCard = (shows) => {
     return (
-      <div className="grid grid-cols-2 gap-4 ml-4 mr-4 tablet:ml-6 tablet:mr-6 tablet:grid-cols-3 tablet:gap-x-7 tablet:gap-y-6 desktop:ml-9 desktop:grid-cols-4 desktop:gap-x-10 desktop:gap-y-8">
+      <div className="grid grid-cols-2 gap-3 ml-4 mr-4 tablet:ml-6 tablet:mr-6 tablet:grid-cols-3 tablet:gap-x-7 tablet:gap-y-[1.3rem] desktop:ml-9 desktop:grid-cols-4 desktop:gap-x-10 desktop:gap-y-8">
         {shows.map((show) => (
           <div
             key={show.title + show.year}
             className="relative justify-self-center"
           >
             <button
-              className="group/book absolute right-2 top-2 bg-dark-blue/50 w-8 h-8 rounded-full hover:bg-white z-10"
+              className="group/book absolute right-2 top-2 bg-dark-blue/50 w-8 h-8 rounded-full hover:bg-white z-10 tablet:top-4 tablet:right-4"
               onClick={() => unbookmarShow(show.id)}
             >
               <img
@@ -96,18 +96,18 @@ export default function Bookmarks() {
                 />
               </picture>
             </div>
-            <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mb-[0.3rem] mt-2 tablet:h-4 tablet:text-bs">
+            <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mb-1 mt-2 tablet:h-4 tablet:text-bs">
               <p>{show.year}</p> <span className="p-[0.4rem]">&#8226;</span>
               {show.category.toLowerCase() === "movie" && (
                 <img
-                  className="mr-1 desktop:mr-2 w-[0.3rem]"
+                  className="mr-1 desktop:mr-2 w-[0.3rem] tablet:w-3"
                   src={moviesIcon}
                   alt="movie"
                 />
               )}
               {show.category.toLowerCase() === "tv series" && (
                 <img
-                  className="mr-1 desktop:mr-2 w-[0.3rem]"
+                  className="mr-1 desktop:mr-2 w-[0.3rem] tablet:w-3"
                   src={tvSeriesIcon}
                   alt="tv series"
                 />
@@ -142,12 +142,12 @@ export default function Bookmarks() {
           </div>
         ) : (
           <div>
-            <h1 className="heading-xs ml-4 my-6 tablet:heading-l tablet:ml-6 tablet:mb-6 desktop:ml-9 desktop:mb-8">
+            <h1 className="heading-xs ml-4 my-6 tablet:heading-l tablet:ml-6 tablet:mt-4 tablet:mb-5 desktop:ml-9 desktop:mb-8">
               Bookmarked Movies
             </h1>
             {showShowsCard(bookmarkedMovies)}
 
-            <h1 className="heading-xs ml-4 mt-6 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-6 tablet:mb-6 desktop:ml-9 desktop:mt-8 desktop:mb-8">
+            <h1 className="heading-xs ml-4 mt-6 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-9 tablet:mb-6 desktop:ml-9 desktop:mt-8 desktop:mb-8">
               Bookmarked TV Series
             </h1>
             {showShowsCard(bookmarkedTVSeries)}
