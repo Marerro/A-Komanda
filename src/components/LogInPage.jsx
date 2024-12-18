@@ -77,9 +77,8 @@ const LogInPage = () => {
                 // If the error occurs, sets input border red
                 // Tailwind autofill class, leaves original CSS
                 // Calls setError state to remove the error when user starts typing
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
-                  errors.email ? "border-red" : "greyish-blue"
-                }`}
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${errors.email ? "border-red" : "greyish-blue"
+                  }`}
                 onInput={() => setError("")}
               />
               {/* Separation of errors by checking their type and placing them differently*/}
@@ -93,11 +92,11 @@ const LogInPage = () => {
               <div className="relative">
                 {errors.email?.type === "pattern" && (
                   <p className="error-text text-red absolute top-[0.1rem] left-[0.5rem]">
-                   Invalid email address
+                    Invalid email address
                   </p>
                 )}
               </div>
-              
+
             </div>
 
             {/* Password input window */}
@@ -107,9 +106,8 @@ const LogInPage = () => {
                 id="password"
                 placeholder="Password"
                 {...register("password", { required: "Can't be empty" })}
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
-                  errors.password ? "border-red" : "greyish-blue"
-                }`}
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${errors.password ? "border-red" : "greyish-blue"
+                  }`}
                 onInput={() => setError("")}
               />
               <div className="relative">
