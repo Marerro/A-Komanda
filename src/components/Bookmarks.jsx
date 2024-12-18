@@ -96,7 +96,7 @@ export default function Bookmarks() {
                 />
               </picture>
             </div>
-            <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mb-1 mt-2 tablet:h-4 tablet:text-bs desktop:mt-3">
+            <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mb-1 mt-2 tablet:h-4 tablet:text-bs">
               <p>{show.year}</p> <span className="p-[0.4rem]">&#8226;</span>
               {show.category.toLowerCase() === "movie" && (
                 <img
@@ -142,12 +142,12 @@ export default function Bookmarks() {
           </div>
         ) : (
           <div>
-            <h1 className="heading-xs ml-4 my-6 tablet:heading-l tablet:ml-6 tablet:mt-4 tablet:mb-5 desktop:ml-9 desktop:mb-8">
+            <h1 className="heading-xs ml-4 my-6 tablet:heading-l tablet:ml-6 tablet:mt-4 tablet:mb-5 desktop:ml-9 desktop:mb-[2.15rem]">
               Bookmarked Movies
             </h1>
             {showShowsCard(bookmarkedMovies)}
 
-            <h1 className="heading-xs ml-4 mt-6 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-9 tablet:mb-6 desktop:ml-9 desktop:mt-8 desktop:mb-8">
+            <h1 className="heading-xs ml-4 mt-6 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-9 tablet:mb-6 desktop:ml-9 desktop:mt-8 desktop:mb-[2.15rem]">
               Bookmarked TV Series
             </h1>
             {showShowsCard(bookmarkedTVSeries)}
