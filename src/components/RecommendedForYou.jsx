@@ -38,7 +38,7 @@ export default function RecommendedForYou() {
 
   // Card rendering
   const renderMovieCards = (movies) => (
-    <div className="bg-[#10141E] desktop:gap-1 grid desktop:grid-cols-4 desktop:w-[90rem] desktop:h-[131.5625rem] mobile:grid-cols-2 mobile:w-[22.50rem] tablet:grid-cols-3 tablet:w-[48rem] tablet:pl-[1.04rem] tablet:mt-[1.0rem] mobile:ml-[0.5rem] mobile:mt-[0.4rem] mobile:gap-y-[0.39rem] tablet:gap-y-[4.7rem] m-0 ">
+    <div className="bg-[#10141E] grid desktop:grid-cols-4  desktop:gap-x-[6.4rem] desktop:px-[6rem]  mobile:grid-cols-2 tablet:grid-cols-3  desktop:pl-[1.74rem] tablet:pl-[1.04rem] tablet:mt-[1.0rem] mobile:ml-[0.5rem] mobile:mt-[0.4rem] mobile:gap-y-[0.39rem] tablet:gap-y-[4.7rem] desktop:gap-y-[5.2rem] desktop:space-y-[-1.rem] m-0 ">
       {movies.map((movie) => {
         const { id, title, thumbnail, year, category, rating, isBookmarked } =
           movie;
@@ -46,7 +46,7 @@ export default function RecommendedForYou() {
         return (
           <div
             key={id}
-            className="relative group/play tablet:w-[13.75rem] tablet:h-[8.75rem]"
+            className="relative group/play tablet:w-[13.75rem] tablet:h-[8.75rem] desktop:w-[17.5rem] desktop:h-[10.875rem]"
           >
             <div className="mobile:m-[0.5rem] min-h-[0.5rem] tablet:m-[0] z-20">
               <picture>
@@ -78,7 +78,7 @@ export default function RecommendedForYou() {
             </div>
 
             <button
-              className="absolute mobile:top-[1.0rem] mobile:left-[8.30rem] tablet:top-[0.95rem] tablet:left-[10.8rem] desktop:left-[16.5rem] desktop:top-[1rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:fill-white hover:duration-500 hover-elements group/book hover:bg-white"
+              className="absolute mobile:top-[1.0rem] mobile:left-[8.30rem] tablet:top-[0.95rem] tablet:left-[10.8rem] desktop:left-[14.5rem] desktop:top-[1rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:fill-white hover:duration-500 hover-elements group/book hover:bg-white"
               onClick={() => toggleBookmark(id, isBookmarked)}
             >
               <img
@@ -92,7 +92,7 @@ export default function RecommendedForYou() {
               />
             </button>
 
-            <div className="flex place-items-center card_content text-[#FFF]/[0.75] ml-[0.5rem] gap-[0.5rem;] mobile:gap-[0.8rem] text-[0.6875rem] tablet:text-[0.8125rem] tablet:gap-[0.85rem] tablet:">
+            <div className="flex place-items-center card_content text-[#FFF]/[0.75] ml-[0.5rem] gap-[0.5rem;] mobile:gap-[0.8rem] text-[0.6875rem] tablet:text-[0.8125rem] tablet:gap-[0.8rem] tablet:">
               <p className="mobile:mt-[-0.20rem] mobile:size-[0.6875rem] mobile:translate-y-[-0.13rem] tablet:translate-y-[0.1rem] tablet:translate-x-[-0.48rem]">
                 {year}
               </p>
@@ -101,14 +101,14 @@ export default function RecommendedForYou() {
               </span>
               {category === "Movie" && (
                 <img
-                  className="w-[0.625rem] shrink h-[0.625rem] mobile:translate-y-[-0.1rem] mobile:translate-x-[-0.15rem] tablet:translate-y-[0.3rem] tablet:translate-x-[-0.2rem]"
+                  className="w-[0.625rem] shrink h-[0.625rem] mobile:translate-y-[-0.1rem] mobile:translate-x-[-0.15rem] tablet:translate-y-[0.3rem] tablet:translate-x-[-0.2rem] tablet:w-[0.75rem] tablet:h-[0.75rem]"
                   src={category_movie}
                   alt="Movie Icon"
                 />
               )}
               {category === "TV Series" && (
                 <img
-                  className="w-[0.625rem] shrink h-[0.625rem] mobile:translate-y-[-0.08rem] mobile:translate-x-[-0.15rem] tablet:translate-y-[0.4rem] tablet:translate-x-[-0.3rem]"
+                  className="w-[0.625rem] shrink h-[0.625rem] mobile:translate-y-[-0.08rem] mobile:translate-x-[-0.15rem] tablet:translate-y-[0.4rem] tablet:translate-x-[-0.3rem] tablet:w-[0.75rem] tablet:h-[0.75rem]"
                   src={category_TV}
                   alt="TV Icon"
                 />
@@ -135,8 +135,8 @@ export default function RecommendedForYou() {
 
   return (
     <>
-      <div className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[1.05rem] tablet:pb-0 recommended_container tablet:mt-[2rem] tablet:mb-[2.5rem]">
-        <h3 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:mt-[1.4rem] mobile:pb-[1rem] tablet:pl-[0.5rem] tablet:pb-0 tablet:size-[2rem] tablet:w-[25rem] tablet:tracking-[-0.03125rem;] tablet:mt-[0rem] desktop:pr-[60.25rem] font-outfit mobile:size-[1.25rem] mobile:w-[25rem] mobile:font-[400] mobile:leading-normal mobile:tracking-[0.0453rem]">
+      <div className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[1.05rem] tablet:pb-0 recommended_container tablet:mt-[2rem] tablet:mb-[2.5rem] desktop:mt-[2.5rem]">
+        <h3 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:mt-[1.4rem] mobile:pb-[1rem] tablet:pl-[0.5rem] tablet:pb-0 tablet:size-[2rem] tablet:w-[25rem] desktop:w-[25rem] tablet:tracking-[-0.03125rem;] tablet:mt-[0rem] font-outfit mobile:size-[1.25rem] desktop:pl-[1.25rem] mobile:w-[25rem] mobile:font-[400] mobile:leading-normal mobile:tracking-[0.0453rem]">
           Recommended for you
         </h3>
       </div>
