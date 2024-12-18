@@ -1,22 +1,25 @@
-import TvSeries from "./components/TvSeries";
-import Movies from "./components/Movies";
-import SignUpPage from "./components/SignUpPage";
 import { Route, Routes } from "react-router";
 import LogInPage from "./components/LogInPage";
-import Home from "./components/Home";
-import Bookmarks from "./components/Bookmarks";
+import { lazy, Suspense } from "react";
+import Loading from "./components/Loading";
+const LazySignUpPage = lazy(()=> import ("./components/SignUpPage"))
+const LazyHome = lazy(()=> import ("./components/Home"))
+const LazyMovies = lazy(()=>import("./components/Movies"))
+const LazyTvSeries = lazy(()=> import("./components/TvSeries") )
+const LazyBookmarks = lazy(()=> import("./components/Bookmarks") )
+
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<LogInPage />} />
-        <Route path="/login" element={<LogInPage />} />
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/tvseries" element={<TvSeries />} />
-        <Route path="/bookmarks" element={<Bookmarks />} />
+        <Route path="/" element={<Suspense fallback={<Loading/>}><LogInPage /></Suspense>} />
+        <Route path="/login" element={<Suspense fallback={<Loading/>}><LogInPage /></Suspense>} />
+        <Route path="/signup" element={<Suspense fallback={<Loading/>}><LazySignUpPage /></Suspense>} />
+        <Route path="/home" element={<Suspense fallback={<Loading/>}><LazyHome /></Suspense>} />
+        <Route path="/movies" element={<Suspense fallback={<Loading/>}><LazyMovies /></Suspense>} />
+        <Route path="/tvseries" element={<Suspense fallback={<Loading/>}><LazyTvSeries /></Suspense>} />
+        <Route path="/bookmarks" element={<Suspense fallback={<Loading/>}><LazyBookmarks /></Suspense>} />
       </Routes>
     </>
   );
