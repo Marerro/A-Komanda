@@ -76,7 +76,7 @@ export default function Bookmarks() {
               />
             </button>
             <div className="group/play relative">
-              <div className="group-hover/play:visible invisible flex justify-around absolute bg-white/25 rounded-full w-[7.25rem] h-11 m-auto top-0 bottom-0 left-0 right-0">
+              <div className="group-hover/play:visible invisible flex justify-around absolute bg-white/25 rounded-full w-[7.25rem] h-11 m-auto top-0 bottom-0 left-0 right-0 z-10">
                 <img className="m-2 w-7 h-7" src={playIcon} />
                 <p className="heading-xs mt-2 mb-2 ml-5 mr-5">Play</p>
               </div>
