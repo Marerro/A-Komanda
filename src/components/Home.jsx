@@ -139,8 +139,8 @@ export default function Home() {
         ) : (
           <div>{!renderCards(data)}</div>
         )}
-        {!showComponent && <Trending />}
-        {!showComponent && <RecommendedForYou />}
+        {!showComponent && <Trending update={update} setUpdate={setUpdate}/>}
+        {!showComponent && <RecommendedForYou update={update} setUpdate={setUpdate}/>}
       </div>
     </>
   );

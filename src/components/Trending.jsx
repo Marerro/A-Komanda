@@ -9,9 +9,8 @@ import { useDraggable } from "react-use-draggable-scroll";
 import { patchData } from "../helpers/update";
 import playButton from "@assets/icon-play.svg"
 
-const Trending = () => {
+const Trending = ({update, setUpdate}) => {
   const [data, setData] = useState([]);
-  const [update, setUpdate] = useState(0);
   const [error, setError] = useState("");
 
 
