@@ -50,7 +50,7 @@ function SearchBar({ showComponent, setShowComponent, page, onSearch, refresh })
   }
 
   useEffect(()=>{
-    redrawSelf(refresh);
+    redrawSelf();
   },[refresh])
 
   const placeholderBasedOnLocation = () => {

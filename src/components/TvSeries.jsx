@@ -24,7 +24,7 @@ export default function TvSeries() {
       const data = await response.json();
       setData(data);
       const tvseries = data.filter(
-        (itemData) => itemData.category === "tv series"
+        (itemData) => itemData.category.toLowerCase() === "tv series"
       );
       setOnlyTVseries(tvseries);
     } catch (error) {
@@ -34,7 +34,7 @@ export default function TvSeries() {
 
   useEffect(() => {
     getTvSeries();
-  }, [update]);
+  }, [update, refresh]);
 
   const filterSearchBarSeries = (query) => {
     setQuery(query);
@@ -53,12 +53,6 @@ export default function TvSeries() {
       setOnlyTVseries(filteredTVSeries);
     }
   };
-
-  useEffect(() => {
-    if (data.length) {
-      filterSearchBarSeries(query);
-    }
-  }, [query, data]);
 
   const renderTvSeries = (series) => {
     return (

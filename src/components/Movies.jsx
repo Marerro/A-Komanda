@@ -54,7 +54,7 @@ export default function Movies() {
 
   useEffect(() => {
     getMovies();
-  }, [update]);
+  }, [update, refresh]);
 
   const renderMovieCards = (movies) => {
     return (
@@ -151,7 +151,7 @@ export default function Movies() {
           // Jei showComponent yra true rodome filtruotus filmus
           <div>
             <h1 className="text-white">
-              Found {onlyMovies.length} results for "{query}"
+              Found {onlyMovies.length} results for &quot;{query}&quot;
             </h1>
             {renderMovieCards(onlyMovies)}
           </div>
