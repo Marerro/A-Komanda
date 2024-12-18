@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { getAll } from "../helpers/get"
 import movieIcon from "@assets/icon-category-movie.svg"
-import tvSeries from "@assets/icon-category-tv.svg"
+import tvSeriesIcon from "@assets/icon-category-tv.svg"
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg"
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg"
 import bookmarkIconHover from "@assets/bookmark_onHover.svg"
@@ -73,6 +73,16 @@ const Trending = () => {
               setUpdate((prev) => prev + 1);
             };
 
+
+            // Different icons, based on the movie category
+            const icon = () => {
+              if (category === "Movie") {
+                return movieIcon;
+              } else if (category === "TV Series") {
+                return tvSeriesIcon;
+              }
+            };
+
             const bookMarking = isBookmarked ? <button onClick={() => unBookmark(id)} className="absolute top-[0.5rem] right-[0.5rem] mobile:top-[0.5rem] mobile:right-[0.5rem] tablet:top-[1rem] tablet:right-[1.5rem] bg-dark-blue/50 w-8 h-8 rounded-full group/bookmark z-50 ">
               <img className="m-auto group-hover/bookmark:invisible" src={bookmarkIconFull} />
               <img className="m-auto invisible group-hover/bookmark:visible absolute top-0 right-0" src={bookmarkIconHover} />
@@ -106,7 +116,7 @@ const Trending = () => {
                   <div className="absolute top-[5.37rem] left-[1rem] mobile:left-[1rem] tablet:top-[9.62rem] tablet:left-[1.5rem] flex place-items-center ">
                       <p className="text_above_title body-s mobile:body-s tablet:body-m mr-[0.4rem]">{year}</p>
                       <p className="text_above_title body-s mobile:body-s tablet:body-m">&#8226;</p>
-                      <img src={movieIcon} alt="MovieIcon" className="text_above_title mr-[0.36rem] ml-[0.41rem] mobile:mr-[0.36rem] mobile:ml-[0.42rem] tablet:ml-[0.53rem] tablet:mt-[0.1rem]" />
+                      <img src={icon()} alt="show_icon" className="text_above_title mr-[0.36rem] ml-[0.41rem] mobile:mr-[0.36rem] mobile:ml-[0.42rem] tablet:ml-[0.53rem] tablet:mt-[0.1rem]" />
                       <p className="text_above_title body-s mobile:body-s tablet:body-m">{category}</p>
                       <p className="text_above_title body-s mobile:body-s mx-[0.4rem] mobile:mx-[0.4rem] tablet:mx-[0.5rem] desktop:mx-[0.48rem] tablet:body-m">&#8226;</p>
                       <p className="text_above_title body-s mobile:body-s mr-[0.5rem] mobile:mr-[0.5rem] tablet:body-m tablet:mr-[5rem]">{rating}</p>
