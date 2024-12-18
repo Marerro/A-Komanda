@@ -16,6 +16,7 @@ export default function Home() {
   const [data, setData] = useState([]);
   const [update, setUpdate] = useState(0);
   const [query, setQuery] = useState("");
+  const [refresh, setRefresh] = useState(0);  
 
   const getMovies = async () => {
     try {
@@ -120,17 +121,18 @@ export default function Home() {
 
   return (
     <>
-      <Navigation />
+      <Navigation setRefresh={setRefresh}/>
       <div className="desktop:ml-32">
         <Searchbar
           showComponent={showComponent}
           setShowComponent={setShowComponent}
           onSearch={userInput}
+          refresh={refresh}
         />
         {showComponent ? (
           <div>
             <h1 className="text-white">
-              Found {filteredData.length} results for "{query}"
+              Found {filteredData.length} results for &quot;{query}&quot;
             </h1>
             {renderCards(filteredData)}
           </div>

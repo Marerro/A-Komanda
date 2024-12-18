@@ -15,6 +15,7 @@ export default function Movies() {
   const [showComponent, setShowComponent] = useState(false);
   const [onlyMovies, setOnlyMovies] = useState([]);
   const [query, setQuery] = useState("");
+  const [refresh, setRefresh] = useState(0);  
 
   const url = "http://localhost:5000/data";
 
@@ -137,12 +138,13 @@ export default function Movies() {
 
   return (
     <>
-      <Navigation />
+      <Navigation setRefresh={setRefresh}/>
       <section className="desktop:ml-32">
         <SearchBar
           setShowComponent={setShowComponent}
           page={"movies"}
           onSearch={filterMovies}
+          refresh={refresh}
         />
 
         {showComponent ? (
