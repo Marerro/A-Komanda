@@ -15,6 +15,7 @@ export default function Bookmarks() {
   const [update, setUpdate] = useState(0);
   const [query, setQuery] = useState("");
   const [showComponent, setShowComponent] = useState(false);
+  const [refresh, setRefresh] = useState(0);  
 
   const getShows = async () => {
     try {
@@ -76,7 +77,7 @@ export default function Bookmarks() {
               />
             </button>
             <div className="group/play relative">
-              <div className="group-hover/play:visible invisible flex justify-around absolute bg-white/25 rounded-full w-[7.25rem] h-11 m-auto top-0 bottom-0 left-0 right-0">
+              <div className="group-hover/play:visible invisible flex justify-around absolute bg-white/25 rounded-full w-[7.25rem] h-11 m-auto top-0 bottom-0 left-0 right-0 z-10">
                 <img className="m-2 w-7 h-7" src={playIcon} />
                 <p className="heading-xs mt-2 mb-2 ml-5 mr-5">Play</p>
               </div>
@@ -96,7 +97,7 @@ export default function Bookmarks() {
                 />
               </picture>
             </div>
-            <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mb-1 mt-2 tablet:h-4 tablet:text-bs desktop:mt-3">
+            <div className="text-ms text-white font-medium opacity-75 flex flex-row justify-start items-center h-[0.825rem] mb-1 mt-2 tablet:h-4 tablet:text-bs">
               <p>{show.year}</p> <span className="p-[0.4rem]">&#8226;</span>
               {show.category.toLowerCase() === "movie" && (
                 <img
@@ -126,11 +127,12 @@ export default function Bookmarks() {
 
   return (
     <div className="desktop:ml-32">
-      <Navigation />
+      <Navigation setRefresh={setRefresh}/>
       <Searchbar
         setShowComponent={setShowComponent}
         page={"bookmarks"}
         onSearch={userInput}
+        refresh={refresh}
       />
       <div className="mb-8">
         {showComponent ? (
@@ -142,12 +144,12 @@ export default function Bookmarks() {
           </div>
         ) : (
           <div>
-            <h1 className="heading-xs ml-4 my-6 tablet:heading-l tablet:ml-6 tablet:mt-4 tablet:mb-5 desktop:ml-9 desktop:mb-8">
+            <h1 className="heading-xs ml-4 my-6 tablet:heading-l tablet:ml-6 tablet:mt-4 tablet:mb-5 desktop:ml-9 desktop:mb-[2.15rem]">
               Bookmarked Movies
             </h1>
             {showShowsCard(bookmarkedMovies)}
 
-            <h1 className="heading-xs ml-4 mt-6 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-9 tablet:mb-6 desktop:ml-9 desktop:mt-8 desktop:mb-8">
+            <h1 className="heading-xs ml-4 mt-6 mb-4 tablet:heading-l tablet:ml-6 tablet:mt-9 tablet:mb-6 desktop:ml-9 desktop:mt-8 desktop:mb-[2.15rem]">
               Bookmarked TV Series
             </h1>
             {showShowsCard(bookmarkedTVSeries)}

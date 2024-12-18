@@ -2,14 +2,16 @@ import { useEffect } from "react";
 import { getAll } from "../helpers/get";
 import { useState } from "react";
 import icon_search from "@assets/icon-search.svg";
-import { useLocation } from "react-router";
+import { useLocation, useSearchParams } from "react-router";
 import { useForm } from "react-hook-form";
 
 // page says what page is search on, if page = null, then search works on all shows
-function SearchBar({ showComponent, setShowComponent, page, onSearch }) {
+function SearchBar({ showComponent, setShowComponent, page, onSearch, refresh }) {
   const [movies, setMovies] = useState([]);
   const [input, setInput] = useState("");
   const location = useLocation();
+  const [searchParam, setSearchParam] = useSearchParams();
+  
   const {
     register,
     handleSubmit,
@@ -33,6 +35,7 @@ function SearchBar({ showComponent, setShowComponent, page, onSearch }) {
 
   const checkInput = (e) => {
     const query = e.target.value;
+    setSearchParam(query ? {search: query} : {});
     setInput(query); // Atnaujiname vartotojo įvestį
     setShowComponent(query.length > 0);
 
@@ -40,6 +43,15 @@ function SearchBar({ showComponent, setShowComponent, page, onSearch }) {
       onSearch(query); // Filtravimo logika perduodama į `Movies.jsx`
     }
   };
+
+  const redrawSelf = ()=>{
+    setInput("");
+    setShowComponent(false);
+  }
+
+  useEffect(()=>{
+    redrawSelf();
+  },[refresh])
 
   const placeholderBasedOnLocation = () => {
     if (location.pathname === "/home") {

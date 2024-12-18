@@ -16,6 +16,7 @@ export default function Home() {
   const [data, setData] = useState([]);
   const [update, setUpdate] = useState(0);
   const [query, setQuery] = useState("");
+  const [refresh, setRefresh] = useState(0);  
 
   const getMovies = async () => {
     try {
@@ -124,12 +125,13 @@ export default function Home() {
 
   return (
     <>
-      <Navigation />
+      <Navigation setRefresh={setRefresh}/>
       <div className="desktop:ml-32">
         <Searchbar
           showComponent={showComponent}
           setShowComponent={setShowComponent}
           onSearch={userInput}
+          refresh={refresh}
         />
         {showComponent ? (
           <div className="mt-[1.4rem] mobile:mt-[1.4rem] tablet:mt-[0.9rem] desktop:mt-[1rem]">
@@ -141,8 +143,8 @@ export default function Home() {
         ) : (
           <div>{!renderCards(data)}</div>
         )}
-        {!showComponent && <Trending />}
-        {!showComponent && <RecommendedForYou />}
+        {!showComponent && <Trending update={update} setUpdate={setUpdate}/>}
+        {!showComponent && <RecommendedForYou update={update} setUpdate={setUpdate}/>}
       </div>
     </>
   );
