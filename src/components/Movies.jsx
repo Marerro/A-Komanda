@@ -72,9 +72,9 @@ export default function Movies() {
               <div className="m-auto relative z-0">
                 {/* Thumbnail and Play Icon */}
                 <div className="group/play relative">
-                  <div className="group-hover/play:visible invisible flex justify-around absolute bg-white/25 rounded-full w-[7.25rem] h-11 m-auto top-0 bottom-0 left-0 right-0">
-                    <img className="m-2 w-7 h-7" src={playIcon} alt="Play" />
-                    <p className="heading-xs mt-2 mb-2 ml-5 mr-5">Play</p>
+                  <div className="group-hover/play:visible invisible flex justify-around absolute bg-white/25 rounded-full w-[7.25rem] h-11 m-auto top-0 bottom-0 left-0 right-0 z-40">
+                    <img className="m-2 w-7 h-7 z-40 " src={playIcon} alt="Play" />
+                    <p className="heading-xs mt-2 mb-2 ml-5 mr-5 z-40">Play</p>
                   </div>
                   <picture>
                     <source
@@ -82,7 +82,7 @@ export default function Movies() {
                       srcSet={thumbnail.regular.large}
                     />
                     <img
-                      className="rounded-lg group-hover/play:opacity-50"
+                      className="rounded-lg group-hover/play:opacity-50 hover:duration-500"
                       src={thumbnail.regular.small}
                       alt={title}
                     />

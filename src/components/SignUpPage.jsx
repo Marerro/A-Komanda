@@ -79,9 +79,8 @@ const SignUpPage = () => {
                 // If the error occurs, sets input border red
                 // Tailwind autofill class, leaves original CSS
                 // Calls setError state to remove the error when user starts typing
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.9rem] desktop:pb-[1.7rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
-                  errors.email ? "border-red" : "greyish-blue"
-                }`}
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.9rem] desktop:pb-[1.7rem] tablet:w-[21rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${errors.email ? "border-red" : "greyish-blue"
+                  }`}
                 onInput={() => setError("")}
               />
               {/* Separation of errors by checking their type and placing them differently*/}
@@ -115,9 +114,8 @@ const SignUpPage = () => {
                       "At least 8 characters, capital letter, symbol and number",
                   },
                 })}
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.9rem] tablet:w-[21rem] desktop:pb-[1.7rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
-                  errors.password ? "error-red" : "greyish-blue"
-                }`}
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.9rem] tablet:w-[21rem] desktop:pb-[1.7rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${errors.password ? "error-red" : "greyish-blue"
+                  }`}
                 onInput={() => setError("")}
               />
               <div className="relative">
@@ -150,9 +148,8 @@ const SignUpPage = () => {
                     }
                   },
                 })}
-                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.8rem] tablet:w-[21rem] desktop:pb-[1.75rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${
-                  errors.repeatPassword ? "border-red" : "greyish-blue"
-                }`}
+                className={`bg-semi-dark-blue border-0 border-b-[0.063rem] pb-7 pl-[1rem] tablet:pb-[1.8rem] tablet:w-[21rem] desktop:pb-[1.75rem] autofill:transition-colors autofill:duration-[999999999s] hover:opacity-100 hover:border-b-white form-input ${errors.repeatPassword ? "border-red" : "greyish-blue"
+                  }`}
                 onInput={() => setError("")}
               />
               <div className="relative">
