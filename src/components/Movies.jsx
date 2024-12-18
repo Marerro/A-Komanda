@@ -15,6 +15,7 @@ export default function Movies() {
   const [showComponent, setShowComponent] = useState(false);
   const [onlyMovies, setOnlyMovies] = useState([]);
   const [query, setQuery] = useState("");
+  const [refresh, setRefresh] = useState(0);  
 
   const url = "http://localhost:5000/data";
 
@@ -53,7 +54,7 @@ export default function Movies() {
 
   useEffect(() => {
     getMovies();
-  }, [update]);
+  }, [update, refresh]);
 
   const renderMovieCards = (movies) => {
     return (
@@ -137,19 +138,20 @@ export default function Movies() {
 
   return (
     <>
-      <Navigation />
+      <Navigation setRefresh={setRefresh}/>
       <section className="desktop:ml-32">
         <SearchBar
           setShowComponent={setShowComponent}
           page={"movies"}
           onSearch={filterMovies}
+          refresh={refresh}
         />
 
         {showComponent ? (
           // Jei showComponent yra true rodome filtruotus filmus
           <div>
             <h1 className="text-white">
-              Found {onlyMovies.length} results for "{query}"
+              Found {onlyMovies.length} results for &quot;{query}&quot;
             </h1>
             {renderMovieCards(onlyMovies)}
           </div>

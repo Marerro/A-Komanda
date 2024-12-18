@@ -15,6 +15,7 @@ export default function Bookmarks() {
   const [update, setUpdate] = useState(0);
   const [query, setQuery] = useState("");
   const [showComponent, setShowComponent] = useState(false);
+  const [refresh, setRefresh] = useState(0);  
 
   const getShows = async () => {
     try {
@@ -126,11 +127,12 @@ export default function Bookmarks() {
 
   return (
     <div className="desktop:ml-32">
-      <Navigation />
+      <Navigation setRefresh={setRefresh}/>
       <Searchbar
         setShowComponent={setShowComponent}
         page={"bookmarks"}
         onSearch={userInput}
+        refresh={refresh}
       />
       <div className="mb-8">
         {showComponent ? (
