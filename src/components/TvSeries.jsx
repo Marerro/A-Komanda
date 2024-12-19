@@ -14,6 +14,7 @@ export default function TvSeries() {
   const [showComponent, setShowComponent] = useState(false);
   const [onlyTVseries, setOnlyTVseries] = useState([]);
   const [query, setQuery] = useState("");
+  const [refresh, setRefresh] = useState(0);  
 
   const url = "http://localhost:5000/data";
 
@@ -23,7 +24,7 @@ export default function TvSeries() {
       const data = await response.json();
       setData(data);
       const tvseries = data.filter(
-        (itemData) => itemData.category === "tv series"
+        (itemData) => itemData.category.toLowerCase() === "tv series"
       );
       setOnlyTVseries(tvseries);
     } catch (error) {
@@ -33,7 +34,7 @@ export default function TvSeries() {
 
   useEffect(() => {
     getTvSeries();
-  }, [update]);
+  }, [update, refresh]);
 
   const filterSearchBarSeries = (query) => {
     setQuery(query);
@@ -52,12 +53,6 @@ export default function TvSeries() {
       setOnlyTVseries(filteredTVSeries);
     }
   };
-
-  useEffect(() => {
-    if (data.length) {
-      filterSearchBarSeries(query);
-    }
-  }, [query, data]);
 
   const renderTvSeries = (series) => {
     return (
@@ -167,12 +162,13 @@ export default function TvSeries() {
 
   return (
     <>
-      <Navigation />
+      <Navigation setRefresh={setRefresh}/>
       <section className="desktop:ml-32">
         <SearchBar
           setShowComponent={setShowComponent}
           onSearch={filterSearchBarSeries}
           page={"tvseries"}
+          refresh={refresh}
         />
         {showComponent ? (
           // if component true show filtered tvseries

@@ -15,6 +15,7 @@ export default function Movies() {
   const [showComponent, setShowComponent] = useState(false);
   const [onlyMovies, setOnlyMovies] = useState([]);
   const [query, setQuery] = useState("");
+  const [refresh, setRefresh] = useState(0);  
 
   const url = "http://localhost:5000/data";
 
@@ -53,7 +54,7 @@ export default function Movies() {
 
   useEffect(() => {
     getMovies();
-  }, [update]);
+  }, [update, refresh]);
 
   const renderMovieCards = (movies) => {
     return (
@@ -137,12 +138,13 @@ export default function Movies() {
 
   return (
     <>
-      <Navigation />
+      <Navigation setRefresh={setRefresh}/>
       <section className="desktop:ml-32">
         <SearchBar
           setShowComponent={setShowComponent}
           page={"movies"}
           onSearch={filterMovies}
+          refresh={refresh}
         />
 
         {showComponent ? (
@@ -150,6 +152,7 @@ export default function Movies() {
           <div className="mt-[1.4rem] mobile:mt-[1.4rem] tablet:mt-[0.8rem] desktop:mt-[1rem]">
             <h1 className="heading-xs mobile:heading-xs- tablet:heading-l tablet:tracking-[0.00215rem] mb-[1.3rem] mobile:mb-[1.3rem] tablet:mb-[1.21rem] desktop:mb-[1.76rem] ml-[1.01rem] mobile:ml-[1.01rem] tablet:ml-[1.55rem] desktop:ml-[2.25rem] found-text mobile:tracking-[-0.0195rem] tablet:tracking-[-0.03125rem] tracking-[-0.0195rem] text-[1.25rem] mobile:text-[1.25rem] tablet:text-[2rem]">
               Found {onlyMovies.length} results for '{query}'
+
             </h1>
             {renderMovieCards(onlyMovies)}
           </div>
