@@ -47,7 +47,7 @@ export default function Home() {
 
   const renderCards = (movies) => {
     return (
-      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] px-[0.97rem] mobile:px-[0.97rem] gap-x-[0.96rem] mobile:gap-x-[0.96rem] tablet:gap-x-[1.8rem] tablet:px-[1.55rem] desktop:px-[2.25rem]">
+      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] px-[0.97rem] gap-x-[0.96rem] mobile:px-[0.97rem] mobile:gap-x-[0.96rem] tablet:gap-x-[1.8rem] tablet:px-[1.55rem] desktop:px-[2.25rem]">
         {movies.map((movie) => {
           const { id, title, thumbnail, year, category, rating, isBookmarked } =
             movie;

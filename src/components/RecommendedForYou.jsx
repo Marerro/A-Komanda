@@ -6,12 +6,12 @@ import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 import playButton from "@assets/icon-play.svg";
 import bookmarkIconHover from "@assets/bookmark_onHover.svg";
-
+ 
 export default function RecommendedForYou({update, setUpdate}) {
   const [recommendMovies, setRecommendMovies] = useState([]);
-
+ 
   const url = "http://localhost:5000/data";
-
+ 
   const getRecommendedMovies = async () => {
     try {
       const response = await fetch(url);
@@ -21,11 +21,11 @@ export default function RecommendedForYou({update, setUpdate}) {
       console.error("Error fetching data:", error);
     }
   };
-
+ 
   useEffect(() => {
     getRecommendedMovies();
   }, [update]);
-
+ 
   const toggleBookmark = async (id, isBookmarked) => {
     try {
       await patchData(id, { isBookmarked: !isBookmarked });
@@ -34,17 +34,17 @@ export default function RecommendedForYou({update, setUpdate}) {
       console.error("Error updating bookmark:", error);
     }
   };
-
+ 
   // Card rendering
   const renderMovieCards = (movies) => (
-    <div className="bg-[#10141E] grid desktop:grid-cols-4 desktop:gap-x-[2.45rem] desktop:px-[2.35rem] tablet:gap-x-[1.69rem] tablet:px-[1.5rem] mobile:grid-cols-2 tablet:grid-cols-3  desktop:pl-[1.74rem] tablet:pl-[1.04rem] tablet:mt-[1.0rem] mobile:ml-[0.5rem] mobile:mt-[0.4rem] mobile:gap-y-[0.39rem] tablet:gap-y-[1.3rem] desktop:gap-y-[1.65rem] desktop:space-y-[-1.rem] m-0 ">
+    <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[1.81rem] mobile:gap-[0.94rem] gap-[0.94rem] mx-[1rem] tablet:mx-[1.56rem] desktop:mx-[2.25rem] mobile:gap-y-[0.87rem]">
       {movies.map((movie) => {
         const { id, title, thumbnail, year, category, rating, isBookmarked } =
           movie;
-
+ 
         return (
           <div key={id} className="relative group/play">
-            <div className="mobile:m-[0.5rem] min-h-[0.5rem] tablet:m-[0] z-20">
+            <div className=" min-h-[0.5rem] tablet:m-[0] z-20">
               <picture>
                 <source
                   className="rounded-lg group-hover/play:opacity-50 hover:duration-500"
@@ -73,9 +73,9 @@ export default function RecommendedForYou({update, setUpdate}) {
                 />
               </picture>
             </div>
-
+ 
             <button
-              className="group/book absolute right-[0.5rem] tablet:right-[1.1rem] top-2 tablet:top-[1rem] bg-slate-900/50 w-8 h-8 rounded-full hover:bg-white"
+              className="group/book absolute right-[0.5rem] tablet:right-[1rem] top-2 tablet:top-[1rem] bg-slate-900/50 w-8 h-8 rounded-full hover:bg-white"
               onClick={() => toggleBookmark(id, isBookmarked)}
             >
               <img
@@ -88,40 +88,40 @@ export default function RecommendedForYou({update, setUpdate}) {
                 src={bookmarkIconHover}
               />
             </button>
-
-            <div className="flex place-items-center card_content text-[#FFF]/[0.75] ml-[0.5rem] gap-[0.5rem;] mobile:gap-[0.8rem] text-[0.6875rem] tablet:text-[0.8125rem] tablet:gap-[0.8rem] tablet:">
-              <p className="mobile:mt-[-0.20rem] mobile:size-[0.6875rem] mobile:translate-y-[-0.13rem] tablet:translate-y-[0.1rem] tablet:translate-x-[-0.48rem]">
+ 
+            <div className="flex gap-[0.3rem] mobile:gap-[0.3rem] tablet:gap-[0.415rem] desktop:gap-[0.4rem] body-s tablet:body-s desktop:body-s mt-[0.4rem] mobile:mt-[0.5rem] tablet:mt-[0.5rem] desktop:mt-[0.28rem]  opacity-75 text-[0.6875rem] tablet:text-[0.8125rem] desktop:text-[0.8125rem]">
+              <p className="tv_series_text_above tablet:text-[0.8125rem]">
                 {year}
               </p>
-              <span className="mobile:translate-x-[0.3rem] mobile:translate-y-[-0.1rem] tablet:translate-y-[0.3rem] tablet:translate-x-[0.18rem]">
+              <span className="tv_series_text_above tablet:text-[0.8125rem] mobile:mr-[0.1rem]">
                 &#8226;
               </span>
               {category === "Movie" && (
                 <img
-                  className="w-[0.625rem] shrink h-[0.625rem] mobile:translate-y-[-0.1rem] mobile:translate-x-[-0.15rem] tablet:translate-y-[0.3rem] tablet:translate-x-[-0.2rem] tablet:w-[0.75rem] tablet:h-[0.75rem]"
+                  className="w-[0.625rem] h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.75rem] desktop:w-[0.75rem] desktop:h-[0.75rem] mobile:mr-[0.15rem] mobile:translate-y-[0.12rem] translate-y-[0.3rem]"
                   src={category_movie}
                   alt="Movie Icon"
                 />
               )}
               {category === "TV Series" && (
                 <img
-                  className="w-[0.625rem] shrink h-[0.625rem] mobile:translate-y-[-0.08rem] mobile:translate-x-[-0.15rem] tablet:translate-y-[0.4rem] tablet:translate-x-[-0.3rem] tablet:w-[0.75rem] tablet:h-[0.75rem]"
+                  className="w-[0.625rem] shrink h-[0.625rem] mobile:translate-y-[0.1rem] mobile:translate-x-[-0.15rem] tablet:translate-y-[0.4rem] tablet:translate-x-[rem] mobile:ml-[0.1rem] tablet:w-[0.75rem] tablet:h-[0.75rem] tablet:mr-[0.1rem]"
                   src={category_TV}
                   alt="TV Icon"
                 />
               )}
-              <p className="mobile:mr-[-4px] mobile:mt-[-0.20rem] mobile:translate-x-[-0.68rem] mobile:translate-y-[0.01rem] tablet:translate-x-[-0.68rem] tablet:translate-y-[0.4rem]">
+              <p className="tv_series_text_above mobile:ml-[-0.2rem] tablet:text-[0.8125rem]">
                 {category}
               </p>
-              <span className="mobile:translate-y-[-0.1rem] mobile:translate-x-[-0.93rem] tablet:translate-y-[0.3rem] tablet:translate-x-[-0.8rem]">
+              <span className="tv_series_text_above mobile:ml-[0.1rem] mobile:mr-[0.02rem] tablet:text-[0.8125rem]">
                 &#8226;
               </span>
-              <p className="mobile:mt-[-0.20rem] mobile:translate-x-[-1.45rem] mobile:translate-y-[-0.15rem] mobile:size-[0.6875rem] tablet:translate-x-[-1.21rem] tablet:translate-y-[0.15rem]">
+              <p className="tv_series_text_above tablet:text-[0.8125rem]">
                 {rating}
               </p>
             </div>
-
-            <p className="text-[#FFF] text-[0.875rem] mobile:ml-[0.5rem] tablet:text-[1.125rem] leading-normal tablet:mt-[0.4rem] tablet:ml-0 font-outfit">
+ 
+            <p className="section-s mobile:section-s tablet:heading-xs desktop:heading-xs tablet:mb-[-0.27rem] mobile:mb-[0.11rem] mobile:mt-[0.27rem] mb-[0.05rem] desktop:mb-[-0.51rem] tv_series_title">
               {title}
             </p>
           </div>
@@ -129,11 +129,11 @@ export default function RecommendedForYou({update, setUpdate}) {
       })}
     </div>
   );
-
+ 
   return (
     <>
-      <div className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1rem] mobile:pb-[1rem] tablet:pl-[1.05rem] tablet:pb-0 recommended_container tablet:mt-[2rem] tablet:mb-[2.5rem] desktop:mt-[2.5rem]">
-        <h3 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:mt-[1.4rem] mobile:pb-[1rem] tablet:pl-[0.5rem] tablet:pb-0 tablet:size-[2rem] tablet:w-[25rem] desktop:w-[25rem] tablet:tracking-[-0.03125rem;] tablet:mt-[0rem] font-outfit mobile:size-[1.25rem] desktop:pl-[1.25rem] mobile:w-[25rem] mobile:font-[400] mobile:leading-normal mobile:tracking-[0.0453rem]">
+      <div className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:pl-[1.05rem] mobile:mb-[1.9rem] tablet:pl-[1.05rem] tablet:pb-0 recommended_container tablet:mt-[2.1rem] tablet:mb-[2.35rem] desktop:mt-[2.25rem] desktop:mb-[2.77rem]">
+        <h3 className="mobile:heading-xs tablet:heading-l text-[1.25rem] mobile:mt-[1.4rem] tablet:pl-[0.5rem] tablet:pb-0 tablet:size-[2rem] tablet:w-[25rem] desktop:w-[25rem] tablet:tracking-[-0.03125rem;] tablet:mt-[0rem] font-outfit mobile:size-[1.25rem] desktop:pl-[1.23rem] mobile:w-[25rem] mobile:font-[400] mobile:leading-normal mobile:tracking-[0.0453rem]">
           Recommended for you
         </h3>
       </div>
