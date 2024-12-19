@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { patchData } from "../helpers/update";
 import category_movie from "@assets/icon-category-movie.svg";
 import bookmarkIconHover from "@assets/icon-bookmark-hover.svg";
-import category_TV from "@assets/icon-category-tv.svg";
 import bookmarkIconEmpty from "@assets/icon-bookmark-empty.svg";
 import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 import Navigation from "./Navigation";
@@ -150,7 +149,7 @@ export default function Movies() {
         {showComponent ? (
           // Jei showComponent yra true rodome filtruotus filmus
           <div className="mt-[1.4rem] mobile:mt-[1.4rem] tablet:mt-[0.8rem] desktop:mt-[1rem]">
-            <h1 className="heading-xs mobile:heading-xs- tablet:heading-l tablet:tracking-[0.00215rem] mb-[1.3rem] mobile:mb-[1.3rem] tablet:mb-[1.21rem] desktop:mb-[1.76rem] ml-[1.01rem] mobile:ml-[1.01rem] tablet:ml-[1.55rem] desktop:ml-[2.25rem] found-text mobile:tracking-[-0.0195rem] tablet:tracking-[-0.03125rem] tracking-[-0.0195rem] text-[1.25rem] mobile:text-[1.25rem] tablet:text-[2rem]">
+            <h1 className="heading-xs mobile:heading-xs- tablet:heading-l mb-[1.3rem] mobile:mb-[1.3rem] tablet:mb-[1.42rem] desktop:mb-[1.76rem] ml-[1.01rem] mobile:ml-[1.01rem] tablet:ml-[1.55rem] desktop:ml-[2.25rem] found-text mobile:tracking-[-0.0195rem] tablet:tracking-[-0.033rem] tracking-[-0.0195rem] text-[1.25rem] mobile:text-[1.25rem] tablet:text-[2rem]">
               Found {onlyMovies.length} results for '{query}'
 
             </h1>
@@ -159,7 +158,7 @@ export default function Movies() {
         ) : (
           // Jei showComponent yra false, rodome visus filmus
           <div className="">
-            <h3 className="mx-[1rem] mobile:mx-[1rem] tablet:mx-[1.56rem] desktop:mx-[2.25rem] heading-xs tablet:heading-l desktop:heading-l mobile:mb-[1.4rem] mt-[1.4rem] mobile:mt-[1.4rem]  mobile:mb-[1.5rem] tablet:mt-[0.65rem] desktop:mt-[0.9rem] desktop:mb-[2.2rem] tracking-tighter">
+            <h3 className="mx-[1rem] mobile:mx-[1rem] tablet:mx-[1.56rem] desktop:mx-[2.25rem] heading-xs tablet:heading-l desktop:heading-l mt-[1.4rem] mobile:mt-[1.4rem] mobile:mb-[1.5rem] tablet:mt-[0.65rem] desktop:mt-[0.9rem] desktop:mb-[2.2rem] tracking-tighter">
               Movies
             </h3>
             {renderMovieCards(onlyMovies)}
