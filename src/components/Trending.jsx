@@ -120,7 +120,7 @@ const Trending = ({update, setUpdate}) => {
                       <p className="text_above_title body-s mobile:body-s mx-[0.4rem] mobile:mx-[0.4rem] tablet:mx-[0.5rem] desktop:mx-[0.48rem] tablet:body-m">&#8226;</p>
                       <p className="text_above_title body-s mobile:body-s mr-[0.5rem] mobile:mr-[0.5rem] tablet:body-m tablet:mr-[5rem]">{rating}</p>
                     </div>
-                    <div className="absolute mobile:left-[1rem] mobile:top-[6.55rem] tablet:left-[1.52rem] tablet:top-[11rem]">
+                    <div className="absolute left-[1rem] top-[6.55rem] mobile:left-[1rem] mobile:top-[6.55rem] tablet:left-[1.52rem] tablet:top-[11rem]">
                       <p className="body-m mobile:body-m tablet:heading-m movie-title">{title}</p>
                     </div>
                 </div>

@@ -83,16 +83,16 @@ export default function Home() {
                 </div>
 
                 <div className="flex place-items-center card_content text-[#FFF]/[0.75] text-[0.8125rem] tablet:gap-[0.5rem] mt-[0.5rem]">
-                  <p className="tv_series_text_above ml-[0.03rem] mobile:ml-[0.03rem] mr-[0.37rem] mobile:mr-[0.37rem] tablet:mr-[0rem] tablet:text-[0.8125rem]">{year}</p>
+                  <p className="tv_series_text_above ml-[0.03rem] mobile:ml-[0.03rem] mr-[0.38rem] mobile:mr-[0.38rem] tablet:mr-[0rem] tablet:text-[0.8125rem]">{year}</p>
                   <span className="tv_series_text_above mr-[0.3rem] mobile:mr-[0.3rem] tablet:text-[0.8125rem]">&#8226;</span>
                   {category.toLowerCase() === "movie" && (
                     <img
-                      className="w-[0.625rem] mobile:w-[0.625rem] h-[0.625rem] mobile:h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.75rem] mr-[0.28rem] mobile:mr-[0.28rem] tablet:ml-[-0.35rem] tablet:mr-[-0.15rem]"
+                      className="w-[0.625rem] mobile:w-[0.625rem] h-[0.625rem] mobile:h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.75rem] mr-[0.28rem] mobile:mr-[0.3rem] tablet:ml-[-0.35rem] tablet:mr-[-0.15rem]"
                       src={category_movie}
                       alt="Category Icon"
                     />
                   )}
-                  <p className="tv_series_text_above mr-[0.37rem] mobile:mr-[0.37rem] tablet:text-[0.8125rem]">{category}</p>
+                  <p className="tv_series_text_above mr-[0.37rem] mobile:mr-[0.36rem] tablet:text-[0.8125rem]">{category}</p>
                   <span className="tv_series_text_above mr-[0.33rem] mobile:mr-[0.33rem] tablet:text-[0.8125rem] tablet:mr-[-0.05rem] tablet:ml-[-0.35rem]">&#8226;</span>
                   <p className="tv_series_text_above tablet:text-[0.8125rem]">{rating}</p>
                 </div>
@@ -135,7 +135,7 @@ export default function Home() {
         />
         {showComponent ? (
           <div className="mt-[1.4rem] mobile:mt-[1.4rem] tablet:mt-[0.9rem] desktop:mt-[1rem]">
-            <h1 className="heading-xs mobile:heading-xs- tablet:heading-l tablet:tracking-[0.00215rem] mb-[1.3rem] mobile:mb-[1.3rem] tablet:mb-[1.21rem] desktop:mb-[1.76rem] ml-[1.01rem] mobile:ml-[1.01rem] tablet:ml-[1.55rem] desktop:ml-[2.25rem] found-text mobile:tracking-[-0.0195rem] tablet:tracking-[-0.033rem] tracking-[-0.0195rem] text-[1.25rem] mobile:text-[1.25rem] tablet:text-[2rem]">
+            <h1 className="heading-xs mobile:heading-xs- tablet:heading-l mb-[1.3rem] mobile:mb-[1.3rem] tablet:mb-[1.21rem] desktop:mb-[1.76rem] ml-[1.01rem] mobile:ml-[1.01rem] tablet:ml-[1.55rem] desktop:ml-[2.25rem] found-text mobile:tracking-[-0.0195rem] tablet:tracking-[-0.033rem] tracking-[-0.0195rem] text-[1.25rem] mobile:text-[1.25rem] tablet:text-[2rem]">
               Found {filteredData.length} results for '{query}'
             </h1>
             {renderCards(filteredData)}
