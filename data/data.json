@@ -36,7 +36,7 @@
       "year": 2021,
       "category": "Movie",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": true,
       "id": "162c"
     },
@@ -176,7 +176,7 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false,
       "id": "0a5d"
     },
