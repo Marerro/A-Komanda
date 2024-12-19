@@ -92,12 +92,12 @@ export default function Movies() {
 
                 {/* Info Section */}
                 <div className="">
-                  <div className="flex gap-[0.3rem] mobile:gap-[0.3rem] tablet:gap-[0.415rem] desktop:gap-[0.4rem] body-s tablet:body-s desktop:body-s mt-[0.4rem] mobile:mt-[0.4rem] tablet:mt-[0.5rem]  desktop:mt-[0.5rem]  opacity-75 text-[0.6875rem] tablet:text-[0.8125rem] desktop:text-[0.8125rem]">
+                  <div className="flex gap-[0.3rem] mobile:gap-[0.3rem] tablet:gap-[0.415rem] desktop:gap-[0.4rem] body-s tablet:body-s desktop:body-s mt-[0.4rem] mobile:mt-[0.4rem] tablet:mt-[0.5rem] desktop:mt-[0.5rem]  opacity-75 text-[0.6875rem] tablet:text-[0.8125rem] desktop:text-[0.8125rem]">
                     <p className="">{year}</p>
                     <span className="">&#8226;</span>
                     {category.toLowerCase() === "movie" && (
                       <img
-                        className="w-[0.625rem]  h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.75rem] desktop:w-[0.75rem] desktop:h-[0.75rem] mobile:translate-y-[0.20rem] translate-y-[0.3rem]"
+                        className="w-[0.625rem] h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.75rem] desktop:w-[0.75rem] desktop:h-[0.75rem] mobile:translate-y-[0.20rem] translate-y-[0.3rem]"
                         src={category_movie}
                         alt="Category Icon"
                       />
@@ -149,16 +149,17 @@ export default function Movies() {
 
         {showComponent ? (
           // Jei showComponent yra true rodome filtruotus filmus
-          <div>
-            <h1 className="text-white">
-              Found {onlyMovies.length} results for &quot;{query}&quot;
+          <div className="mt-[1.4rem] mobile:mt-[1.4rem] tablet:mt-[0.8rem] desktop:mt-[1rem]">
+            <h1 className="heading-xs mobile:heading-xs- tablet:heading-l tablet:tracking-[0.00215rem] mb-[1.3rem] mobile:mb-[1.3rem] tablet:mb-[1.21rem] desktop:mb-[1.76rem] ml-[1.01rem] mobile:ml-[1.01rem] tablet:ml-[1.55rem] desktop:ml-[2.25rem] found-text mobile:tracking-[-0.0195rem] tablet:tracking-[-0.03125rem] tracking-[-0.0195rem] text-[1.25rem] mobile:text-[1.25rem] tablet:text-[2rem]">
+              Found {onlyMovies.length} results for '{query}'
+
             </h1>
             {renderMovieCards(onlyMovies)}
           </div>
         ) : (
           // Jei showComponent yra false, rodome visus filmus
           <div className="">
-            <h3 className="mx-[1rem] mobile:mx-[1rem] tablet:mx-[1.56rem] desktop:mx-[2.25rem] heading-xs tablet:heading-l desktop:heading-l  mb-[1.4rem] mt-[1.4rem] mobile:mt-[1.4rem]  mobile:mb-[1.5rem] tablet:mt-[0.65rem]   desktop:mt-[0.9rem] desktop:mb-[2.2rem] tracking-tighter">
+            <h3 className="mx-[1rem] mobile:mx-[1rem] tablet:mx-[1.56rem] desktop:mx-[2.25rem] heading-xs tablet:heading-l desktop:heading-l mobile:mb-[1.4rem] mt-[1.4rem] mobile:mt-[1.4rem]  mobile:mb-[1.5rem] tablet:mt-[0.65rem] desktop:mt-[0.9rem] desktop:mb-[2.2rem] tracking-tighter">
               Movies
             </h3>
             {renderMovieCards(onlyMovies)}

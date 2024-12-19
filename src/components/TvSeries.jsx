@@ -56,7 +56,7 @@ export default function TvSeries() {
 
   const renderTvSeries = (series) => {
     return (
-      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-y-[1.98rem] desktop:gap-x-[2.5rem] tablet:gap-y-[1.6rem] tablet:gap-x-[1.7rem] mobile:gap-[0.94rem] gap-[0.94rem] mx-[1rem] tablet:pl-[1.4rem] tablet:pr-[1.45rem] tablet:mx-[0.1rem] desktop:mt-[2.13rem] desktop:pl-[1.2rem] desktop:pr-[2rem] desktop:mx-[0.5rem] desktop:ml-[1.0rem]">
+      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-y-[1.98rem] desktop:gap-x-[2.5rem] tablet:gap-y-[1.6rem] tablet:gap-x-[1.7rem] mobile:gap-[0.94rem] gap-[0.94rem] mx-[1rem] tablet:pl-[1.4rem] tablet:pr-[1.45rem] tablet:mx-[0.1rem] desktop:mt-[2.13rem] desktop:pl-[1.2rem] desktop:pr-[2rem] desktop:mx-[0.5rem] desktop:ml-[1.0rem] desktop:ml-[1.1rem]">
         {series.map((itemData) => {
           const { id, title, thumbnail, year, category, rating, isBookmarked } =
             itemData;
@@ -172,9 +172,9 @@ export default function TvSeries() {
         />
         {showComponent ? (
           // if component true show filtered tvseries
-          <div>
-            <h1 className="text-white">
-              Found {onlyTVseries.length} results for `{query}`
+          <div className="mt-[1.4rem] mobile:mt-[1.4rem] tablet:mt-[0.9rem] desktop:mt-[1rem]">
+            <h1 className="heading-xs mobile:heading-xs- tablet:heading-l tablet:tracking-[0.00215rem] mb-[1.3rem] mobile:mb-[1.3rem] tablet:mb-[1.21rem] desktop:mb-[-0.42rem] ml-[1.01rem] mobile:ml-[1.01rem] tablet:ml-[1.55rem] desktop:ml-[2.25rem] found-text mobile:tracking-[-0.0195rem] tablet:tracking-[-0.03125rem] tracking-[-0.0195rem] text-[1.25rem] mobile:text-[1.25rem] tablet:text-[2rem]">
+              Found {onlyTVseries.length} results for '{query}'
             </h1>
             {renderTvSeries(onlyTVseries)}
           </div>

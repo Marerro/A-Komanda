@@ -47,7 +47,7 @@ export default function Home() {
 
   const renderCards = (movies) => {
     return (
-      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] mobile:gap-[0.94rem]">
+      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-[2.5rem] tablet:gap-[2.5rem] px-[0.97rem] mobile:px-[0.97rem] gap-x-[0.96rem] mobile:gap-x-[0.96rem] tablet:gap-x-[1.8rem] tablet:px-[1.55rem] desktop:px-[2.25rem]">
         {movies.map((movie) => {
           const { id, title, thumbnail, year, category, rating, isBookmarked } =
             movie;
@@ -67,8 +67,12 @@ export default function Home() {
                   </div>
                   <picture>
                     <source
-                      media="(min-width: 768px)"
+                      media="(min-width: 1440px)"
                       srcSet={thumbnail.regular.large}
+                    />
+                      <source
+                      media="(min-width: 768px)"
+                      srcSet={thumbnail.regular.medium}
                     />
                     <img
                       className="rounded-lg group-hover/play:opacity-50"
@@ -78,26 +82,26 @@ export default function Home() {
                   </picture>
                 </div>
 
-                <div className="flex place-items-center card_content text-[#FFF]/[0.75] gap-[0.5rem;] text-[0.8125rem] tablet:gap-[0.5rem] mt-1">
-                  <p className="">{year}</p>
-                  <span className="">&#8226;</span>
+                <div className="flex place-items-center card_content text-[#FFF]/[0.75] text-[0.8125rem] tablet:gap-[0.5rem] mt-[0.5rem]">
+                  <p className="tv_series_text_above ml-[0.03rem] mobile:ml-[0.03rem] mr-[0.37rem] mobile:mr-[0.37rem] tablet:mr-[0rem] tablet:text-[0.8125rem]">{year}</p>
+                  <span className="tv_series_text_above mr-[0.3rem] mobile:mr-[0.3rem] tablet:text-[0.8125rem]">&#8226;</span>
                   {category.toLowerCase() === "movie" && (
                     <img
-                      className="w-[0.75rem] shrink h-[0.75rem]"
+                      className="w-[0.625rem] mobile:w-[0.625rem] h-[0.625rem] mobile:h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.75rem] mr-[0.28rem] mobile:mr-[0.28rem] tablet:ml-[-0.35rem] tablet:mr-[-0.15rem]"
                       src={category_movie}
                       alt="Category Icon"
                     />
                   )}
-                  <p className="">{category}</p>
-                  <span className="">&#8226;</span>
-                  <p className="">{rating}</p>
+                  <p className="tv_series_text_above mr-[0.37rem] mobile:mr-[0.37rem] tablet:text-[0.8125rem]">{category}</p>
+                  <span className="tv_series_text_above mr-[0.33rem] mobile:mr-[0.33rem] tablet:text-[0.8125rem] tablet:mr-[-0.05rem] tablet:ml-[-0.35rem]">&#8226;</span>
+                  <p className="tv_series_text_above tablet:text-[0.8125rem]">{rating}</p>
                 </div>
-                <p className="text-white mt-1 desktop:text-[1.125rem]">
+                <p className="text-white tv_series_title mt-[0.25rem] ml-[0.03rem] mobile:mt-[0.25rem] tablet:mt-[0.3rem] mobile:ml-[0.03rem] mobile:mb-[1rem] tablet:text-[1.125rem]">
                   {title}
                 </p>
 
                 <button
-                  className="group/book absolute right-[0.5rem] top-[0.5rem] bg-slate-900/50 w-8 h-8 rounded-full hover:bg-white"
+                  className="group/book absolute right-[0.5rem] top-[0.5rem] mobile:right-[0.5rem] mobile:top-[0.5rem] tablet:top-[1rem] tablet:right-[1rem] bg-slate-900/50 w-8 h-8 rounded-full hover:bg-white"
                   onClick={() => handleBookmark(id)}
                 >
                   <img
@@ -130,9 +134,9 @@ export default function Home() {
           refresh={refresh}
         />
         {showComponent ? (
-          <div>
-            <h1 className="text-white">
-              Found {filteredData.length} results for &quot;{query}&quot;
+          <div className="mt-[1.4rem] mobile:mt-[1.4rem] tablet:mt-[0.9rem] desktop:mt-[1rem]">
+            <h1 className="heading-xs mobile:heading-xs- tablet:heading-l tablet:tracking-[0.00215rem] mb-[1.3rem] mobile:mb-[1.3rem] tablet:mb-[1.21rem] desktop:mb-[1.76rem] ml-[1.01rem] mobile:ml-[1.01rem] tablet:ml-[1.55rem] desktop:ml-[2.25rem] found-text mobile:tracking-[-0.0195rem] tablet:tracking-[-0.03125rem] tracking-[-0.0195rem] text-[1.25rem] mobile:text-[1.25rem] tablet:text-[2rem]">
+              Found {filteredData.length} results for '{query}'
             </h1>
             {renderCards(filteredData)}
           </div>
