@@ -147,7 +147,7 @@ export default function Bookmarks() {
             </h1>
             {showShowsCard(bookmarkedMovies)}
 
-            <h1 className="heading-xs ml-4 my-6 tablet:heading-l tablet:ml-6 tablet:mt-9 tablet:mb-6 desktop:ml-9 desktop:mt-8 desktop:mb-[2.15rem]">
+            <h1 className="heading-xs ml-4 my-6 tablet:heading-l tablet:ml-6 tablet:mt-10 tablet:mb-6 desktop:ml-9 desktop:mt-8 desktop:mb-[2.15rem]">
               Bookmarked TV Series
             </h1>
             {showShowsCard(bookmarkedTVSeries)}
