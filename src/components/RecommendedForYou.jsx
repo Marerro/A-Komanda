@@ -7,9 +7,8 @@ import bookmarkIconFull from "@assets/icon-bookmark-full.svg";
 import playButton from "@assets/icon-play.svg";
 import bookmarkIconHover from "@assets/bookmark_onHover.svg";
  
-export default function RecommendedForYou() {
+export default function RecommendedForYou({update, setUpdate}) {
   const [recommendMovies, setRecommendMovies] = useState([]);
-  const [update, setUpdate] = useState(0);
  
   const url = "http://localhost:5000/data";
  
