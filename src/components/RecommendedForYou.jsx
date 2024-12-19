@@ -37,24 +37,22 @@ export default function RecommendedForYou({update, setUpdate}) {
 
   // Card rendering
   const renderMovieCards = (movies) => (
-    <div className="bg-[#10141E] grid desktop:grid-cols-4  desktop:gap-x-[6.4rem] desktop:px-[6rem]  mobile:grid-cols-2 tablet:grid-cols-3  desktop:pl-[1.74rem] tablet:pl-[1.04rem] tablet:mt-[1.0rem] mobile:ml-[0.5rem] mobile:mt-[0.4rem] mobile:gap-y-[0.39rem] tablet:gap-y-[4.7rem] desktop:gap-y-[5.2rem] desktop:space-y-[-1.rem] m-0 ">
+    <div className="bg-[#10141E] grid desktop:grid-cols-4 desktop:gap-x-[2.45rem] desktop:px-[2.35rem] tablet:gap-x-[1.69rem] tablet:px-[1.5rem] mobile:grid-cols-2 tablet:grid-cols-3  desktop:pl-[1.74rem] tablet:pl-[1.04rem] tablet:mt-[1.0rem] mobile:ml-[0.5rem] mobile:mt-[0.4rem] mobile:gap-y-[0.39rem] tablet:gap-y-[1.3rem] desktop:gap-y-[1.65rem] desktop:space-y-[-1.rem] m-0 ">
       {movies.map((movie) => {
         const { id, title, thumbnail, year, category, rating, isBookmarked } =
           movie;
 
         return (
-          <div
-            key={id}
-            className="relative group/play tablet:w-[13.75rem] tablet:h-[8.75rem] desktop:w-[17.5rem] desktop:h-[10.875rem]"
-          >
+          <div key={id} className="relative group/play">
             <div className="mobile:m-[0.5rem] min-h-[0.5rem] tablet:m-[0] z-20">
               <picture>
                 <source
+                  className="rounded-lg group-hover/play:opacity-50 hover:duration-500"
                   media="(min-width: 1440px)"
                   src={thumbnail.regular.large}
                   alt="Shows"
                 />
-                <div className="group-hover/play:opacity-100 flex items-center absolute top-0 mobile:bottom-8 mobile:left-4 tablet:bottom-13 tablet:right-1 left-0 right-6 m-auto mobile:w-[5.2rem] mobile:h-[2.1rem] tablet:w-[7.3125rem] tablet:h-[3rem] desktop:bottom-14 desktop:right-9 bg-white bg-opacity-25 rounded-full opacity-0 hover:opacity-100 hover:duration-500 cursor-pointer z-40">
+                <div className="group-hover/play:opacity-100 flex items-center absolute top-0 mobile:bottom-8 mobile:left-4 tablet:bottom-12 tablet:right-6 left-0 right-6 m-auto mobile:w-[5.2rem] mobile:h-[2.1rem] tablet:w-[7.3125rem] tablet:h-[3rem] desktop:bottom-14 desktop:right-9 bg-white bg-opacity-25 rounded-full opacity-0 hover:opacity-100 hover:duration-500 cursor-pointer z-40">
                   <button>
                     <img
                       src={playButton}
@@ -69,7 +67,7 @@ export default function RecommendedForYou({update, setUpdate}) {
                   srcSet={thumbnail.regular.medium}
                 />
                 <img
-                  className="w-[3rem] h-[1rem] max-w-[29.375rem] max-h-[14.375rem] mobile:w-[10.25rem] mobile:h-[6.875rem] tablet:w-[13.75rem] tablet:h-[8.75rem] rounded-[0.5rem] desktop:w-[17.5rem] desktop:h-[10.875rem] group-hover/play:opacity-50 hover:duration-500"
+                  className="rounded-lg group-hover/play:opacity-50 hover:duration-500 m-0 w-full"
                   src={thumbnail.regular.small}
                   alt={title}
                 />
@@ -77,16 +75,16 @@ export default function RecommendedForYou({update, setUpdate}) {
             </div>
 
             <button
-              className="absolute mobile:top-[1.0rem] mobile:left-[8.30rem] tablet:top-[0.95rem] tablet:left-[10.8rem] desktop:left-[14.5rem] desktop:top-[1rem] bg-dark-blue/50 w-8 h-8 rounded-full hover:fill-white hover:duration-500 hover-elements group/book hover:bg-white"
+              className="group/book absolute right-[0.5rem] tablet:right-[1.1rem] top-2 tablet:top-[1rem] bg-slate-900/50 w-8 h-8 rounded-full hover:bg-white"
               onClick={() => toggleBookmark(id, isBookmarked)}
             >
               <img
                 src={isBookmarked ? bookmarkIconFull : bookmarkIconEmpty}
                 alt="Bookmark Icon"
-                className="m-auto group-hover/bookmark:invisible"
+                className="m-auto group-hover/book:invisible"
               />
               <img
-                className="m-auto group-hover/book:visible invisible absolute top-0 right-0"
+                className="group-hover/book:visible absolute top-0 invisible"
                 src={bookmarkIconHover}
               />
             </button>
