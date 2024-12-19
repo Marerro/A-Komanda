@@ -14,7 +14,7 @@ export default function TvSeries() {
   const [showComponent, setShowComponent] = useState(false);
   const [onlyTVseries, setOnlyTVseries] = useState([]);
   const [query, setQuery] = useState("");
-  const [refresh, setRefresh] = useState(0);  
+  const [refresh, setRefresh] = useState(0);
 
   const url = "http://localhost:5000/data";
 
@@ -56,7 +56,7 @@ export default function TvSeries() {
 
   const renderTvSeries = (series) => {
     return (
-      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-y-[1.98rem] desktop:gap-x-[2.5rem] tablet:gap-y-[1.6rem] tablet:gap-x-[1.7rem] mobile:gap-[0.94rem] gap-[0.94rem] mx-[1rem] tablet:pl-[1.4rem] tablet:pr-[1.45rem] tablet:mx-[0.1rem] desktop:mt-[2.13rem] desktop:pl-[1.2rem] desktop:pr-[2rem] desktop:mx-[0.5rem] desktop:ml-[1.0rem] desktop:ml-[1.1rem]">
+      <div className="bg-[#10141E] grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 desktop:gap-y-[1.98rem] desktop:gap-x-[2.5rem] tablet:gap-y-[1.6rem] tablet:gap-x-[1.7rem] mobile:gap-[0.94rem] gap-[0.94rem] mx-[1rem] tablet:pl-[1.4rem] tablet:pr-[1.45rem] tablet:mx-[0.1rem] desktop:mt-[2.13rem] desktop:pl-[1.2rem] desktop:pr-[2rem] desktop:mx-[0.5rem] desktop:ml-[1.1rem]">
         {series.map((itemData) => {
           const { id, title, thumbnail, year, category, rating, isBookmarked } =
             itemData;
@@ -117,11 +117,11 @@ export default function TvSeries() {
                     <p className="heading-xs mt-2 mb-2 ml-5 mr-5 z-40">Play</p>
                   </div>
                   <picture>
-                  <source
+                    <source
                       media="(min-width: 1440px)"
                       srcSet={thumbnail.regular.large}
                     />
-                     <source
+                    <source
                       media="(min-width: 768px)"
                       srcSet={thumbnail.regular.medium}
                     />
@@ -134,19 +134,23 @@ export default function TvSeries() {
                 </div>
                 <div className="flex gap-[0.26rem] tablet:gap-[0.5rem] desktop:gap-[0.43rem] body-s tablet:body-s desktop:body-s mobile:mt-[0.5rem] tablet:mt-[0.4rem] desktop:mt-[0.6rem] opacity-75 text-[0.6875rem] tablet:text-[0.8125rem] desktop:text-[0.8125rem] tv_series_text_above">
                   <p className="mr-[-0.2rem] ">{year}</p>
-                  <span className="ml-[0.32rem] mx-[0.2rem] tablet:mx-[0.19rem] tablet:ml-[0.3rem] desktop:ml-[0.27rem] desktop:mx-[0.14rem]">&#8226;</span>
+                  <span className="ml-[0.32rem] mx-[0.2rem] tablet:mx-[0.19rem] tablet:ml-[0.3rem] desktop:ml-[0.27rem] desktop:mx-[0.14rem]">
+                    &#8226;
+                  </span>
                   {category === "TV Series" && (
-                    
                     <img
                       className="w-[0.625rem] h-[0.625rem] tablet:w-[0.75rem] tablet:h-[0.79rem] desktop:w-[0.75rem] desktop:h-[0.75rem] mobile:translate-y-[0.20rem] translate-y-[0.3rem] mx-[-0.19rem] desktop:translate-y-[0.04rem] desktop:translate-x-[0.1rem]"
                       src={category_TV}
                       alt="Category Icon"
                     />
-                   
                   )}
-                  <div className="tablet:mr-[-0.5rem] desktop:mr-[-0.1rem]">{bookMarking}</div>
-                  <p >{category}</p>
-                  <span className="ml-[0.15rem] tablet:ml-[-0.05rem] desktop:ml-[0.05rem] desktop:mr-[0.05rem]">&#8226;</span>
+                  <div className="tablet:mr-[-0.5rem] desktop:mr-[-0.1rem]">
+                    {bookMarking}
+                  </div>
+                  <p>{category}</p>
+                  <span className="ml-[0.15rem] tablet:ml-[-0.05rem] desktop:ml-[0.05rem] desktop:mr-[0.05rem]">
+                    &#8226;
+                  </span>
                   <p>{rating}</p>
                 </div>
                 <p className="mobile:mt-[0.26rem] tablet:mt-[0.24rem] desktop:mt-[0.25rem] section-s  tablet:heading-xs desktop:heading-xs tv_series_title">
@@ -162,7 +166,7 @@ export default function TvSeries() {
 
   return (
     <>
-      <Navigation setRefresh={setRefresh}/>
+      <Navigation setRefresh={setRefresh} />
       <section className="desktop:ml-32">
         <SearchBar
           setShowComponent={setShowComponent}
@@ -181,11 +185,10 @@ export default function TvSeries() {
         ) : (
           <div>
             <h3 className="heading-xs tablet:heading-l desktop:heading-l my-[1.45rem] mx-[1.05rem] tracking-wider tablet:my-[0.8525rem] tablet:pl-[0.6rem] tablet:tracking-normal tablet:mb-[1.3rem] desktop:mb-[0.5rem] desktop:my-[-0.4rem] desktop:mt-[1rem] desktop:ml-[1.7rem]">
-            TV Series
+              TV Series
             </h3>
-            
+
             {renderTvSeries(onlyTVseries)}
-            
           </div>
         )}
       </section>
